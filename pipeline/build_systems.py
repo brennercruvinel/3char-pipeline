@@ -2,6 +2,7 @@
 import csv, datetime, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from systems_meta import SYSTEMS, DERIVED_PATTERN, DERIVED_FROM, NOTES
+from versions import version_of
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 COLS = ["system_id","domain","name","authority","url","license","license_status",
@@ -65,7 +66,8 @@ def main():
             "code_pattern": pattern,
             "pattern_status": "derived" if sid in DERIVED_PATTERN else "provisional",
             "case_sensitive": str(cs).lower(), "raw_file": raw_target(sid),
-            "derived_from": DERIVED_FROM.get(sid, ""), "version": "",
+            "derived_from": DERIVED_FROM.get(sid, ""),
+        "version": version_of(sid, ROOT/raw_target(sid)),
             "retrieved_at": retrieved(sid), "notes": NOTES.get(sid, ""),
         })
     rows = [{k: flat(v) for k, v in r.items()} for r in rows]

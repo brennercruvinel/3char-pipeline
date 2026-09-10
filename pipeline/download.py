@@ -53,7 +53,10 @@ def download_all():
 def verify(accept_new=False):
     manifest = ROOT/"CHECKSUMS.tsv"
     expected = {r["path"]: (r["sha256"], int(r["bytes"])) for r in read_tsv(manifest)}
-    on_disk = sorted(str(p.relative_to(ROOT)) for p in (ROOT/"data").rglob("*") if p.is_file())
+    # only raw sources are in the manifest. the parquet next to them is built output,
+    # and sweeping it in here made every successful build look like manifest drift.
+    on_disk = sorted(str(p.relative_to(ROOT)) for p in (ROOT/"data").rglob("raw/**/*")
+                     if p.is_file())
 
     missing = [p for p in expected if p not in set(on_disk)]
     extra = [p for p in on_disk if p not in expected]

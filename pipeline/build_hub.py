@@ -28,6 +28,10 @@ def main():
         shutil.copy2(src, dst)
         counts[sid] = pq.read_metadata(src).num_rows
 
+    changelog = ROOT/"CHANGELOG.md"
+    if changelog.exists():
+        shutil.copy2(changelog, HUB/"CHANGELOG.md")
+
     rows = []
     for sid in publish:
         r = dict(sysmap[sid])

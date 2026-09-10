@@ -152,6 +152,9 @@ def main():
              "`download.py` refetches every source and fails on any checksum drift, `validate.py` "
              "tests every code against its system's regex. the raw files are not in that repo "
              "either, for the same licensing reason they are not here.\n")
+    b.append("what changed and why is in [CHANGELOG.md](CHANGELOG.md), including the two "
+             "sources that turned out to be the wrong file and the eight that were re-derived "
+             "from the body that assigns the codes.\n")
     b.append("### citation\n")
     b.append("```bibtex\n@misc{cruvinel_3char,\n  title  = {3char: three character code systems "
              "in one schema},\n  author = {Cruvinel, Brenner},\n  year   = {2026},\n"
