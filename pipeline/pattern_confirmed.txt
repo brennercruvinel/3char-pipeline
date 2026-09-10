@@ -1,0 +1,9 @@
+cls/elm
+cmp/sts
+lng/i31
+lng/i39
+lng/ioc
+trp/iata
+trp/icao
+trp/unl
+wrt/iau
