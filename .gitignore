@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.DS_Store
+
+# the hub payload is built, not source
+hub/
+
+# raw sources are fetched by pipeline/download.py and verified against CHECKSUMS.tsv.
+# several of them carry terms that forbid redistribution, so they never live in git.
+data/
+
+PLAN.md

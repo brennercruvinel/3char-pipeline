@@ -9,7 +9,7 @@ cls/atc	atc.csv	oficial	https://raw.githubusercontent.com/fabkury/atcd/master/WH
 cls/bsc	bisac.csv	3ch.lua(teu)	https://gist.githubusercontent.com/jveldboom/6542197/raw/0f310e70fe0395ad6ab8b3891f8aafdb840de7d0/bisac.csv
 cls/dew	deweysummaries.pdf	3ch.lua(teu)	https://www.oclc.org/content/dam/oclc/dewey/resources/summaries/deweysummaries.pdf
 cls/elm	pubchem-periodic-table.csv	oficial	https://pubchem.ncbi.nlm.nih.gov/rest/pug/periodictable/CSV
-cls/icd	icd10cm.parquet	oficial	https://huggingface.co/datasets/wangyichen25/ICD-10-CM_Code-Description_Pairs/resolve/main/test-00000-of-00001.parquet
+cls/icd	icd10cm-order-2027.txt	autoridade	https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Publications/ICD10CM/2027/icd10cm-code-descriptions-2027.zip
 cls/loc	lc_class.txt	3ch.lua(teu)	https://raw.githubusercontent.com/edsu/lcco/master/lc_class.txt
 cmp/asm	x86.csv	oficial	https://raw.githubusercontent.com/GregoryComer/x86-csv/master/x86.csv
 cmp/css	functions.json	3ch.lua(teu)	https://raw.githubusercontent.com/mdn/data/main/css/functions.json
@@ -26,7 +26,7 @@ cmp/sts	http-status-codes-1.csv	3ch.lua(teu)	https://www.iana.org/assignments/ht
 cmp/vim	motion.txt	3ch.lua(teu)	https://raw.githubusercontent.com/vim/vim/master/runtime/doc/motion.txt
 com/bau	T-REC-S.1.pdf	autoridade	https://www.itu.int/rec/T-REC-S.1-199303-I/en
 com/mor	R-REC-M.1677-1.pdf	autoridade	https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.1677-1-200910-I!!PDF-E.pdf
-com/tlg	abcuniversalco00clau_djvu.txt	oficial	https://archive.org/download/abcuniversalco00clau/abcuniversalco00clau_djvu.txt
+com/tlg	abcuniversalco00clau_djvu.xml	oficial	https://archive.org/download/abcuniversalco00clau/abcuniversalco00clau_djvu.xml
 fin/cfi	cfi-iso10962.xlsx	oficial	https://www.six-group.com/dam/download/financial-information/data-center/cfi/cfi-20210507-current.xlsx
 fin/cus	cik-cusip-maps.csv	3ch.lua(teu)	https://raw.githubusercontent.com/leoliu0/cik-cusip-mapping/master/cik-cusip-maps.csv
 fin/i42	iso4217-list-one.xml	oficial	https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml

@@ -40,7 +40,9 @@ for sid, (name, authority, pattern, cs, lic, status) in sorted(SYSTEMS.items()):
         "pattern_status": "derived" if sid in DERIVED_PATTERN else "provisional",
         "case_sensitive": str(cs).lower(), "raw_file": raw_target(sid),
         "derived_from": DERIVED_FROM.get(sid, ""), "version": "",
-        "retrieved_at": retrieved(sid), "notes": NOTES.get(sid, ""),
+        "retrieved_at": retrieved(sid),
+        # a stray newline or tab in a note silently splits the row in a TSV
+        "notes": " ".join(NOTES.get(sid, "").split()),
     })
 
 with open(ROOT/"systems.tsv", "w", newline="", encoding="utf-8") as fh:

@@ -51,9 +51,14 @@ def dns_types(path, sysrow):
 
 @parser("wrt/iau")
 def constellations(path, sysrow):
+    """Serpens appears twice, once per half (Caput and Cauda). one abbreviation, one row."""
+    seen = set()
     for r in read_csv(path):
-        yield row("wrt/iau", r["desig"], r["la"], description=r.get("en"),
-                  aliases=[r.get("id")] if r.get("id") != r.get("desig") else [],
+        c = r["desig"]
+        if c in seen: continue
+        seen.add(c)
+        yield row("wrt/iau", c, r["la"], description=r.get("en"),
+                  aliases=[r.get("id")] if r.get("id") != c else [],
                   extra={"genitive": r.get("gen"), "rank": r.get("rank")})
 
 @parser("lng/i39")
@@ -125,10 +130,15 @@ def x86_mnemonics(path, sysrow):
 
 @parser("trp/olc")
 def open_location_code(path, sysrow):
+    """these are the reference encoder test vectors, not a registry. plus codes are
+    generated from coordinates, so no complete enumeration exists to ship. the file
+    repeats a code across wrapped longitudes (+/-360), which is one code, not three."""
     cols = ["lat","lng","latint","lngint","length","code"]
+    seen = set()
     for r in read_csv(path, header=False, fieldnames=cols, comment="#"):
         c = (r.get("code") or "").strip()
-        if not c: continue
+        if not c or c in seen: continue
+        seen.add(c)
         yield row("trp/olc", c, "", extra={"lat": r.get("lat"), "lng": r.get("lng"),
                                            "length": r.get("length")})
 
@@ -138,14 +148,22 @@ def open_location_code(path, sysrow):
 def atc(path, sysrow):
     """A > A01 > A01A > A01AA > A01AA01. parent is the previous level's prefix."""
     cut = {1: None, 3: 1, 4: 3, 5: 4, 7: 5}
+    order, agg = [], {}
     for r in read_csv(path):
         c = (r.get("atc_code") or "").strip()
         if not c: continue
-        n = cut.get(len(c), None)
-        yield row("cls/atc", c, r.get("atc_name") or "",
-                  parent_code=c[:n] if n else None,
-                  extra={k: (r.get(k) if r.get(k) != "NA" else None)
-                         for k in ("ddd","uom","adm_r","note")})
+        na = lambda k: (r.get(k) or "").strip() or None
+        na = lambda k, r=r: (None if (r.get(k) or "").strip() in ("", "NA") else r[k].strip())
+        if c not in agg:
+            order.append(c)
+            agg[c] = {"label": r.get("atc_name") or "", "note": na("note"), "ddd": []}
+        d = {"adm_r": na("adm_r"), "ddd": na("ddd"), "uom": na("uom")}
+        if any(d.values()) and d not in agg[c]["ddd"]:
+            agg[c]["ddd"].append(d)
+    for c in order:
+        a = agg[c]; n = cut.get(len(c))
+        yield row("cls/atc", c, a["label"], parent_code=c[:n] if n else None,
+                  extra={"note": a["note"], "ddd": a["ddd"] or None})
 
 @parser("cls/bsc")
 def bisac(path, sysrow):
