@@ -6,6 +6,10 @@ from core import ROOT
 
 HUB = ROOT/"hub"
 CFG = lambda sid: sid.replace("/", "-")
+# a regex goes inside a table cell, and a bare | ends the cell even inside backticks.
+# GFM resolves \| before inline parsing, so it survives into the code span. an html
+# entity would not: entities are left alone inside code spans and would render literally.
+md_cell = lambda v: v.replace("|", r"\|")
 
 DOMAIN_NAME = {
  "bio":"biology","cls":"classification","cmp":"computing","com":"communication",
@@ -19,9 +23,10 @@ def main():
     sysrows = {r["system_id"]: r for r in pq.read_table(HUB/"systems.parquet").to_pylist()}
     total = sum(counts.values())
 
-    y = ["---", "pretty_name: 3char", "license: other", "license_name: mixed-see-card",
-         "language:", "- en", "task_categories:", "- token-classification",
-         "- table-question-answering", "tags:", "- code-systems", "- controlled-vocabulary",
+    y = ["---", "pretty_name: 3char", "license: other", "license_name: mixed-per-system",
+         "license_link: https://huggingface.co/datasets/brennercruvinel/3char#provenance-and-licensing",
+         "language:", "- en",
+         "tags:", "- code-systems", "- controlled-vocabulary",
          "- taxonomy", "- identifiers", "- three-letter-codes", "- knowledge-base",
          f"size_categories:", "- 100K<n<1M", "configs:"]
     y += ["- config_name: all", "  data_files:", '  - split: train', '    path: data/*/*.parquet',
@@ -80,7 +85,7 @@ def main():
         for sid in sorted(doms[dom]):
             r = sysrows[sid]
             b.append(f"| `{sid}` | {r['name']} | {r['authority']} | {counts[sid]:,} | "
-                     f"`{r['code_pattern']}` |")
+                     f"`{md_cell(r['code_pattern'])}` |")
         b.append("")
 
     b.append("### provenance and licensing\n")
@@ -97,7 +102,7 @@ def main():
              "point.\n")
     b.append("two systems ship at `check`: `fin/cfi` and `fin/i42`, both from SIX Group, which "
              "publishes free of charge and then says nothing at all about redistribution.\n")
-    b.append("only parquet is published. the raw files stay in the build repo and are refetched "
+    b.append("only parquet is published. the raw files stay in the [build repo](https://github.com/brennercruvinel/3char-pipeline) and are refetched "
              "from `url`, which matters for the ITU recommendations and the IUPAC table, where "
              "the facts are free to state and the document is not free to mirror.\n")
 
@@ -118,6 +123,11 @@ def main():
              "a bounding box, and rebuilds the columns from the x coordinate. 92 percent of the "
              "code words come back with their phrase attached. the rest, and the code numbers on "
              "the left, are as good as a hundred and twenty year old scan allows.\n")
+    b.append(f"`cmp/sts` carries {counts.get('cmp/sts',0)} rows for a registry that assigns about "
+             "64 status codes. IANA writes the gaps as ranges, `105-199`, and those are expanded "
+             "to one row each: an assigned code has a description and a null status, an unassigned "
+             "one has `status = unassigned` and an empty label. filter on `status` to get the "
+             "registry as most people picture it.\n")
     b.append("`trp/olc` is the reference encoder test vectors, not a registry. plus codes are "
              "generated from coordinates, so no complete enumeration exists to ship.\n")
     b.append("`trp/iata` and `trp/icao` both come from the OurAirports public domain file, read "
@@ -132,9 +142,16 @@ def main():
     b.append(f"all 64 systems parse and validate. {len(man['blocked'])} of them are held back "
              "from upload because their authority forbids redistribution: the WHO ATC index, "
              "the BISAC subject headings, the Dewey summaries, the CUSIP mapping, the ISO 10383 "
-             "MIC list and the what3words API surface. the parsers for those live in the build "
-             "repo and run locally against the sources you fetch yourself.\n")
+             "MIC list and the what3words API surface. the parsers for those live in the "
+             "[build repo](https://github.com/brennercruvinel/3char-pipeline) and run locally against the sources you fetch yourself.\n")
 
+    b.append("### build\n")
+    b.append("every parser, the schema, the checksum manifest and the license triage with its "
+             "verbatim quotes live at "
+             "[github.com/brennercruvinel/3char-pipeline](https://github.com/brennercruvinel/3char-pipeline). "
+             "`download.py` refetches every source and fails on any checksum drift, `validate.py` "
+             "tests every code against its system's regex. the raw files are not in that repo "
+             "either, for the same licensing reason they are not here.\n")
     b.append("### citation\n")
     b.append("```bibtex\n@misc{cruvinel_3char,\n  title  = {3char: three character code systems "
              "in one schema},\n  author = {Cruvinel, Brenner},\n  year   = {2026},\n"
