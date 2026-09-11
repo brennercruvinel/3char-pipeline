@@ -51,3 +51,6 @@ def http_status(path, sysrow):
 there is no single license here. every system carries its own in `systems.tsv`, and `LICENSES.md` quotes the terms. six systems parse locally and are never uploaded, because their authority forbids republishing the code set: the WHO ATC index, BISAC, the Dewey summaries, the CUSIP mapping, the ISO 10383 MIC list and the what3words API surface.
 
 the code in this repo is MIT. that covers the parsers, not the code systems they read.
+
+this is maintained by brenner cruvinel (brenner@hoffresearch.com). all contributions are welcome.
+
