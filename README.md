@@ -52,5 +52,6 @@ there is no single license here. every system carries its own in `systems.tsv`, 
 
 the code in this repo is MIT. that covers the parsers, not the code systems they read.
 
-this is maintained by brenner cruvinel (brenner@hoffresearch.com). all contributions are welcome.
+this is maintained by brenner cruvinel (brenner@hoffresearch.com).
+all contributions are welcome.
 
