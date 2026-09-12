@@ -78,9 +78,14 @@ def ioc_codes(path, sysrow):
     for r in read_csv(path):
         code = (r.get("IOC") or "").strip()
         if not code: continue
+        iso3, fifa = (r.get("ISO3166-1-Alpha-3") or "").strip(), (r.get("FIFA") or "").strip()
+        # the source writes a footnote marker where the UK has four FIFA members, and the
+        # ioc code often equals the iso3: an alias must be a code and must not repeat the code
+        aliases = sorted({a for a in (iso3, fifa) if a.isalpha() and a != code})
         yield row("lng/ioc", code, r.get("official_name_en") or r.get("CLDR display name") or "",
-                  aliases=[r.get("ISO3166-1-Alpha-3"), r.get("FIFA")],
-                  extra={"iso2": r.get("ISO3166-1-Alpha-2"), "capital": r.get("Capital"),
+                  aliases=aliases,
+                  extra={"iso3": iso3, "fifa": fifa if fifa.isalpha() else None,
+                         "iso2": r.get("ISO3166-1-Alpha-2"), "capital": r.get("Capital"),
                          "continent": r.get("Continent"), "tld": r.get("TLD")})
 
 @parser("lng/glt")

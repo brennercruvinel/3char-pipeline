@@ -132,12 +132,39 @@ def main():
              "generated from coordinates, so no complete enumeration exists to ship.\n")
     b.append("`trp/iata` and `trp/icao` both come from the OurAirports public domain file, read "
              "on different columns. neither is an official IATA or ICAO publication.\n")
+    b.append("`lng/ioc` carries the ISO 3166 alpha-3 in `extra.iso3` and the FIFA code in "
+             "`extra.fifa`, and `aliases` holds only the ones that differ from the IOC code. "
+             "the first release put both in `aliases` unlabelled, with a footnote marker from "
+             "the source where the United Kingdom has four FIFA members. found by using the "
+             "dataset in the retrieval rig, fixed in 0.1.1.\n")
     b.append("`code_pattern` is enforced: the build fails if any code in a system does not match "
              "it. `pattern_status` says how much that is worth. `derived` means the regex was "
              "written against the real file, `provisional` means it is still loose and will "
-             "tighten. writing these patterns caught 13 of my own wrong assumptions and exactly "
+             "tighten. writing these patterns caught 25 of my own wrong assumptions and exactly "
              "one malformed row upstream.\n")
 
+    b.append("### using it for retrieval\n")
+    b.append("i measured how to feed these tables to a retriever, on this parquet, with a "
+             "51 question answer key checked against the data and a grid that varies one thing "
+             "at a time: chunk granularity (record, block of 20, whole file), chunk form (k=v "
+             "dump or one sentence of prose), key (`GRU` or `iata:GRU`) and embedder (minilm, "
+             "multilingual e5). the rig, the raw json and the write-up live at "
+             "[github.com/brennercruvinel/bench](https://github.com/brennercruvinel/bench).\n")
+    b.append("| decision | result |\n| --- | --- |")
+    b.append("| one record per chunk, verbalized, e5 | 92.2% recall@1, 100% recall@5, 22.6 tokens per answer |")
+    b.append("| same with `system:code` as key | 88.2% recall@1, 27.0 tokens |")
+    b.append("| block of 20 records | 47.1% recall@1, 460 tokens |")
+    b.append("| whole system as one chunk | 90.2% recall@1, 7,467 tokens |")
+    b.append("| prose vs the same fields as k=v | +37 points of recall@1 for 1.3x the tokens |")
+    b.append("| faiss scalar quantizer 8-bit | 4x smaller index, identical recall |")
+    b.append("")
+    b.append("the one rule that matters more than the grid: never index `code` alone. a literal "
+             "with no system next to it is ambiguous by construction. across the 58 published "
+             "systems, case folded, 14,911 of the 623,141 distinct codes are claimed by two or "
+             "more systems, `AND` and `CAR` by eleven. given a bare literal the retriever routes "
+             "it to the right system 33% of the time, which is exactly the combinatorial floor. "
+             "with the system name in the query or the key it routes 99 to 100%. keep `system_id` "
+             "in the chunk, or in the key, or in both.\n")
     b.append("### what is not here\n")
     b.append(f"all 64 systems parse and validate. {len(man['blocked'])} of them are held back "
              "from upload because their authority forbids redistribution: the WHO ATC index, "

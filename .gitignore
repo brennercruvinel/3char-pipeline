@@ -10,3 +10,6 @@ hub/
 data/
 
 PLAN.md
+
+# the retrieval rig is its own repo, github.com/brennercruvinel/bench, checked out here for convenience
+tools/
