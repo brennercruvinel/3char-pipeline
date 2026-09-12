@@ -6,13 +6,13 @@ one system rebuilt, one count corrected, one section added. no other parquet cha
 
 ### lng/ioc
 
-`aliases` mixed the ISO 3166 alpha-3 and the FIFA code with no label, and for the United Kingdom the FIFA slot carried `1`, a footnote marker in the source where the UK has four FIFA members. now `extra.iso3` and `extra.fifa` are named fields, and `aliases` holds only the codes that differ from the IOC code, so `GER` lists `DEU` and `BRA` lists nothing. found by consuming the dataset from the retrieval rig, where a hypothesis that every IOC alias resolves in ISO 3166 came back at 84 percent and the missing 16 were this.
+`aliases` mixed the ISO 3166 alpha-3 code and the FIFA code without labels, and for the United Kingdom the FIFA slot carried `1`, a footnote marker from the source where the UK has four FIFA members. `extra.iso3` and `extra.fifa` are now named fields, and `aliases` holds only the codes that differ from the IOC code, so `GER` lists `DEU` and `BRA` lists nothing. identified while using the dataset as a retrieval corpus, where a check that every IOC alias resolves in ISO 3166 returned 84 percent.
 
-### the card
+### card
 
-the validator caught 25 wrong assumptions of mine, not 13. the card said 13, the README and this changelog said 25, and 25 is the number in the notes. corrected.
+the validator identified 25 incorrect assumptions, not 13. the card said 13 while the README and this changelog said 25. corrected.
 
-a new section, using it for retrieval, with the measured answer to how to chunk these tables for a retriever and the collision census over the published set: 14,911 of 623,141 distinct codes are claimed by more than one system. the rig behind those numbers is at [github.com/brennercruvinel/3char-bench](https://github.com/brennercruvinel/3char-bench).
+a retrieval section was added with the measured chunking configuration and the collision census over the published set: 14,911 of 623,141 distinct codes are claimed by more than one system. the rig behind those numbers is at [github.com/brennercruvinel/3char-bench](https://github.com/brennercruvinel/3char-bench).
 
 ## 0.1.0, 2026-09-10
 
