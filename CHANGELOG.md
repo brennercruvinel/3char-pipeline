@@ -12,7 +12,7 @@ one system rebuilt, one count corrected, one section added. no other parquet cha
 
 the validator caught 25 wrong assumptions of mine, not 13. the card said 13, the README and this changelog said 25, and 25 is the number in the notes. corrected.
 
-a new section, using it for retrieval, with the measured answer to how to chunk these tables for a retriever and the collision census over the published set: 14,911 of 623,141 distinct codes are claimed by more than one system. the rig behind those numbers is at [github.com/brennercruvinel/bench](https://github.com/brennercruvinel/bench).
+a new section, using it for retrieval, with the measured answer to how to chunk these tables for a retriever and the collision census over the published set: 14,911 of 623,141 distinct codes are claimed by more than one system. the rig behind those numbers is at [github.com/brennercruvinel/3char-bench](https://github.com/brennercruvinel/3char-bench).
 
 ## 0.1.0, 2026-09-10
 

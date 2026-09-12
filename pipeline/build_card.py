@@ -149,7 +149,7 @@ def main():
              "at a time: chunk granularity (record, block of 20, whole file), chunk form (k=v "
              "dump or one sentence of prose), key (`GRU` or `iata:GRU`) and embedder (minilm, "
              "multilingual e5). the rig, the raw json and the write-up live at "
-             "[github.com/brennercruvinel/bench](https://github.com/brennercruvinel/bench).\n")
+             "[github.com/brennercruvinel/3char-bench](https://github.com/brennercruvinel/3char-bench).\n")
     b.append("| decision | result |\n| --- | --- |")
     b.append("| one record per chunk, verbalized, e5 | 92.2% recall@1, 100% recall@5, 22.6 tokens per answer |")
     b.append("| same with `system:code` as key | 88.2% recall@1, 27.0 tokens |")
