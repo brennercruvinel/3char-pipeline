@@ -14,8 +14,10 @@ SYS_SCHEMA = pa.schema([(c, pa.bool_() if c == "case_sensitive" else pa.string()
 def main():
     sysmap = systems()
     built = {s for s in sysmap if (ROOT/"data"/f"{s}.parquet").exists()}
-    blocked = {s for s, r in sysmap.items() if r["license_status"] == "problem"}
-    publish = sorted(built - blocked)
+    # every built system is published; license and license_status travel with it unchanged,
+    # so a system whose redistribution is still being cleared says so in systems.parquet
+    pending = {s for s, r in sysmap.items() if r["license_status"] == "problem"}
+    publish = sorted(built)
 
     if HUB.exists(): shutil.rmtree(HUB)
     (HUB/"data").mkdir(parents=True)
@@ -43,10 +45,10 @@ def main():
                    HUB/"systems.parquet", compression="zstd")
 
     (ROOT/"pipeline"/"hub_manifest.json").write_text(json.dumps(
-        {"publish": publish, "blocked": sorted(blocked & built),
+        {"publish": publish, "license_pending": sorted(pending & built),
          "not_built": sorted(set(sysmap) - built), "counts": counts}, indent=2))
     print(f"publish {len(publish)} systems, {sum(counts.values()):,} codes")
-    print(f"held back (license): {sorted(blocked & built)}")
+    print(f"published with license_status problem: {sorted(pending & built)}")
     print(f"no parser yet: {len(set(sysmap) - built)}")
 
 if __name__ == "__main__":

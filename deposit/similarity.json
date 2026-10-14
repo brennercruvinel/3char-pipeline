@@ -1,0 +1,7786 @@
+{
+ "systems": 64,
+ "min_shared": 10,
+ "min_values": 10,
+ "min_coverage": 0.9,
+ "pairs": 196,
+ "pairs_same_label_over_half": 8,
+ "pairs_same_label_under_1pct": 179,
+ "shared_codes": [
+  {
+   "a": "trp/iata",
+   "b": "trp/unl",
+   "shared": 8999,
+   "same_label": 9,
+   "same_label_share": 0.001,
+   "share_of_a": 0.9937,
+   "share_of_b": 0.344,
+   "jaccard": 0.3432,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Anaa Airport",
+     "b": "Araçuaí"
+    },
+    {
+     "code": "aab",
+     "a": "Arrabury Airport",
+     "b": "Arrabury"
+    },
+    {
+     "code": "aac",
+     "a": "El Arish International Airport",
+     "b": "Aliança"
+    },
+    {
+     "code": "aad",
+     "a": "Adado Airport",
+     "b": "Anadia"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "lng/i63",
+   "shared": 8084,
+   "same_label": 8084,
+   "same_label_share": 1.0,
+   "share_of_a": 0.9065,
+   "share_of_b": 1.0,
+   "jaccard": 0.9065,
+   "derived_pair": true,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Ghotuo"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Alumu-Tesu"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "Ari"
+    },
+    {
+     "code": "aad",
+     "a": "Amal",
+     "b": "Amal"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "trp/unl",
+   "shared": 7999,
+   "same_label": 31,
+   "same_label_share": 0.0039,
+   "share_of_a": 0.8969,
+   "share_of_b": 0.3057,
+   "jaccard": 0.2954,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Araçuaí"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Arrabury"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "Aliança"
+    },
+    {
+     "code": "aad",
+     "a": "Amal",
+     "b": "Anadia"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "trp/unl",
+   "shared": 7999,
+   "same_label": 31,
+   "same_label_share": 0.0039,
+   "share_of_a": 0.9895,
+   "share_of_b": 0.3057,
+   "jaccard": 0.3048,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Araçuaí"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Arrabury"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "Aliança"
+    },
+    {
+     "code": "aad",
+     "a": "Amal",
+     "b": "Anadia"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "trp/iata",
+   "shared": 5795,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.6498,
+   "share_of_b": 0.6399,
+   "jaccard": 0.4758,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Anaa Airport"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Arrabury Airport"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "El Arish International Airport"
+    },
+    {
+     "code": "aad",
+     "a": "Amal",
+     "b": "Adado Airport"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "trp/iata",
+   "shared": 5795,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.7168,
+   "share_of_b": 0.6399,
+   "jaccard": 0.5108,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Anaa Airport"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Arrabury Airport"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "El Arish International Airport"
+    },
+    {
+     "code": "aad",
+     "a": "Amal",
+     "b": "Adado Airport"
+    }
+   ]
+  },
+  {
+   "a": "trp/ica2",
+   "b": "trp/unl",
+   "shared": 5770,
+   "same_label": 3,
+   "same_label_share": 0.0005,
+   "share_of_a": 0.9878,
+   "share_of_b": 0.2205,
+   "jaccard": 0.22,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "2co",
+     "a": "ConneX European Airline",
+     "b": "Tyabb"
+    },
+    {
+     "code": "4aa",
+     "a": "Epic Holiday",
+     "b": "Allmannshofen"
+    },
+    {
+     "code": "6cc",
+     "a": "Vuela Cuba",
+     "b": "Chillac"
+    },
+    {
+     "code": "7zc",
+     "a": "All America CO",
+     "b": "Balizac"
+    }
+   ]
+  },
+  {
+   "a": "trp/iata",
+   "b": "trp/ica2",
+   "shared": 4125,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.4555,
+   "share_of_b": 0.7062,
+   "jaccard": 0.3829,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Anaa Airport",
+     "b": "Ansett Australia"
+    },
+    {
+     "code": "aab",
+     "a": "Arrabury Airport",
+     "b": "Abelag Aviation"
+    },
+    {
+     "code": "aac",
+     "a": "El Arish International Airport",
+     "b": "Army Air Corps"
+    },
+    {
+     "code": "aad",
+     "a": "Adado Airport",
+     "b": "Aero Aviation Centre Ltd."
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "trp/ica2",
+   "shared": 3576,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.401,
+   "share_of_b": 0.6122,
+   "jaccard": 0.3198,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "001",
+     "a": "World",
+     "b": "AirOne Polska"
+    },
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Ansett Australia"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Abelag Aviation"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "Army Air Corps"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "trp/ica2",
+   "shared": 3575,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.4422,
+   "share_of_b": 0.6121,
+   "jaccard": 0.3454,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "Ansett Australia"
+    },
+    {
+     "code": "aab",
+     "a": "Alumu-Tesu",
+     "b": "Abelag Aviation"
+    },
+    {
+     "code": "aac",
+     "a": "Ari",
+     "b": "Army Air Corps"
+    },
+    {
+     "code": "aad",
+     "a": "Amal",
+     "b": "Aero Aviation Centre Ltd."
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "trp/unl",
+   "shared": 2019,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.194,
+   "share_of_b": 0.0772,
+   "jaccard": 0.0584,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aal",
+     "a": "American Airlines Group Inc.",
+     "b": "Aalter"
+    },
+    {
+     "code": "aap",
+     "a": "ADVANCE AUTO PARTS INC",
+     "b": "Alto Alegre do Pindaré"
+    },
+    {
+     "code": "aas",
+     "a": "Antharas Inc",
+     "b": "Aarschot"
+    },
+    {
+     "code": "aat",
+     "a": "American Assets Trust, Inc.",
+     "b": "Athus"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "lng/b47",
+   "shared": 1405,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.135,
+   "share_of_b": 0.1575,
+   "jaccard": 0.0784,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aa",
+     "a": "Alcoa Corp",
+     "b": "Afar"
+    },
+    {
+     "code": "aal",
+     "a": "American Airlines Group Inc.",
+     "b": "Afade"
+    },
+    {
+     "code": "aap",
+     "a": "ADVANCE AUTO PARTS INC",
+     "b": "Pará Arára"
+    },
+    {
+     "code": "aas",
+     "a": "Antharas Inc",
+     "b": "Aasáx"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "trp/iata",
+   "shared": 1375,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1321,
+   "share_of_b": 0.1518,
+   "jaccard": 0.076,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aal",
+     "a": "American Airlines Group Inc.",
+     "b": "Aalborg Airport"
+    },
+    {
+     "code": "aap",
+     "a": "ADVANCE AUTO PARTS INC",
+     "b": "Aji Pangeran Tumenggung Pranoto International Airport"
+    },
+    {
+     "code": "aas",
+     "a": "Antharas Inc",
+     "b": "Apalapsili Airport"
+    },
+    {
+     "code": "aat",
+     "a": "American Assets Trust, Inc.",
+     "b": "Altay Xuedu Airport"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "lng/i63",
+   "shared": 1233,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1185,
+   "share_of_b": 0.1525,
+   "jaccard": 0.0715,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aal",
+     "a": "American Airlines Group Inc.",
+     "b": "Afade"
+    },
+    {
+     "code": "aap",
+     "a": "ADVANCE AUTO PARTS INC",
+     "b": "Pará Arára"
+    },
+    {
+     "code": "aas",
+     "a": "Antharas Inc",
+     "b": "Aasáx"
+    },
+    {
+     "code": "aat",
+     "a": "American Assets Trust, Inc.",
+     "b": "Arvanitika Albanian"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "trp/ica2",
+   "shared": 1109,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1066,
+   "share_of_b": 0.1899,
+   "jaccard": 0.0733,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aal",
+     "a": "American Airlines Group Inc.",
+     "b": "American Airlines"
+    },
+    {
+     "code": "aap",
+     "a": "ADVANCE AUTO PARTS INC",
+     "b": "Aerovista Airlines"
+    },
+    {
+     "code": "aas",
+     "a": "Antharas Inc",
+     "b": "Askari Aviation"
+    },
+    {
+     "code": "aat",
+     "a": "American Assets Trust, Inc.",
+     "b": "Austrian Airtransport"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "trp/unl",
+   "shared": 574,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0128,
+   "share_of_b": 0.0219,
+   "jaccard": 0.0081,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a2m",
+     "a": "alpha-2-macroglobulin",
+     "b": "Morsasco"
+    },
+    {
+     "code": "abo",
+     "a": "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase",
+     "b": "Abovyan"
+    },
+    {
+     "code": "abr",
+     "a": "ABR activator of RhoGEF and GTPase",
+     "b": "Assebroek"
+    },
+    {
+     "code": "acd",
+     "a": "ACD shelterin complex subunit and telomerase recruitment factor",
+     "b": "Arcadia"
+    }
+   ]
+  },
+  {
+   "a": "cls/icd",
+   "b": "trp/unl",
+   "shared": 443,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0045,
+   "share_of_b": 0.0169,
+   "jaccard": 0.0036,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a22",
+     "a": "Anthrax",
+     "b": "Zauppenberg"
+    },
+    {
+     "code": "a23",
+     "a": "Brucellosis",
+     "b": "Adlitz"
+    },
+    {
+     "code": "a24",
+     "a": "Glanders and melioidosis",
+     "b": "Brünnberg"
+    },
+    {
+     "code": "a25",
+     "a": "Rat-bite fevers",
+     "b": "Vordergereuth"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "trp/tld",
+   "shared": 404,
+   "same_label": 1,
+   "same_label_share": 0.0025,
+   "share_of_a": 0.0453,
+   "share_of_b": 0.2811,
+   "jaccard": 0.0406,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "American Automobile Association, Inc."
+    },
+    {
+     "code": "abb",
+     "a": "Bankon",
+     "b": "ABB Ltd"
+    },
+    {
+     "code": "abc",
+     "a": "Ambala Ayta",
+     "b": "Disney Enterprises, Inc."
+    },
+    {
+     "code": "ac",
+     "a": "Ascension Island",
+     "b": "Internet Computer Bureau Limited"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "trp/iata",
+   "shared": 370,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0082,
+   "share_of_b": 0.0409,
+   "jaccard": 0.0069,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abo",
+     "a": "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase",
+     "b": "Aboisso Airport"
+    },
+    {
+     "code": "abr",
+     "a": "ABR activator of RhoGEF and GTPase",
+     "b": "Aberdeen Regional Airport"
+    },
+    {
+     "code": "acd",
+     "a": "ACD shelterin complex subunit and telomerase recruitment factor",
+     "b": "Alcides Fernández Airport"
+    },
+    {
+     "code": "ace",
+     "a": "angiotensin I converting enzyme",
+     "b": "César Manrique-Lanzarote Airport"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "lng/b47",
+   "shared": 318,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0071,
+   "share_of_b": 0.0357,
+   "jaccard": 0.0059,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abo",
+     "a": "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase",
+     "b": "Abon"
+    },
+    {
+     "code": "abr",
+     "a": "ABR activator of RhoGEF and GTPase",
+     "b": "Abron"
+    },
+    {
+     "code": "acd",
+     "a": "ACD shelterin complex subunit and telomerase recruitment factor",
+     "b": "Gikyode"
+    },
+    {
+     "code": "ace",
+     "a": "angiotensin I converting enzyme",
+     "b": "Achinese"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "lng/i63",
+   "shared": 305,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0068,
+   "share_of_b": 0.0377,
+   "jaccard": 0.0058,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abo",
+     "a": "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase",
+     "b": "Abon"
+    },
+    {
+     "code": "abr",
+     "a": "ABR activator of RhoGEF and GTPase",
+     "b": "Abron"
+    },
+    {
+     "code": "acd",
+     "a": "ACD shelterin complex subunit and telomerase recruitment factor",
+     "b": "Gikyode"
+    },
+    {
+     "code": "ace",
+     "a": "angiotensin I converting enzyme",
+     "b": "Achinese"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "trp/ica2",
+   "shared": 296,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0066,
+   "share_of_b": 0.0507,
+   "jaccard": 0.0059,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abo",
+     "a": "ABO, alpha 1-3-N-acetylgalactosaminyltransferase and alpha 1-3-galactosyltransferase",
+     "b": "APSA Colombia"
+    },
+    {
+     "code": "abr",
+     "a": "ABR activator of RhoGEF and GTPase",
+     "b": "Air Contractors"
+    },
+    {
+     "code": "acd",
+     "a": "ACD shelterin complex subunit and telomerase recruitment factor",
+     "b": "Academy Airlines"
+    },
+    {
+     "code": "ace",
+     "a": "angiotensin I converting enzyme",
+     "b": "Race Cargo Airlines"
+    }
+   ]
+  },
+  {
+   "a": "cls/dew",
+   "b": "cmp/sts",
+   "shared": 270,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.5143,
+   "share_of_b": 0.54,
+   "jaccard": 0.3576,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "100",
+     "a": "Philosophy & psychology",
+     "b": "Continue"
+    },
+    {
+     "code": "101",
+     "a": "Theory of philosophy 151 [Unassigned]",
+     "b": "Switching Protocols"
+    },
+    {
+     "code": "102",
+     "a": "Miscellany 152 Perception, movement, emotions & drives",
+     "b": "Processing"
+    },
+    {
+     "code": "103",
+     "a": "Dictionaries & encyclopedias 153 Mental processes & intelligence",
+     "b": "Early Hints"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "trp/tld",
+   "shared": 252,
+   "same_label": 4,
+   "same_label_share": 0.0159,
+   "share_of_a": 0.0242,
+   "share_of_b": 0.1754,
+   "jaccard": 0.0217,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ad",
+     "a": "ARRAY DIGITAL INFRASTRUCTURE, INC.",
+     "b": "Andorra Telecom"
+    },
+    {
+     "code": "aeg",
+     "a": "AEGON LTD.",
+     "b": "Aktiebolaget Electrolux"
+    },
+    {
+     "code": "aero",
+     "a": "Grupo Aeromexico, S.A.B. de C.V.",
+     "b": "Societe Internationale de Telecommunications Aeronautique (SITA INC USA)"
+    },
+    {
+     "code": "afl",
+     "a": "AFLAC INC",
+     "b": "Australian Football League"
+    }
+   ]
+  },
+  {
+   "a": "lng/i31",
+   "b": "trp/unl",
+   "shared": 249,
+   "same_label": 13,
+   "same_label_share": 0.0522,
+   "share_of_a": 1.0,
+   "share_of_b": 0.0095,
+   "jaccard": 0.0095,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abw",
+     "a": "Aruba",
+     "b": "Arlebosc"
+    },
+    {
+     "code": "afg",
+     "a": "Afghanistan",
+     "b": "Água Fria de Goiás"
+    },
+    {
+     "code": "ago",
+     "a": "Angola",
+     "b": "Agudo"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Andirá"
+    }
+   ]
+  },
+  {
+   "a": "lng/ioc",
+   "b": "trp/unl",
+   "shared": 225,
+   "same_label": 14,
+   "same_label_share": 0.0622,
+   "share_of_a": 0.9956,
+   "share_of_b": 0.0086,
+   "jaccard": 0.0086,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "Afghanistan",
+     "b": "Água Fria de Goiás"
+    },
+    {
+     "code": "aho",
+     "a": "Bonaire, Sint Eustatius and Saba",
+     "b": "Althofen"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Andirá"
+    },
+    {
+     "code": "alb",
+     "a": "Albania",
+     "b": "Al Barsha"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "lng/i15",
+   "shared": 224,
+   "same_label": 182,
+   "same_label_share": 0.8125,
+   "share_of_a": 0.0251,
+   "share_of_b": 0.9912,
+   "jaccard": 0.0251,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adlm",
+     "a": "Adlam",
+     "b": "Adlam"
+    },
+    {
+     "code": "afak",
+     "a": "Afaka",
+     "b": "Afaka"
+    },
+    {
+     "code": "aghb",
+     "a": "Caucasian Albanian",
+     "b": "Caucasian Albanian"
+    },
+    {
+     "code": "ahom",
+     "a": "Ahom",
+     "b": "Ahom, Tai Ahom"
+    }
+   ]
+  },
+  {
+   "a": "trp/tld",
+   "b": "trp/unl",
+   "shared": 215,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1496,
+   "share_of_b": 0.0082,
+   "jaccard": 0.0079,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "American Automobile Association, Inc.",
+     "b": "Araçuaí"
+    },
+    {
+     "code": "abb",
+     "a": "ABB Ltd",
+     "b": "Abdon Batista"
+    },
+    {
+     "code": "abc",
+     "a": "Disney Enterprises, Inc.",
+     "b": "Abfaltersbach"
+    },
+    {
+     "code": "aco",
+     "a": "ACO Severin Ahlmann GmbH &amp; Co. KG",
+     "b": "Ascot"
+    }
+   ]
+  },
+  {
+   "a": "lng/i31",
+   "b": "trp/iata",
+   "shared": 201,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8072,
+   "share_of_b": 0.0222,
+   "jaccard": 0.0221,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ago",
+     "a": "Angola",
+     "b": "Magnolia Municipal Airport / Ralph C Weiser Field"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Alliance Municipal Airport"
+    },
+    {
+     "code": "ala",
+     "a": "Åland Islands",
+     "b": "Almaty International Airport"
+    },
+    {
+     "code": "alb",
+     "a": "Albania",
+     "b": "Albany International Airport"
+    }
+   ]
+  },
+  {
+   "a": "lng/ioc",
+   "b": "trp/iata",
+   "shared": 187,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8274,
+   "share_of_b": 0.0206,
+   "jaccard": 0.0206,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aho",
+     "a": "Bonaire, Sint Eustatius and Saba",
+     "b": "Alghero-Fertilia Airport"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Alliance Municipal Airport"
+    },
+    {
+     "code": "alb",
+     "a": "Albania",
+     "b": "Albany International Airport"
+    },
+    {
+     "code": "alg",
+     "a": "Algeria",
+     "b": "Houari Boumediene Airport"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "lng/i39",
+   "shared": 183,
+   "same_label": 152,
+   "same_label_share": 0.8306,
+   "share_of_a": 0.0205,
+   "share_of_b": 1.0,
+   "jaccard": 0.0205,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aa",
+     "a": "Afar",
+     "b": "Afar"
+    },
+    {
+     "code": "ab",
+     "a": "Abkhazian",
+     "b": "Abkhazian"
+    },
+    {
+     "code": "ae",
+     "a": "Avestan",
+     "b": "Avestan"
+    },
+    {
+     "code": "af",
+     "a": "Afrikaans",
+     "b": "Afrikaans"
+    }
+   ]
+  },
+  {
+   "a": "lng/i31",
+   "b": "trp/ica2",
+   "shared": 179,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.7189,
+   "share_of_b": 0.0306,
+   "jaccard": 0.0303,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abw",
+     "a": "Aruba",
+     "b": "AirBridge Cargo"
+    },
+    {
+     "code": "afg",
+     "a": "Afghanistan",
+     "b": "Ariana Afghan Airlines"
+    },
+    {
+     "code": "ago",
+     "a": "Angola",
+     "b": "Angola Air Charter"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Avies"
+    }
+   ]
+  },
+  {
+   "a": "fin/i42",
+   "b": "trp/unl",
+   "shared": 175,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.9831,
+   "share_of_b": 0.0067,
+   "jaccard": 0.0067,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aed",
+     "a": "UAE Dirham",
+     "b": "Sankt Aegyd am Neuwalde"
+    },
+    {
+     "code": "afn",
+     "a": "Afghani",
+     "b": "Afsnee"
+    },
+    {
+     "code": "all",
+     "a": "Lek",
+     "b": "Allen"
+    },
+    {
+     "code": "amd",
+     "a": "Armenian Dram",
+     "b": "Armadale"
+    }
+   ]
+  },
+  {
+   "a": "lng/ioc",
+   "b": "trp/ica2",
+   "shared": 175,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.7743,
+   "share_of_b": 0.03,
+   "jaccard": 0.0297,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "Afghanistan",
+     "b": "Ariana Afghan Airlines"
+    },
+    {
+     "code": "aho",
+     "a": "Bonaire, Sint Eustatius and Saba",
+     "b": "Air Hamburg (AHO)"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Avies"
+    },
+    {
+     "code": "alb",
+     "a": "Albania",
+     "b": "Aero Albatros"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "fin/tck",
+   "shared": 170,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0038,
+   "share_of_b": 0.0163,
+   "jaccard": 0.0031,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aard",
+     "a": "alanine and arginine rich domain containing protein",
+     "b": "Aardvark Therapeutics, Inc."
+    },
+    {
+     "code": "abat",
+     "a": "4-aminobutyrate aminotransferase",
+     "b": "AMERICAN BATTERY TECHNOLOGY Co"
+    },
+    {
+     "code": "abr",
+     "a": "ABR activator of RhoGEF and GTPase",
+     "b": "ARBOR REALTY TRUST INC"
+    },
+    {
+     "code": "accs",
+     "a": "1-aminocyclopropane-1-carboxylate synthase homolog (inactive)",
+     "b": "ACCESS Newswire Inc."
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "trp/unl",
+   "shared": 166,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.5804,
+   "share_of_b": 0.0063,
+   "jaccard": 0.0063,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "3mf",
+     "a": "3MF document",
+     "b": "Monfort"
+    },
+    {
+     "code": "aac",
+     "a": "AAC audio",
+     "b": "Aliança"
+    },
+    {
+     "code": "aaf",
+     "a": "Video file",
+     "b": "Almino Afonso"
+    },
+    {
+     "code": "aar",
+     "a": "Archive file",
+     "b": "Aartselaar"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "trp/icao",
+   "shared": 162,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0156,
+   "share_of_b": 0.016,
+   "jaccard": 0.0079,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aggi",
+     "a": "Allied Energy, Inc.",
+     "b": "Babanakira Airport"
+    },
+    {
+     "code": "aytu",
+     "a": "AYTU BIOPHARMA, INC",
+     "b": "Tufi Airport"
+    },
+    {
+     "code": "bgsf",
+     "a": "BGSF, INC.",
+     "b": "Kangerlussuaq International Airport"
+    },
+    {
+     "code": "bgsi",
+     "a": "Boyd Group Services Inc.",
+     "b": "Siorapaluk Heliport"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "lng/i31",
+   "shared": 159,
+   "same_label": 1,
+   "same_label_share": 0.0063,
+   "share_of_a": 0.0178,
+   "share_of_b": 0.6386,
+   "jaccard": 0.0177,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abw",
+     "a": "Pal",
+     "b": "Aruba"
+    },
+    {
+     "code": "afg",
+     "a": "Afghan Sign Language",
+     "b": "Afghanistan"
+    },
+    {
+     "code": "ago",
+     "a": "Tainae",
+     "b": "Angola"
+    },
+    {
+     "code": "aia",
+     "a": "Arosi",
+     "b": "Anguilla"
+    }
+   ]
+  },
+  {
+   "a": "lng/i31",
+   "b": "lng/i63",
+   "shared": 159,
+   "same_label": 1,
+   "same_label_share": 0.0063,
+   "share_of_a": 0.6386,
+   "share_of_b": 0.0197,
+   "jaccard": 0.0195,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abw",
+     "a": "Aruba",
+     "b": "Pal"
+    },
+    {
+     "code": "afg",
+     "a": "Afghanistan",
+     "b": "Afghan Sign Language"
+    },
+    {
+     "code": "ago",
+     "a": "Angola",
+     "b": "Tainae"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Arosi"
+    }
+   ]
+  },
+  {
+   "a": "trp/iata",
+   "b": "trp/tld",
+   "shared": 153,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0169,
+   "share_of_b": 0.1065,
+   "jaccard": 0.0148,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Anaa Airport",
+     "b": "American Automobile Association, Inc."
+    },
+    {
+     "code": "abb",
+     "a": "Asaba International Airport",
+     "b": "ABB Ltd"
+    },
+    {
+     "code": "abc",
+     "a": "Albacete Airport / Los Llanos Air Base",
+     "b": "Disney Enterprises, Inc."
+    },
+    {
+     "code": "aco",
+     "a": "Cóbano Airport",
+     "b": "ACO Severin Ahlmann GmbH &amp; Co. KG"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "trp/tld",
+   "shared": 152,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0188,
+   "share_of_b": 0.1058,
+   "jaccard": 0.0162,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ghotuo",
+     "b": "American Automobile Association, Inc."
+    },
+    {
+     "code": "abb",
+     "a": "Bankon",
+     "b": "ABB Ltd"
+    },
+    {
+     "code": "abc",
+     "a": "Ambala Ayta",
+     "b": "Disney Enterprises, Inc."
+    },
+    {
+     "code": "ads",
+     "a": "Adamorobe Sign Language",
+     "b": "Charleston Road Registry Inc."
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "lng/ioc",
+   "shared": 137,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0154,
+   "share_of_b": 0.6062,
+   "jaccard": 0.0152,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "Afghan Sign Language",
+     "b": "Afghanistan"
+    },
+    {
+     "code": "aho",
+     "a": "Ahom",
+     "b": "Bonaire, Sint Eustatius and Saba"
+    },
+    {
+     "code": "aia",
+     "a": "Arosi",
+     "b": "Anguilla"
+    },
+    {
+     "code": "alg",
+     "a": "Algonquian languages",
+     "b": "Algeria"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "lng/ioc",
+   "shared": 137,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0169,
+   "share_of_b": 0.6062,
+   "jaccard": 0.0168,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "Afghan Sign Language",
+     "b": "Afghanistan"
+    },
+    {
+     "code": "aho",
+     "a": "Ahom",
+     "b": "Bonaire, Sint Eustatius and Saba"
+    },
+    {
+     "code": "aia",
+     "a": "Arosi",
+     "b": "Anguilla"
+    },
+    {
+     "code": "alg",
+     "a": "Algonquian languages",
+     "b": "Algeria"
+    }
+   ]
+  },
+  {
+   "a": "trp/ica2",
+   "b": "trp/tld",
+   "shared": 131,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0224,
+   "share_of_b": 0.0912,
+   "jaccard": 0.0183,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "Ansett Australia",
+     "b": "American Automobile Association, Inc."
+    },
+    {
+     "code": "abb",
+     "a": "African Business and Transportations",
+     "b": "ABB Ltd"
+    },
+    {
+     "code": "aco",
+     "a": "Aero Comondu",
+     "b": "ACO Severin Ahlmann GmbH &amp; Co. KG"
+    },
+    {
+     "code": "ads",
+     "a": "Aviones de Sonora",
+     "b": "Charleston Road Registry Inc."
+    }
+   ]
+  },
+  {
+   "a": "lng/i31",
+   "b": "lng/ioc",
+   "shared": 126,
+   "same_label": 116,
+   "same_label_share": 0.9206,
+   "share_of_a": 0.506,
+   "share_of_b": 0.5575,
+   "jaccard": 0.361,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "Afghanistan",
+     "b": "Afghanistan"
+    },
+    {
+     "code": "aia",
+     "a": "Anguilla",
+     "b": "Anguilla"
+    },
+    {
+     "code": "alb",
+     "a": "Albania",
+     "b": "Albania"
+    },
+    {
+     "code": "and",
+     "a": "Andorra",
+     "b": "Andorra"
+    }
+   ]
+  },
+  {
+   "a": "fin/i42",
+   "b": "lng/b47",
+   "shared": 123,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.691,
+   "share_of_b": 0.0138,
+   "jaccard": 0.0137,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aed",
+     "a": "UAE Dirham",
+     "b": "Argentine Sign Language"
+    },
+    {
+     "code": "afn",
+     "a": "Afghani",
+     "b": "Defaka"
+    },
+    {
+     "code": "all",
+     "a": "Lek",
+     "b": "Allar"
+    },
+    {
+     "code": "aoa",
+     "a": "Kwanza",
+     "b": "Angolar"
+    }
+   ]
+  },
+  {
+   "a": "fin/i42",
+   "b": "lng/i63",
+   "shared": 123,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.691,
+   "share_of_b": 0.0152,
+   "jaccard": 0.0151,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aed",
+     "a": "UAE Dirham",
+     "b": "Argentine Sign Language"
+    },
+    {
+     "code": "afn",
+     "a": "Afghani",
+     "b": "Defaka"
+    },
+    {
+     "code": "all",
+     "a": "Lek",
+     "b": "Allar"
+    },
+    {
+     "code": "aoa",
+     "a": "Kwanza",
+     "b": "Angolar"
+    }
+   ]
+  },
+  {
+   "a": "fin/i42",
+   "b": "trp/iata",
+   "shared": 123,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.691,
+   "share_of_b": 0.0136,
+   "jaccard": 0.0135,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afn",
+     "a": "Afghani",
+     "b": "Jaffrey Airfield Silver Ranch Airport"
+    },
+    {
+     "code": "amd",
+     "a": "Armenian Dram",
+     "b": "Sardar Vallabh Patel International Airport"
+    },
+    {
+     "code": "ars",
+     "a": "Argentine Peso",
+     "b": "Aragarças Airport"
+    },
+    {
+     "code": "aud",
+     "a": "Australian Dollar",
+     "b": "Augustus Downs Airport"
+    }
+   ]
+  },
+  {
+   "a": "fin/mic",
+   "b": "fin/tck",
+   "shared": 122,
+   "same_label": 1,
+   "same_label_share": 0.0082,
+   "share_of_a": 0.0428,
+   "share_of_b": 0.0117,
+   "jaccard": 0.0093,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "absi",
+     "a": "ALM. BRAND BANK",
+     "b": "Absci Corp"
+    },
+    {
+     "code": "allt",
+     "a": "ALLT - OTF",
+     "b": "Allot Ltd."
+    },
+    {
+     "code": "altx",
+     "a": "JSE ALTERNATE EXCHANGE",
+     "b": "ALTEX INDUSTRIES INC"
+    },
+    {
+     "code": "ampx",
+     "a": "ASSET MATCH PRIVATE EXCHANGE",
+     "b": "Amprius Technologies, Inc."
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "lng/b47",
+   "shared": 121,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.5171,
+   "share_of_b": 0.0136,
+   "jaccard": 0.0134,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ac",
+     "a": "Collections.  Series.  Collected works",
+     "b": "Ascension Island"
+    },
+    {
+     "code": "ae",
+     "a": "Encyclopedias",
+     "b": "Avestan"
+    },
+    {
+     "code": "ag",
+     "a": "Dictionaries and other general reference works",
+     "b": "Antigua and Barbuda"
+    },
+    {
+     "code": "ai",
+     "a": "Indexes",
+     "b": "Anguilla"
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "fin/tck",
+   "shared": 117,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.5,
+   "share_of_b": 0.0112,
+   "jaccard": 0.0111,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "General Works",
+     "b": "AGILENT TECHNOLOGIES, INC."
+    },
+    {
+     "code": "ag",
+     "a": "Dictionaries and other general reference works",
+     "b": "FIRST MAJESTIC SILVER CORP"
+    },
+    {
+     "code": "ai",
+     "a": "Indexes",
+     "b": "C3.ai, Inc."
+    },
+    {
+     "code": "am",
+     "a": "Museums.  Collectors and collecting",
+     "b": "Antero Midstream Corp"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "lng/b47",
+   "shared": 112,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.3916,
+   "share_of_b": 0.0126,
+   "jaccard": 0.0123,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "AAC audio",
+     "b": "Ari"
+    },
+    {
+     "code": "aaf",
+     "a": "Video file",
+     "b": "Aranadan"
+    },
+    {
+     "code": "ada",
+     "a": "Ada source file",
+     "b": "Adangme"
+    },
+    {
+     "code": "adb",
+     "a": "Ada source code",
+     "b": "Atauran"
+    }
+   ]
+  },
+  {
+   "a": "lng/i39",
+   "b": "trp/tld",
+   "shared": 112,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.612,
+   "share_of_b": 0.0779,
+   "jaccard": 0.0743,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ae",
+     "a": "Avestan",
+     "b": "Telecommunications and Digital Government Regulatory Authority (TDRA)"
+    },
+    {
+     "code": "af",
+     "a": "Afrikaans",
+     "b": "Ministry of Communications and IT"
+    },
+    {
+     "code": "am",
+     "a": "Amharic",
+     "b": "&quot;Internet Society&quot; Non-governmental Organization"
+    },
+    {
+     "code": "ar",
+     "a": "Arabic",
+     "b": "Presidencia de la Nación , Secretaría Legal y Técnica"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "trp/iata",
+   "shared": 109,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.3811,
+   "share_of_b": 0.012,
+   "jaccard": 0.0118,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "AAC audio",
+     "b": "El Arish International Airport"
+    },
+    {
+     "code": "aaf",
+     "a": "Video file",
+     "b": "Apalachicola Regional Airport"
+    },
+    {
+     "code": "aar",
+     "a": "Archive file",
+     "b": "Aarhus Airport"
+    },
+    {
+     "code": "ada",
+     "a": "Ada source file",
+     "b": "Adana Şakirpaşa Airport"
+    }
+   ]
+  },
+  {
+   "a": "com/tlg",
+   "b": "grf/sch",
+   "shared": 106,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0068,
+   "share_of_b": 0.0363,
+   "jaccard": 0.0057,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abdomen",
+     "a": "Will you abide by",
+     "b": "Abdomen"
+    },
+    {
+     "code": "abstract",
+     "a": "Will only accept draft with documents",
+     "b": "abstract"
+    },
+    {
+     "code": "actor",
+     "a": "Act according to agreement",
+     "b": "actor"
+    },
+    {
+     "code": "album",
+     "a": "Against.",
+     "b": "album"
+    }
+   ]
+  },
+  {
+   "a": "com/tlg",
+   "b": "trp/tld",
+   "shared": 99,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0063,
+   "share_of_b": 0.0689,
+   "jaccard": 0.0058,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "academy",
+     "a": "Has (have) accepted draft",
+     "b": "Binky Moon, LLC"
+    },
+    {
+     "code": "actor",
+     "a": "Act according to agreement",
+     "b": "Dog Beach, LLC"
+    },
+    {
+     "code": "adult",
+     "a": "I (we) will advance jQ",
+     "b": "ICM Registry AD LLC"
+    },
+    {
+     "code": "amazon",
+     "a": "Make the necessary alteration",
+     "b": "Amazon Registry Services, Inc."
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "lng/i63",
+   "shared": 95,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.3322,
+   "share_of_b": 0.0118,
+   "jaccard": 0.0115,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "AAC audio",
+     "b": "Ari"
+    },
+    {
+     "code": "aaf",
+     "a": "Video file",
+     "b": "Aranadan"
+    },
+    {
+     "code": "ada",
+     "a": "Ada source file",
+     "b": "Adangme"
+    },
+    {
+     "code": "adb",
+     "a": "Ada source code",
+     "b": "Atauran"
+    }
+   ]
+  },
+  {
+   "a": "cls/atc",
+   "b": "cls/icd",
+   "shared": 90,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.014,
+   "share_of_b": 0.0009,
+   "jaccard": 0.0009,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a01",
+     "a": "STOMATOLOGICAL PREPARATIONS",
+     "b": "Typhoid and paratyphoid fevers"
+    },
+    {
+     "code": "a02",
+     "a": "DRUGS FOR ACID RELATED DISORDERS",
+     "b": "Other salmonella infections"
+    },
+    {
+     "code": "a03",
+     "a": "DRUGS FOR FUNCTIONAL GASTROINTESTINAL DISORDERS",
+     "b": "Shigellosis"
+    },
+    {
+     "code": "a04",
+     "a": "ANTIEMETICS AND ANTINAUSEANTS",
+     "b": "Other bacterial intestinal infections"
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "trp/tld",
+   "shared": 88,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.3761,
+   "share_of_b": 0.0612,
+   "jaccard": 0.0556,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ac",
+     "a": "Collections.  Series.  Collected works",
+     "b": "Internet Computer Bureau Limited"
+    },
+    {
+     "code": "ae",
+     "a": "Encyclopedias",
+     "b": "Telecommunications and Digital Government Regulatory Authority (TDRA)"
+    },
+    {
+     "code": "ag",
+     "a": "Dictionaries and other general reference works",
+     "b": "UHSA School of Medicine"
+    },
+    {
+     "code": "ai",
+     "a": "Indexes",
+     "b": "Government of Anguilla"
+    }
+   ]
+  },
+  {
+   "a": "fin/i42",
+   "b": "trp/ica2",
+   "shared": 88,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.4944,
+   "share_of_b": 0.0151,
+   "jaccard": 0.0148,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aed",
+     "a": "UAE Dirham",
+     "b": "Aerotrans Airlines"
+    },
+    {
+     "code": "all",
+     "a": "Lek",
+     "b": "Aerovallarta"
+    },
+    {
+     "code": "amd",
+     "a": "Armenian Dram",
+     "b": "Aerolineas Medellin"
+    },
+    {
+     "code": "aoa",
+     "a": "Kwanza",
+     "b": "Alcon Servicios Aereos"
+    }
+   ]
+  },
+  {
+   "a": "trp/unl",
+   "b": "wrt/iau",
+   "shared": 88,
+   "same_label": 2,
+   "same_label_share": 0.0227,
+   "share_of_a": 0.0034,
+   "share_of_b": 1.0,
+   "jaccard": 0.0034,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "Andalgalá",
+     "b": "Andromeda"
+    },
+    {
+     "code": "ant",
+     "a": "Sankt Anton",
+     "b": "Antlia"
+    },
+    {
+     "code": "aps",
+     "a": "Ampsin",
+     "b": "Apus"
+    },
+    {
+     "code": "aql",
+     "a": "Aiquile",
+     "b": "Aquila"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "trp/unl",
+   "shared": 83,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0634,
+   "share_of_b": 0.0032,
+   "jaccard": 0.003,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "ASCII adjust AL after addition.",
+     "b": "Araçuaí"
+    },
+    {
+     "code": "aad",
+     "a": "ASCII adjust AX before division.",
+     "b": "Anadia"
+    },
+    {
+     "code": "aam",
+     "a": "ASCII adjust AX after multiply.",
+     "b": "Alto Alegre do Maranhão"
+    },
+    {
+     "code": "aas",
+     "a": "ASCII adjust AL after subtraction.",
+     "b": "Aarschot"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "lng/i39",
+   "shared": 83,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.008,
+   "share_of_b": 0.4536,
+   "jaccard": 0.0079,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aa",
+     "a": "Alcoa Corp",
+     "b": "Afar"
+    },
+    {
+     "code": "ab",
+     "a": "ALLIANCEBERNSTEIN HOLDING L.P.",
+     "b": "Abkhazian"
+    },
+    {
+     "code": "am",
+     "a": "Antero Midstream Corp",
+     "b": "Amharic"
+    },
+    {
+     "code": "an",
+     "a": "AUTONATION, INC.",
+     "b": "Aragonese"
+    }
+   ]
+  },
+  {
+   "a": "trp/unl",
+   "b": "wrt/tz",
+   "shared": 81,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0031,
+   "share_of_b": 0.1053,
+   "jaccard": 0.003,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adt",
+     "a": "Astolfo Dutra",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "amt",
+     "a": "Amata",
+     "b": "Local mean time of Asunción, Athens"
+    },
+    {
+     "code": "apt",
+     "a": "Arturo Prat",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "ast",
+     "a": "Asturias",
+     "b": "Atlantic time"
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "lng/b47",
+   "shared": 80,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.678,
+   "share_of_b": 0.009,
+   "jaccard": 0.0089,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ac",
+     "a": "Actinium",
+     "b": "Ascension Island"
+    },
+    {
+     "code": "ag",
+     "a": "Silver",
+     "b": "Antigua and Barbuda"
+    },
+    {
+     "code": "al",
+     "a": "Aluminum",
+     "b": "Albania"
+    },
+    {
+     "code": "am",
+     "a": "Americium",
+     "b": "Amharic"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "trp/ica2",
+   "shared": 78,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2727,
+   "share_of_b": 0.0134,
+   "jaccard": 0.0129,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "AAC audio",
+     "b": "Army Air Corps"
+    },
+    {
+     "code": "aaf",
+     "a": "Video file",
+     "b": "Aigle Azur"
+    },
+    {
+     "code": "aar",
+     "a": "Archive file",
+     "b": "Asiana Airlines"
+    },
+    {
+     "code": "ada",
+     "a": "Ada source file",
+     "b": "Airservices Australia"
+    }
+   ]
+  },
+  {
+   "a": "trp/iata",
+   "b": "wrt/iau",
+   "shared": 78,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0086,
+   "share_of_b": 0.8864,
+   "jaccard": 0.0086,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "Anderson Regional Airport",
+     "b": "Andromeda"
+    },
+    {
+     "code": "ant",
+     "a": "Sankt Anton am Arlberg Heliport",
+     "b": "Antlia"
+    },
+    {
+     "code": "aps",
+     "a": "Anápolis Airport",
+     "b": "Apus"
+    },
+    {
+     "code": "ara",
+     "a": "Acadiana Regional Airport",
+     "b": "Ara"
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "fin/tck",
+   "shared": 71,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.6017,
+   "share_of_b": 0.0068,
+   "jaccard": 0.0068,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ag",
+     "a": "Silver",
+     "b": "FIRST MAJESTIC SILVER CORP"
+    },
+    {
+     "code": "am",
+     "a": "Americium",
+     "b": "Antero Midstream Corp"
+    },
+    {
+     "code": "ar",
+     "a": "Argon",
+     "b": "ANTERO RESOURCES Corp"
+    },
+    {
+     "code": "as",
+     "a": "Arsenic",
+     "b": "Amer Sports, Inc."
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "trp/tld",
+   "shared": 67,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.5678,
+   "share_of_b": 0.0466,
+   "jaccard": 0.045,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ac",
+     "a": "Actinium",
+     "b": "Internet Computer Bureau Limited"
+    },
+    {
+     "code": "ag",
+     "a": "Silver",
+     "b": "UHSA School of Medicine"
+    },
+    {
+     "code": "al",
+     "a": "Aluminum",
+     "b": "Electronic and Postal Communications Authority - AKEP"
+    },
+    {
+     "code": "am",
+     "a": "Americium",
+     "b": "&quot;Internet Society&quot; Non-governmental Organization"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "lng/b47",
+   "shared": 67,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0512,
+   "share_of_b": 0.0075,
+   "jaccard": 0.0066,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "ASCII adjust AL after addition.",
+     "b": "Ghotuo"
+    },
+    {
+     "code": "aad",
+     "a": "ASCII adjust AX before division.",
+     "b": "Amal"
+    },
+    {
+     "code": "aam",
+     "a": "ASCII adjust AX after multiply.",
+     "b": "Aramanik"
+    },
+    {
+     "code": "aas",
+     "a": "ASCII adjust AL after subtraction.",
+     "b": "Aasáx"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "wrt/iau",
+   "shared": 66,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0074,
+   "share_of_b": 0.75,
+   "jaccard": 0.0074,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "Ansus",
+     "b": "Andromeda"
+    },
+    {
+     "code": "ant",
+     "a": "Antakarinya",
+     "b": "Antlia"
+    },
+    {
+     "code": "aps",
+     "a": "Arop-Sissano",
+     "b": "Apus"
+    },
+    {
+     "code": "aql",
+     "a": "Algic languages",
+     "b": "Aquila"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "wrt/iau",
+   "shared": 66,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0082,
+   "share_of_b": 0.75,
+   "jaccard": 0.0081,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "Ansus",
+     "b": "Andromeda"
+    },
+    {
+     "code": "ant",
+     "a": "Antakarinya",
+     "b": "Antlia"
+    },
+    {
+     "code": "aps",
+     "a": "Arop-Sissano",
+     "b": "Apus"
+    },
+    {
+     "code": "aql",
+     "a": "Algic languages",
+     "b": "Aquila"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "trp/iata",
+   "shared": 65,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0497,
+   "share_of_b": 0.0072,
+   "jaccard": 0.0063,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "ASCII adjust AL after addition.",
+     "b": "Anaa Airport"
+    },
+    {
+     "code": "aad",
+     "a": "ASCII adjust AX before division.",
+     "b": "Adado Airport"
+    },
+    {
+     "code": "aam",
+     "a": "ASCII adjust AX after multiply.",
+     "b": "Malamala Airport"
+    },
+    {
+     "code": "aas",
+     "a": "ASCII adjust AL after subtraction.",
+     "b": "Apalapsili Airport"
+    }
+   ]
+  },
+  {
+   "a": "bio/cdn",
+   "b": "trp/unl",
+   "shared": 64,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 1.0,
+   "share_of_b": 0.0024,
+   "jaccard": 0.0024,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "K",
+     "b": "Araçuaí"
+    },
+    {
+     "code": "aac",
+     "a": "N",
+     "b": "Aliança"
+    },
+    {
+     "code": "aag",
+     "a": "K",
+     "b": "Morgan"
+    },
+    {
+     "code": "aat",
+     "a": "N",
+     "b": "Athus"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "lng/i31",
+   "shared": 64,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0062,
+   "share_of_b": 0.257,
+   "jaccard": 0.006,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "AMERICAN FINANCIAL GROUP INC",
+     "b": "Afghanistan"
+    },
+    {
+     "code": "ago",
+     "a": "ASSURED GUARANTY LTD",
+     "b": "Angola"
+    },
+    {
+     "code": "alb",
+     "a": "ALBEMARLE CORP",
+     "b": "Albania"
+    },
+    {
+     "code": "are",
+     "a": "ALEXANDRIA REAL ESTATE EQUITIES, INC.",
+     "b": "United Arab Emirates"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "trp/tld",
+   "shared": 64,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0219,
+   "share_of_b": 0.0445,
+   "jaccard": 0.0149,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "actor",
+     "a": "actor",
+     "b": "Dog Beach, LLC"
+    },
+    {
+     "code": "attorney",
+     "a": "Attorney",
+     "b": "Dog Beach, LLC"
+    },
+    {
+     "code": "audio",
+     "a": "audio",
+     "b": "XYZ.COM LLC"
+    },
+    {
+     "code": "author",
+     "a": "author",
+     "b": "Amazon Registry Services, Inc."
+    }
+   ]
+  },
+  {
+   "a": "trp/iata",
+   "b": "wrt/tz",
+   "shared": 63,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.007,
+   "share_of_b": 0.0819,
+   "jaccard": 0.0065,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adt",
+     "a": "Ada Regional Airport",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "amt",
+     "a": "Amata Airport",
+     "b": "Local mean time of Asunción, Athens"
+    },
+    {
+     "code": "apt",
+     "a": "Marion County Airport - Brown Field",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "ast",
+     "a": "Astoria Regional Airport",
+     "b": "Atlantic time"
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "lng/i39",
+   "shared": 61,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2607,
+   "share_of_b": 0.3333,
+   "jaccard": 0.1713,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ae",
+     "a": "Encyclopedias",
+     "b": "Avestan"
+    },
+    {
+     "code": "am",
+     "a": "Museums.  Collectors and collecting",
+     "b": "Amharic"
+    },
+    {
+     "code": "an",
+     "a": "Newspapers",
+     "b": "Aragonese"
+    },
+    {
+     "code": "as",
+     "a": "Academies and learned societies",
+     "b": "Assamese"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "fin/tck",
+   "shared": 61,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2133,
+   "share_of_b": 0.0059,
+   "jaccard": 0.0057,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "AR archive",
+     "b": "AGILENT TECHNOLOGIES, INC."
+    },
+    {
+     "code": "ai",
+     "a": "Adobe Illustrator document",
+     "b": "C3.ai, Inc."
+    },
+    {
+     "code": "aiff",
+     "a": "AIFF/Amiga/Mac audio",
+     "b": "FIREFLY NEUROSCIENCE, INC."
+    },
+    {
+     "code": "ar",
+     "a": "AR archive",
+     "b": "ANTERO RESOURCES Corp"
+    }
+   ]
+  },
+  {
+   "a": "trp/ica2",
+   "b": "wrt/iau",
+   "shared": 60,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0103,
+   "share_of_b": 0.6818,
+   "jaccard": 0.0102,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "National Jet Service",
+     "b": "Andromeda"
+    },
+    {
+     "code": "ant",
+     "a": "Air North Charter - Canada",
+     "b": "Antlia"
+    },
+    {
+     "code": "aql",
+     "a": "Aquila Air Ltd.",
+     "b": "Aquila"
+    },
+    {
+     "code": "ara",
+     "a": "Arik Air",
+     "b": "Ara"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "lng/i63",
+   "shared": 58,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0443,
+   "share_of_b": 0.0072,
+   "jaccard": 0.0062,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "ASCII adjust AL after addition.",
+     "b": "Ghotuo"
+    },
+    {
+     "code": "aad",
+     "a": "ASCII adjust AX before division.",
+     "b": "Amal"
+    },
+    {
+     "code": "aam",
+     "a": "ASCII adjust AX after multiply.",
+     "b": "Aramanik"
+    },
+    {
+     "code": "aas",
+     "a": "ASCII adjust AL after subtraction.",
+     "b": "Aasáx"
+    }
+   ]
+  },
+  {
+   "a": "bio/cdn",
+   "b": "trp/iata",
+   "shared": 57,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8906,
+   "share_of_b": 0.0063,
+   "jaccard": 0.0063,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "K",
+     "b": "Anaa Airport"
+    },
+    {
+     "code": "aac",
+     "a": "N",
+     "b": "El Arish International Airport"
+    },
+    {
+     "code": "aat",
+     "a": "N",
+     "b": "Altay Xuedu Airport"
+    },
+    {
+     "code": "aca",
+     "a": "T",
+     "b": "General Juan N. Álvarez International Airport"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "lng/ioc",
+   "shared": 57,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0055,
+   "share_of_b": 0.2522,
+   "jaccard": 0.0054,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "afg",
+     "a": "AMERICAN FINANCIAL GROUP INC",
+     "b": "Afghanistan"
+    },
+    {
+     "code": "alb",
+     "a": "ALBEMARLE CORP",
+     "b": "Albania"
+    },
+    {
+     "code": "alg",
+     "a": "ALAMO GROUP INC",
+     "b": "Algeria"
+    },
+    {
+     "code": "arm",
+     "a": "ARM HOLDINGS PLC /UK",
+     "b": "Armenia"
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "trp/unl",
+   "shared": 56,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2179,
+   "share_of_b": 0.0021,
+   "jaccard": 0.0021,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bpl",
+     "a": "8-bit general-purpose register (X86-64 only, requires REX)",
+     "b": "Bonópolis"
+    },
+    {
+     "code": "cr2",
+     "a": "Control register",
+     "b": "Carlton River"
+    },
+    {
+     "code": "cr3",
+     "a": "Control register",
+     "b": "Corral Rubio"
+    },
+    {
+     "code": "cr4",
+     "a": "Control register",
+     "b": "Carrascal del Río"
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "cls/loc",
+   "shared": 53,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.4492,
+   "share_of_b": 0.2265,
+   "jaccard": 0.1773,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ac",
+     "a": "Actinium",
+     "b": "Collections.  Series.  Collected works"
+    },
+    {
+     "code": "ag",
+     "a": "Silver",
+     "b": "Dictionaries and other general reference works"
+    },
+    {
+     "code": "am",
+     "a": "Americium",
+     "b": "Museums.  Collectors and collecting"
+    },
+    {
+     "code": "as",
+     "a": "Arsenic",
+     "b": "Academies and learned societies"
+    }
+   ]
+  },
+  {
+   "a": "bio/cdn",
+   "b": "lng/b47",
+   "shared": 52,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8125,
+   "share_of_b": 0.0058,
+   "jaccard": 0.0058,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "K",
+     "b": "Ghotuo"
+    },
+    {
+     "code": "aac",
+     "a": "N",
+     "b": "Ari"
+    },
+    {
+     "code": "aag",
+     "a": "K",
+     "b": "Ambrak"
+    },
+    {
+     "code": "aat",
+     "a": "N",
+     "b": "Arvanitika Albanian"
+    }
+   ]
+  },
+  {
+   "a": "bio/cdn",
+   "b": "lng/i63",
+   "shared": 52,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8125,
+   "share_of_b": 0.0064,
+   "jaccard": 0.0064,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "K",
+     "b": "Ghotuo"
+    },
+    {
+     "code": "aac",
+     "a": "N",
+     "b": "Ari"
+    },
+    {
+     "code": "aag",
+     "a": "K",
+     "b": "Ambrak"
+    },
+    {
+     "code": "aat",
+     "a": "N",
+     "b": "Arvanitika Albanian"
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "lng/i39",
+   "shared": 51,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.4322,
+   "share_of_b": 0.2787,
+   "jaccard": 0.204,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "am",
+     "a": "Americium",
+     "b": "Amharic"
+    },
+    {
+     "code": "ar",
+     "a": "Argon",
+     "b": "Arabic"
+    },
+    {
+     "code": "as",
+     "a": "Arsenic",
+     "b": "Assamese"
+    },
+    {
+     "code": "ba",
+     "a": "Barium",
+     "b": "Bashkir"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "wrt/tz",
+   "shared": 51,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0057,
+   "share_of_b": 0.0663,
+   "jaccard": 0.0053,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adt",
+     "a": "Adnyamathanha",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "amt",
+     "a": "Amto",
+     "b": "Local mean time of Asunción, Athens"
+    },
+    {
+     "code": "apt",
+     "a": "Apatani",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "ast",
+     "a": "Asturian",
+     "b": "Atlantic time"
+    }
+   ]
+  },
+  {
+   "a": "bio/cdn",
+   "b": "trp/ica2",
+   "shared": 50,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.7812,
+   "share_of_b": 0.0086,
+   "jaccard": 0.0085,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "K",
+     "b": "Ansett Australia"
+    },
+    {
+     "code": "aac",
+     "a": "N",
+     "b": "Army Air Corps"
+    },
+    {
+     "code": "aag",
+     "a": "K",
+     "b": "Air Atlantique"
+    },
+    {
+     "code": "aat",
+     "a": "N",
+     "b": "Austrian Airtransport"
+    }
+   ]
+  },
+  {
+   "a": "lng/i63",
+   "b": "wrt/tz",
+   "shared": 49,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0061,
+   "share_of_b": 0.0637,
+   "jaccard": 0.0056,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adt",
+     "a": "Adnyamathanha",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "amt",
+     "a": "Amto",
+     "b": "Local mean time of Asunción, Athens"
+    },
+    {
+     "code": "apt",
+     "a": "Apatani",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "ast",
+     "a": "Asturian",
+     "b": "Atlantic time"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "trp/ica2",
+   "shared": 46,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0351,
+   "share_of_b": 0.0079,
+   "jaccard": 0.0065,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "ASCII adjust AL after addition.",
+     "b": "Ansett Australia"
+    },
+    {
+     "code": "aad",
+     "a": "ASCII adjust AX before division.",
+     "b": "Aero Aviation Centre Ltd."
+    },
+    {
+     "code": "aam",
+     "a": "ASCII adjust AX after multiply.",
+     "b": "Aviation Management Corporation"
+    },
+    {
+     "code": "aas",
+     "a": "ASCII adjust AL after subtraction.",
+     "b": "Askari Aviation"
+    }
+   ]
+  },
+  {
+   "a": "trp/ica2",
+   "b": "wrt/tz",
+   "shared": 46,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0079,
+   "share_of_b": 0.0598,
+   "jaccard": 0.007,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adt",
+     "a": "Air Dorval",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "amt",
+     "a": "ATA Airlines",
+     "b": "Local mean time of Asunción, Athens"
+    },
+    {
+     "code": "apt",
+     "a": "LAP Colombia - Lineas Aereas Petroleras",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "ast",
+     "a": "Aerlineas Del Oeste",
+     "b": "Atlantic time"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "trp/icao",
+   "shared": 45,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.001,
+   "share_of_b": 0.0044,
+   "jaccard": 0.0008,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bivm",
+     "a": "basic, immunoglobulin-like variable motif containing",
+     "b": "Vestmannaeyjar Airport"
+    },
+    {
+     "code": "cyba",
+     "a": "cytochrome b-245 alpha chain",
+     "b": "Banff Airport"
+    },
+    {
+     "code": "cybb",
+     "a": "cytochrome b-245 beta chain",
+     "b": "Kugaaruk Airport"
+    },
+    {
+     "code": "cycs",
+     "a": "cytochrome c, somatic",
+     "b": "Chesterfield Inlet Airport"
+    }
+   ]
+  },
+  {
+   "a": "fin/mic",
+   "b": "trp/icao",
+   "shared": 44,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0154,
+   "share_of_b": 0.0043,
+   "jaccard": 0.0034,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bgco",
+     "a": "BGC BROKERS LP - OTF",
+     "b": "Neerlerit Inaat Airport"
+    },
+    {
+     "code": "bgsg",
+     "a": "BGC PARTNERS SINGAPORE RMO",
+     "b": "Sermiligaaq Heliport"
+    },
+    {
+     "code": "bgsi",
+     "a": "BERENBERG",
+     "b": "Siorapaluk Heliport"
+    },
+    {
+     "code": "bguk",
+     "a": "BERENBERG  UK",
+     "b": "Upernavik Airport"
+    }
+   ]
+  },
+  {
+   "a": "cmp/frc",
+   "b": "trp/unl",
+   "shared": 39,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0671,
+   "share_of_b": 0.0015,
+   "jaccard": 0.0015,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a52",
+     "a": "Audio Coding 3 (AC-3)",
+     "b": "Aub"
+    },
+    {
+     "code": "aac",
+     "a": "MPEG AAC Audio",
+     "b": "Aliança"
+    },
+    {
+     "code": "adx",
+     "a": "ADX ADPCM Audio",
+     "b": "Ardoix"
+    },
+    {
+     "code": "als",
+     "a": "MPEG-4 Audio Lossless (ALS)",
+     "b": "Al Sufouh"
+    }
+   ]
+  },
+  {
+   "a": "cmp/sts",
+   "b": "trp/unl",
+   "shared": 37,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.074,
+   "share_of_b": 0.0014,
+   "jaccard": 0.0014,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "222",
+     "a": "Unassigned",
+     "b": "Brandscheid/Westerwald"
+    },
+    {
+     "code": "223",
+     "a": "Unassigned",
+     "b": "Brandshagen"
+    },
+    {
+     "code": "225",
+     "a": "Unassigned",
+     "b": "Braschwitz"
+    },
+    {
+     "code": "226",
+     "a": "IM Used",
+     "b": "Bräsen"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "wrt/tz",
+   "shared": 34,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0033,
+   "share_of_b": 0.0442,
+   "jaccard": 0.0031,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adt",
+     "a": "ADT Inc.",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "amt",
+     "a": "AMERICAN TOWER CORP /MA/",
+     "b": "Local mean time of Asunción, Athens"
+    },
+    {
+     "code": "apt",
+     "a": "ALPHA PRO TECH LTD",
+     "b": "Atlantic time"
+    },
+    {
+     "code": "bst",
+     "a": "BlackRock Science & Technology Trust",
+     "b": "Bering time; Greenwich time; Bermuda 1890–1930; Bolivian Summer Time 1890–1932"
+    }
+   ]
+  },
+  {
+   "a": "fin/i42",
+   "b": "fin/tck",
+   "shared": 33,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1854,
+   "share_of_b": 0.0032,
+   "jaccard": 0.0031,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "all",
+     "a": "Lek",
+     "b": "ALLSTATE CORP"
+    },
+    {
+     "code": "amd",
+     "a": "Armenian Dram",
+     "b": "ADVANCED MICRO DEVICES INC"
+    },
+    {
+     "code": "azn",
+     "a": "Azerbaijan Manat",
+     "b": "ASTRAZENECA PLC"
+    },
+    {
+     "code": "bam",
+     "a": "Convertible Mark",
+     "b": "Brookfield Asset Management Ltd."
+    }
+   ]
+  },
+  {
+   "a": "grf/act",
+   "b": "grf/sch",
+   "shared": 31,
+   "same_label": 31,
+   "same_label_share": 1.0,
+   "share_of_a": 0.2246,
+   "share_of_b": 0.0106,
+   "jaccard": 0.0102,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "actor",
+     "a": "actor",
+     "b": "actor"
+    },
+    {
+     "code": "application",
+     "a": "Application",
+     "b": "application"
+    },
+    {
+     "code": "article",
+     "a": "Article",
+     "b": "Article"
+    },
+    {
+     "code": "audience",
+     "a": "audience",
+     "b": "Audience"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "grf/vcd",
+   "shared": 30,
+   "same_label": 30,
+   "same_label_share": 1.0,
+   "share_of_a": 0.0103,
+   "share_of_b": 0.2113,
+   "jaccard": 0.0099,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "address",
+     "a": "address",
+     "b": "Address"
+    },
+    {
+     "code": "agent",
+     "a": "agent",
+     "b": "Agent"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Car"
+    },
+    {
+     "code": "category",
+     "a": "category",
+     "b": "category"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "fin/tck",
+   "shared": 28,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0214,
+   "share_of_b": 0.0027,
+   "jaccard": 0.0024,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aas",
+     "a": "ASCII adjust AL after subtraction.",
+     "b": "Antharas Inc"
+    },
+    {
+     "code": "adc",
+     "a": "Add with carry imm8 to AL.",
+     "b": "AGREE REALTY CORP"
+    },
+    {
+     "code": "btc",
+     "a": "Store selected bit in CF flag and complement.",
+     "b": "Grayscale Bitcoin Mini Trust ETF"
+    },
+    {
+     "code": "cmc",
+     "a": "Complement CF flag.",
+     "b": "COMMERCIAL METALS Co"
+    }
+   ]
+  },
+  {
+   "a": "cmp/dns",
+   "b": "trp/unl",
+   "shared": 27,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2784,
+   "share_of_b": 0.001,
+   "jaccard": 0.001,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apl",
+     "a": "APL",
+     "b": "Appels"
+    },
+    {
+     "code": "avc",
+     "a": "Application Visibility and Control",
+     "b": "Amfreville"
+    },
+    {
+     "code": "caa",
+     "a": "Certification Authority Restriction",
+     "b": "Carcaraña"
+    },
+    {
+     "code": "cds",
+     "a": "Child DS",
+     "b": "Capilla del Señor"
+    }
+   ]
+  },
+  {
+   "a": "cmp/frc",
+   "b": "lng/b47",
+   "shared": 26,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0448,
+   "share_of_b": 0.0029,
+   "jaccard": 0.0027,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "MPEG AAC Audio",
+     "b": "Ari"
+    },
+    {
+     "code": "adx",
+     "a": "ADX ADPCM Audio",
+     "b": "Amdo Tibetan"
+    },
+    {
+     "code": "als",
+     "a": "MPEG-4 Audio Lossless (ALS)",
+     "b": "Tosk Albanian"
+    },
+    {
+     "code": "ape",
+     "a": "Monkey's Audio",
+     "b": "Bukiyip"
+    }
+   ]
+  },
+  {
+   "a": "cls/dew",
+   "b": "trp/unl",
+   "shared": 25,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0476,
+   "share_of_b": 0.001,
+   "jaccard": 0.0009,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "222",
+     "a": "Historical books of Old Testament 272 Persecutions in church history",
+     "b": "Brandscheid/Westerwald"
+    },
+    {
+     "code": "223",
+     "a": "Poetic books of Old Testament 273 Doctrinal controversies & heresies",
+     "b": "Brandshagen"
+    },
+    {
+     "code": "225",
+     "a": "New Testament 275 History of Christianity in Asia",
+     "b": "Braschwitz"
+    },
+    {
+     "code": "226",
+     "a": "Gospels & Acts 276 History of Christianity in Africa",
+     "b": "Bräsen"
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "cmp/ext",
+   "shared": 25,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1068,
+   "share_of_b": 0.0874,
+   "jaccard": 0.0505,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "General Works",
+     "b": "AR archive"
+    },
+    {
+     "code": "ai",
+     "a": "Indexes",
+     "b": "Adobe Illustrator document"
+    },
+    {
+     "code": "br",
+     "a": "Christianity",
+     "b": "Brotli archive"
+    },
+    {
+     "code": "c",
+     "a": "Auxiliary Sciences Of History",
+     "b": "C++ source code"
+    }
+   ]
+  },
+  {
+   "a": "cls/dew",
+   "b": "lng/b47",
+   "shared": 24,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0457,
+   "share_of_b": 0.0027,
+   "jaccard": 0.0025,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "001",
+     "a": "Knowledge 051 Serials in American English",
+     "b": "World"
+    },
+    {
+     "code": "002",
+     "a": "The book 052 Serials in English",
+     "b": "Africa"
+    },
+    {
+     "code": "003",
+     "a": "Systems 053 Serials in other Germanic languages",
+     "b": "North America"
+    },
+    {
+     "code": "005",
+     "a": "Computer programming, programs & data 055 In Italian, Romanian & related languages",
+     "b": "South America"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "trp/tld",
+   "shared": 24,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0839,
+   "share_of_b": 0.0167,
+   "jaccard": 0.0141,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ads",
+     "a": "Ada source code",
+     "b": "Charleston Road Registry Inc."
+    },
+    {
+     "code": "ai",
+     "a": "Adobe Illustrator document",
+     "b": "Government of Anguilla"
+    },
+    {
+     "code": "ar",
+     "a": "AR archive",
+     "b": "Presidencia de la Nación , Secretaría Legal y Técnica"
+    },
+    {
+     "code": "au",
+     "a": "ULAW (Sun) audio",
+     "b": ".au Domain Administration (auDA)"
+    }
+   ]
+  },
+  {
+   "a": "cmp/frc",
+   "b": "lng/i63",
+   "shared": 24,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0413,
+   "share_of_b": 0.003,
+   "jaccard": 0.0028,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "MPEG AAC Audio",
+     "b": "Ari"
+    },
+    {
+     "code": "adx",
+     "a": "ADX ADPCM Audio",
+     "b": "Amdo Tibetan"
+    },
+    {
+     "code": "als",
+     "a": "MPEG-4 Audio Lossless (ALS)",
+     "b": "Tosk Albanian"
+    },
+    {
+     "code": "ape",
+     "a": "Monkey's Audio",
+     "b": "Bukiyip"
+    }
+   ]
+  },
+  {
+   "a": "cmp/frc",
+   "b": "trp/iata",
+   "shared": 24,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0413,
+   "share_of_b": 0.0027,
+   "jaccard": 0.0025,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "MPEG AAC Audio",
+     "b": "El Arish International Airport"
+    },
+    {
+     "code": "adx",
+     "a": "ADX ADPCM Audio",
+     "b": "Leuchars Station Airfield"
+    },
+    {
+     "code": "als",
+     "a": "MPEG-4 Audio Lossless (ALS)",
+     "b": "San Luis Valley Regional Airport/Bergman Field"
+    },
+    {
+     "code": "bmp",
+     "a": "BMP Image",
+     "b": "Brampton Island Airport"
+    }
+   ]
+  },
+  {
+   "a": "cmp/frc",
+   "b": "trp/ica2",
+   "shared": 24,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0413,
+   "share_of_b": 0.0041,
+   "jaccard": 0.0038,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "MPEG AAC Audio",
+     "b": "Army Air Corps"
+    },
+    {
+     "code": "adx",
+     "a": "ADX ADPCM Audio",
+     "b": "Anderson Aviation"
+    },
+    {
+     "code": "als",
+     "a": "MPEG-4 Audio Lossless (ALS)",
+     "b": "Naka Nihon Airlines Service"
+    },
+    {
+     "code": "ape",
+     "a": "Monkey's Audio",
+     "b": "Parcel Express"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "fin/mic",
+   "shared": 23,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0005,
+   "share_of_b": 0.0081,
+   "jaccard": 0.0005,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "asmt",
+     "a": "acetylserotonin O-methyltransferase",
+     "b": "INTELLIGENTCROSS ASPEN MAKER/TAKER"
+    },
+    {
+     "code": "aspn",
+     "a": "asporin",
+     "b": "INTELLIGENTCROSS ASPEN INTELLIGENT BID/OFFER"
+    },
+    {
+     "code": "batf",
+     "a": "basic leucine zipper ATF-like transcription factor",
+     "b": "CBOE EUROPE - BXE OFF-BOOK"
+    },
+    {
+     "code": "blnk",
+     "a": "B cell linker",
+     "b": "BLINK MTF"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "trp/tld",
+   "shared": 23,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0005,
+   "share_of_b": 0.016,
+   "jaccard": 0.0005,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "app",
+     "a": "amyloid beta precursor protein",
+     "b": "Charleston Road Registry Inc."
+    },
+    {
+     "code": "ar",
+     "a": "androgen receptor",
+     "b": "Presidencia de la Nación , Secretaría Legal y Técnica"
+    },
+    {
+     "code": "bid",
+     "a": "BH3 interacting domain death agonist",
+     "b": "dot Bid Limited"
+    },
+    {
+     "code": "camp",
+     "a": "cathelicidin antimicrobial peptide",
+     "b": "Binky Moon, LLC"
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "lng/b47",
+   "shared": 23,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0895,
+   "share_of_b": 0.0026,
+   "jaccard": 0.0025,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "al",
+     "a": "8-bit general-purpose register",
+     "b": "Albania"
+    },
+    {
+     "code": "ax",
+     "a": "16-bit general-purpose register",
+     "b": "Åland Islands"
+    },
+    {
+     "code": "bh",
+     "a": "8-bit general-purpose register",
+     "b": "Bihari languages"
+    },
+    {
+     "code": "bl",
+     "a": "8-bit general-purpose register",
+     "b": "Saint Barthélemy"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "wrt/iau",
+   "shared": 23,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0022,
+   "share_of_b": 0.2614,
+   "jaccard": 0.0022,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ari",
+     "a": "Apollo Commercial Real Estate Finance, Inc.",
+     "b": "Aries"
+    },
+    {
+     "code": "aur",
+     "a": "Aurora Innovation, Inc.",
+     "b": "Auriga"
+    },
+    {
+     "code": "cae",
+     "a": "CAE INC",
+     "b": "Caelum"
+    },
+    {
+     "code": "car",
+     "a": "AVIS BUDGET GROUP, INC.",
+     "b": "Carina"
+    }
+   ]
+  },
+  {
+   "a": "cmp/dns",
+   "b": "lng/b47",
+   "shared": 22,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2268,
+   "share_of_b": 0.0025,
+   "jaccard": 0.0024,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apl",
+     "a": "APL",
+     "b": "Lipan Apache"
+    },
+    {
+     "code": "caa",
+     "a": "Certification Authority Restriction",
+     "b": "Chortí"
+    },
+    {
+     "code": "cds",
+     "a": "Child DS",
+     "b": "Chadian Sign Language"
+    },
+    {
+     "code": "cla",
+     "a": "BP Convergence Layer Adapter",
+     "b": "Ron"
+    }
+   ]
+  },
+  {
+   "a": "com/mor",
+   "b": "fin/tck",
+   "shared": 21,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.4375,
+   "share_of_b": 0.002,
+   "jaccard": 0.002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": ".-",
+     "b": "AGILENT TECHNOLOGIES, INC."
+    },
+    {
+     "code": "b",
+     "a": "-...",
+     "b": "BARRICK MINING CORP"
+    },
+    {
+     "code": "c",
+     "a": "-.-.",
+     "b": "CITIGROUP INC"
+    },
+    {
+     "code": "d",
+     "a": "-..",
+     "b": "DOMINION ENERGY, INC"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa1",
+   "b": "com/mor",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 1.0,
+   "share_of_b": 0.4167,
+   "jaccard": 0.4167,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "Alanine",
+     "b": ".-"
+    },
+    {
+     "code": "c",
+     "a": "Cysteine",
+     "b": "-.-."
+    },
+    {
+     "code": "d",
+     "a": "Aspartic acid",
+     "b": "-.."
+    },
+    {
+     "code": "e",
+     "a": "Glutamic acid",
+     "b": "."
+    }
+   ]
+  },
+  {
+   "a": "bio/aa3",
+   "b": "trp/unl",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 1.0,
+   "share_of_b": 0.0008,
+   "jaccard": 0.0008,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ala",
+     "a": "Alanine",
+     "b": "Auldana"
+    },
+    {
+     "code": "arg",
+     "a": "Arginine",
+     "b": "Argyrokastro"
+    },
+    {
+     "code": "asn",
+     "a": "Asparagine",
+     "b": "Assesse"
+    },
+    {
+     "code": "asp",
+     "a": "Aspartic acid",
+     "b": "Aspern"
+    }
+   ]
+  },
+  {
+   "a": "cls/icd",
+   "b": "cmp/frc",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0002,
+   "share_of_b": 0.0344,
+   "jaccard": 0.0002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a52",
+     "a": "Late syphilis",
+     "b": "Audio Coding 3 (AC-3)"
+    },
+    {
+     "code": "g722",
+     "a": "Myopathy due to other toxic agents",
+     "b": "G.722 ADPCM Audio"
+    },
+    {
+     "code": "h261",
+     "a": "Traumatic cataract",
+     "b": "H.261"
+    },
+    {
+     "code": "h262",
+     "a": "Complicated cataract",
+     "b": "MPEG-2 Video"
+    }
+   ]
+  },
+  {
+   "a": "cls/icd",
+   "b": "cmp/reg",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0002,
+   "share_of_b": 0.0778,
+   "jaccard": 0.0002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "r10",
+     "a": "Abdominal and pelvic pain",
+     "b": "64-bit general-purpose register"
+    },
+    {
+     "code": "r11",
+     "a": "Nausea and vomiting",
+     "b": "64-bit general-purpose register"
+    },
+    {
+     "code": "r12",
+     "a": "Heartburn",
+     "b": "64-bit general-purpose register"
+    },
+    {
+     "code": "r13",
+     "a": "Aphagia and dysphagia",
+     "b": "64-bit general-purpose register"
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "com/mor",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0855,
+   "share_of_b": 0.4167,
+   "jaccard": 0.0763,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "General Works",
+     "b": ".-"
+    },
+    {
+     "code": "b",
+     "a": "Philosophy.  Psychology.  Religion",
+     "b": "-..."
+    },
+    {
+     "code": "c",
+     "a": "Auxiliary Sciences Of History",
+     "b": "-.-."
+    },
+    {
+     "code": "d",
+     "a": "World History And History Of Europe, Asia, Africa, Australia, New Zealand, Etc.",
+     "b": "-.."
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "fin/tck",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0778,
+   "share_of_b": 0.0019,
+   "jaccard": 0.0019,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ax",
+     "a": "16-bit general-purpose register",
+     "b": "Axos Financial, Inc."
+    },
+    {
+     "code": "bh",
+     "a": "8-bit general-purpose register",
+     "b": "Biglari Holdings Inc."
+    },
+    {
+     "code": "bl",
+     "a": "8-bit general-purpose register",
+     "b": "BLACKLINE, INC."
+    },
+    {
+     "code": "bp",
+     "a": "16-bit general-purpose register",
+     "b": "BP PLC"
+    }
+   ]
+  },
+  {
+   "a": "cmp/vim",
+   "b": "fin/tck",
+   "shared": 20,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0769,
+   "share_of_b": 0.0019,
+   "jaccard": 0.0019,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ab",
+     "a": "\"a block\", select [count] blocks, from \"[count] [(\" to the matching ')', including the '(' and ')' (see |[(|).",
+     "b": "ALLIANCEBERNSTEIN HOLDING L.P."
+    },
+    {
+     "code": "ap",
+     "a": "\"a paragraph\", select [count] paragraphs (see |paragraph|).",
+     "b": "AMPCO PITTSBURGH CORP"
+    },
+    {
+     "code": "as",
+     "a": "\"a sentence\", select [count] sentences (see |sentence|).",
+     "b": "Amer Sports, Inc."
+    },
+    {
+     "code": "b",
+     "a": "[count] words backward.",
+     "b": "BARRICK MINING CORP"
+    }
+   ]
+  },
+  {
+   "a": "cmp/css",
+   "b": "trp/unl",
+   "shared": 19,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.181,
+   "share_of_b": 0.0007,
+   "jaccard": 0.0007,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abs",
+     "a": "abs()",
+     "b": "Absam"
+    },
+    {
+     "code": "cos",
+     "a": "cos()",
+     "b": "Concepcion de la Sierra"
+    },
+    {
+     "code": "env",
+     "a": "env()",
+     "b": "Esperança Nova"
+    },
+    {
+     "code": "exp",
+     "a": "exp()",
+     "b": "Lisboa-EXPO"
+    }
+   ]
+  },
+  {
+   "a": "cmp/vim",
+   "b": "lng/b47",
+   "shared": 19,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0731,
+   "share_of_b": 0.0021,
+   "jaccard": 0.0021,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ab",
+     "a": "\"a block\", select [count] blocks, from \"[count] [(\" to the matching ')', including the '(' and ')' (see |[(|).",
+     "b": "Abkhazian"
+    },
+    {
+     "code": "as",
+     "a": "\"a sentence\", select [count] sentences (see |sentence|).",
+     "b": "Assamese"
+    },
+    {
+     "code": "at",
+     "a": "\"a tag block\", select [count] tag blocks, from the [count]'th unmatched \"<aaa>\" backwards to the matching \"</aaa>\", including the \"<aaa>\" and \"</aaa>\".",
+     "b": "Austria"
+    },
+    {
+     "code": "aw",
+     "a": "\"a word\", select [count] words (see |word|).",
+     "b": "Aruba"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa3",
+   "b": "trp/iata",
+   "shared": 18,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.9,
+   "share_of_b": 0.002,
+   "jaccard": 0.002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ala",
+     "a": "Alanine",
+     "b": "Almaty International Airport"
+    },
+    {
+     "code": "arg",
+     "a": "Arginine",
+     "b": "Walnut Ridge Regional Airport"
+    },
+    {
+     "code": "asn",
+     "a": "Asparagine",
+     "b": "Talladega Municipal Airport"
+    },
+    {
+     "code": "asp",
+     "a": "Aspartic acid",
+     "b": "Alice Springs Airport"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "cmp/frc",
+   "shared": 18,
+   "same_label": 6,
+   "same_label_share": 0.3333,
+   "share_of_a": 0.0629,
+   "share_of_b": 0.031,
+   "jaccard": 0.0212,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aac",
+     "a": "AAC audio",
+     "b": "MPEG AAC Audio"
+    },
+    {
+     "code": "ape",
+     "a": "Monkey's audio",
+     "b": "Monkey's Audio"
+    },
+    {
+     "code": "bmp",
+     "a": "Windows BMP image",
+     "b": "BMP Image"
+    },
+    {
+     "code": "flac",
+     "a": "FLAC audio",
+     "b": "FLAC (Free Lossless Audio Codec)"
+    }
+   ]
+  },
+  {
+   "a": "com/tlg",
+   "b": "grf/act",
+   "shared": 18,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0011,
+   "share_of_b": 0.1304,
+   "jaccard": 0.0011,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "accuracy",
+     "a": "According to circumstances",
+     "b": "accuracy"
+    },
+    {
+     "code": "actor",
+     "a": "Act according to agreement",
+     "b": "actor"
+    },
+    {
+     "code": "altitude",
+     "a": "If alongside",
+     "b": "altitude"
+    },
+    {
+     "code": "article",
+     "a": "Will give all assistance required [",
+     "b": "Article"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "grf/sch",
+   "shared": 18,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0017,
+   "share_of_b": 0.0062,
+   "jaccard": 0.0014,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "box",
+     "a": "BOX INC",
+     "b": "box"
+    },
+    {
+     "code": "car",
+     "a": "AVIS BUDGET GROUP, INC.",
+     "b": "Car"
+    },
+    {
+     "code": "cash",
+     "a": "PATHWARD FINANCIAL, INC.",
+     "b": "Cash"
+    },
+    {
+     "code": "drug",
+     "a": "BRIGHT MINDS BIOSCIENCES INC.",
+     "b": "Drug"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "trp/unl",
+   "shared": 18,
+   "same_label": 2,
+   "same_label_share": 0.1111,
+   "share_of_a": 0.0062,
+   "share_of_b": 0.0007,
+   "jaccard": 0.0006,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bed",
+     "a": "bed",
+     "b": "Brejo do Piauí"
+    },
+    {
+     "code": "box",
+     "a": "box",
+     "b": "Borroloola"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Carina Heights"
+    },
+    {
+     "code": "cod",
+     "a": "COD",
+     "b": "Condado"
+    }
+   ]
+  },
+  {
+   "a": "cmp/dns",
+   "b": "trp/ica2",
+   "shared": 17,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1753,
+   "share_of_b": 0.0029,
+   "jaccard": 0.0029,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apl",
+     "a": "APL",
+     "b": "Appalachian Flying Service"
+    },
+    {
+     "code": "caa",
+     "a": "Certification Authority Restriction",
+     "b": "Atlantic Southeast Airlines"
+    },
+    {
+     "code": "cds",
+     "a": "Child DS",
+     "b": "Spectrem Air"
+    },
+    {
+     "code": "cla",
+     "a": "BP Convergence Layer Adapter",
+     "b": "Comlux Aviation"
+    }
+   ]
+  },
+  {
+   "a": "cmp/frc",
+   "b": "fin/tck",
+   "shared": 17,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0293,
+   "share_of_b": 0.0016,
+   "jaccard": 0.0015,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aacp",
+     "a": "MPEG AAC Audio",
+     "b": "Apogee Acquisition Corp"
+    },
+    {
+     "code": "adea",
+     "a": "EA ADPCM Audio",
+     "b": "Adeia Inc."
+    },
+    {
+     "code": "adx",
+     "a": "ADX ADPCM Audio",
+     "b": "ADAMS DIVERSIFIED EQUITY FUND, INC."
+    },
+    {
+     "code": "atrc",
+     "a": "atrac 3",
+     "b": "AtriCure, Inc."
+    }
+   ]
+  },
+  {
+   "a": "bio/aa1",
+   "b": "cls/loc",
+   "shared": 16,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8,
+   "share_of_b": 0.0684,
+   "jaccard": 0.0672,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "Alanine",
+     "b": "General Works"
+    },
+    {
+     "code": "c",
+     "a": "Cysteine",
+     "b": "Auxiliary Sciences Of History"
+    },
+    {
+     "code": "d",
+     "a": "Aspartic acid",
+     "b": "World History And History Of Europe, Asia, Africa, Australia, New Zealand, Etc."
+    },
+    {
+     "code": "e",
+     "a": "Glutamic acid",
+     "b": "F - History Of The Americas"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa1",
+   "b": "fin/tck",
+   "shared": 16,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.8,
+   "share_of_b": 0.0015,
+   "jaccard": 0.0015,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "Alanine",
+     "b": "AGILENT TECHNOLOGIES, INC."
+    },
+    {
+     "code": "c",
+     "a": "Cysteine",
+     "b": "CITIGROUP INC"
+    },
+    {
+     "code": "d",
+     "a": "Aspartic acid",
+     "b": "DOMINION ENERGY, INC"
+    },
+    {
+     "code": "e",
+     "a": "Glutamic acid",
+     "b": "ENI SPA"
+    }
+   ]
+  },
+  {
+   "a": "cmp/dns",
+   "b": "lng/i63",
+   "shared": 16,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1649,
+   "share_of_b": 0.002,
+   "jaccard": 0.002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apl",
+     "a": "APL",
+     "b": "Lipan Apache"
+    },
+    {
+     "code": "caa",
+     "a": "Certification Authority Restriction",
+     "b": "Chortí"
+    },
+    {
+     "code": "cds",
+     "a": "Child DS",
+     "b": "Chadian Sign Language"
+    },
+    {
+     "code": "cla",
+     "a": "BP Convergence Layer Adapter",
+     "b": "Ron"
+    }
+   ]
+  },
+  {
+   "a": "cmp/dns",
+   "b": "trp/iata",
+   "shared": 16,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1649,
+   "share_of_b": 0.0018,
+   "jaccard": 0.0018,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apl",
+     "a": "APL",
+     "b": "Nampula Airport"
+    },
+    {
+     "code": "caa",
+     "a": "Certification Authority Restriction",
+     "b": "El Aguacate Airport"
+    },
+    {
+     "code": "cds",
+     "a": "Child DS",
+     "b": "Childress Municipal Airport"
+    },
+    {
+     "code": "cla",
+     "a": "BP Convergence Layer Adapter",
+     "b": "Comilla Airport"
+    }
+   ]
+  },
+  {
+   "a": "grf/gql",
+   "b": "lng/b47",
+   "shared": 16,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2623,
+   "share_of_b": 0.0018,
+   "jaccard": 0.0018,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "add",
+     "a": "Reserved word, used by no rule of the grammar",
+     "b": "Lidzonka"
+    },
+    {
+     "code": "all",
+     "a": "Keyword in atom, union",
+     "b": "Allar"
+    },
+    {
+     "code": "and",
+     "a": "Keyword in and expression",
+     "b": "Ansus"
+    },
+    {
+     "code": "any",
+     "a": "Keyword in atom",
+     "b": "Anyin"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa3",
+   "b": "trp/ica2",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.75,
+   "share_of_b": 0.0026,
+   "jaccard": 0.0026,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "arg",
+     "a": "Arginine",
+     "b": "Aerolineas Argentinas"
+    },
+    {
+     "code": "asn",
+     "a": "Asparagine",
+     "b": "Air and Sea Transport"
+    },
+    {
+     "code": "asp",
+     "a": "Aspartic acid",
+     "b": "Airsprint"
+    },
+    {
+     "code": "cys",
+     "a": "Cysteine",
+     "b": "Cypress Airlines"
+    }
+   ]
+  },
+  {
+   "a": "bio/cdn",
+   "b": "fin/tck",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.2344,
+   "share_of_b": 0.0014,
+   "jaccard": 0.0014,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aat",
+     "a": "N",
+     "b": "American Assets Trust, Inc."
+    },
+    {
+     "code": "aca",
+     "a": "T",
+     "b": "Arcosa, Inc."
+    },
+    {
+     "code": "act",
+     "a": "T",
+     "b": "Enact Holdings, Inc."
+    },
+    {
+     "code": "cac",
+     "a": "H",
+     "b": "CAMDEN NATIONAL CORP"
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "cmp/ext",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1271,
+   "share_of_b": 0.0524,
+   "jaccard": 0.0386,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ar",
+     "a": "Argon",
+     "b": "AR archive"
+    },
+    {
+     "code": "au",
+     "a": "Gold",
+     "b": "ULAW (Sun) audio"
+    },
+    {
+     "code": "br",
+     "a": "Bromine",
+     "b": "Brotli archive"
+    },
+    {
+     "code": "c",
+     "a": "Carbon",
+     "b": "C++ source code"
+    }
+   ]
+  },
+  {
+   "a": "com/tlg",
+   "b": "fin/tck",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.001,
+   "share_of_b": 0.0014,
+   "jaccard": 0.0006,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "acre",
+     "a": "Are goods accumulating",
+     "b": "Ares Commercial Real Estate Corp"
+    },
+    {
+     "code": "alms",
+     "a": "I (we) cannot allow",
+     "b": "ALUMIS INC."
+    },
+    {
+     "code": "apex",
+     "a": "I (we) cannot arrange it here",
+     "b": "APEX Global Solutions Ltd"
+    },
+    {
+     "code": "bird",
+     "a": "Port boiler burst",
+     "b": "Allbirds, Inc."
+    }
+   ]
+  },
+  {
+   "a": "grf/act",
+   "b": "trp/tld",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1087,
+   "share_of_b": 0.0104,
+   "jaccard": 0.0096,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "actor",
+     "a": "actor",
+     "b": "Dog Beach, LLC"
+    },
+    {
+     "code": "audio",
+     "a": "Audio",
+     "b": "XYZ.COM LLC"
+    },
+    {
+     "code": "cc",
+     "a": "cc",
+     "b": "eNIC Cocos (Keeling) Islands Pty. Ltd. d/b/a Island Internet Services"
+    },
+    {
+     "code": "group",
+     "a": "Group",
+     "b": "Binky Moon, LLC"
+    }
+   ]
+  },
+  {
+   "a": "grf/foa",
+   "b": "grf/sch",
+   "shared": 15,
+   "same_label": 14,
+   "same_label_share": 0.9333,
+   "share_of_a": 0.2027,
+   "share_of_b": 0.0051,
+   "jaccard": 0.005,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "agent",
+     "a": "Agent",
+     "b": "agent"
+    },
+    {
+     "code": "familyname",
+     "a": "familyName",
+     "b": "familyName"
+    },
+    {
+     "code": "gender",
+     "a": "gender",
+     "b": "gender"
+    },
+    {
+     "code": "givenname",
+     "a": "Given name",
+     "b": "givenName"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "trp/iata",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0051,
+   "share_of_b": 0.0017,
+   "jaccard": 0.0013,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bed",
+     "a": "bed",
+     "b": "Laurence G Hanscom Field"
+    },
+    {
+     "code": "box",
+     "a": "box",
+     "b": "Borroloola Airport"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Caribou Municipal Airport"
+    },
+    {
+     "code": "cod",
+     "a": "COD",
+     "b": "Yellowstone Regional Airport"
+    }
+   ]
+  },
+  {
+   "a": "grf/vcd",
+   "b": "trp/unl",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1056,
+   "share_of_b": 0.0006,
+   "jaccard": 0.0006,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adr",
+     "a": "address",
+     "b": "Angra dos Reis"
+    },
+    {
+     "code": "bbs",
+     "a": "BBS",
+     "b": "Bombinhas"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Carina Heights"
+    },
+    {
+     "code": "dom",
+     "a": "Dom",
+     "b": "São Domingos"
+    }
+   ]
+  },
+  {
+   "a": "lng/b47",
+   "b": "trp/icao",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0017,
+   "share_of_b": 0.0015,
+   "jaccard": 0.0008,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "cyrl",
+     "a": "Cyrillic",
+     "b": "Red Lake Airport"
+    },
+    {
+     "code": "cyrs",
+     "a": "Cyrillic (Old Church Slavonic variant)",
+     "b": "Red Sucker Lake Airport"
+    },
+    {
+     "code": "egyd",
+     "a": "Egyptian demotic",
+     "b": "RAF Cranwell"
+    },
+    {
+     "code": "egyp",
+     "a": "Egyptian hieroglyphs",
+     "b": "Mount Pleasant Airport / RAF Mount Pleasant"
+    }
+   ]
+  },
+  {
+   "a": "lng/i15",
+   "b": "trp/icao",
+   "shared": 15,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0664,
+   "share_of_b": 0.0015,
+   "jaccard": 0.0014,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "cyrl",
+     "a": "Cyrillic",
+     "b": "Red Lake Airport"
+    },
+    {
+     "code": "cyrs",
+     "a": "Cyrillic (Old Church Slavonic variant)",
+     "b": "Red Sucker Lake Airport"
+    },
+    {
+     "code": "egyd",
+     "a": "Egyptian demotic",
+     "b": "RAF Cranwell"
+    },
+    {
+     "code": "egyp",
+     "a": "Egyptian hieroglyphs",
+     "b": "Mount Pleasant Airport / RAF Mount Pleasant"
+    }
+   ]
+  },
+  {
+   "a": "cls/atc",
+   "b": "cls/loc",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0022,
+   "share_of_b": 0.0598,
+   "jaccard": 0.0021,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "ALIMENTARY TRACT AND METABOLISM",
+     "b": "General Works"
+    },
+    {
+     "code": "b",
+     "a": "BLOOD AND BLOOD FORMING ORGANS",
+     "b": "Philosophy.  Psychology.  Religion"
+    },
+    {
+     "code": "c",
+     "a": "CARDIOVASCULAR SYSTEM",
+     "b": "Auxiliary Sciences Of History"
+    },
+    {
+     "code": "d",
+     "a": "DERMATOLOGICALS",
+     "b": "World History And History Of Europe, Asia, Africa, Australia, New Zealand, Etc."
+    }
+   ]
+  },
+  {
+   "a": "cls/atc",
+   "b": "com/mor",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0022,
+   "share_of_b": 0.2917,
+   "jaccard": 0.0022,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "ALIMENTARY TRACT AND METABOLISM",
+     "b": ".-"
+    },
+    {
+     "code": "b",
+     "a": "BLOOD AND BLOOD FORMING ORGANS",
+     "b": "-..."
+    },
+    {
+     "code": "c",
+     "a": "CARDIOVASCULAR SYSTEM",
+     "b": "-.-."
+    },
+    {
+     "code": "d",
+     "a": "DERMATOLOGICALS",
+     "b": "-.."
+    }
+   ]
+  },
+  {
+   "a": "cls/elm",
+   "b": "com/mor",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1186,
+   "share_of_b": 0.2917,
+   "jaccard": 0.0921,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "b",
+     "a": "Boron",
+     "b": "-..."
+    },
+    {
+     "code": "c",
+     "a": "Carbon",
+     "b": "-.-."
+    },
+    {
+     "code": "f",
+     "a": "Fluorine",
+     "b": "..-."
+    },
+    {
+     "code": "h",
+     "a": "Hydrogen",
+     "b": "...."
+    }
+   ]
+  },
+  {
+   "a": "cmp/css",
+   "b": "lng/b47",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1333,
+   "share_of_b": 0.0016,
+   "jaccard": 0.0016,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abs",
+     "a": "abs()",
+     "b": "Ambonese Malay"
+    },
+    {
+     "code": "env",
+     "a": "env()",
+     "b": "Enwan (Edo State)"
+    },
+    {
+     "code": "hsl",
+     "a": "hsl()",
+     "b": "Hausa Sign Language"
+    },
+    {
+     "code": "lab",
+     "a": "lab()",
+     "b": "Linear A"
+    }
+   ]
+  },
+  {
+   "a": "cmp/css",
+   "b": "lng/i63",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1333,
+   "share_of_b": 0.0017,
+   "jaccard": 0.0017,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abs",
+     "a": "abs()",
+     "b": "Ambonese Malay"
+    },
+    {
+     "code": "env",
+     "a": "env()",
+     "b": "Enwan (Edo State)"
+    },
+    {
+     "code": "hsl",
+     "a": "hsl()",
+     "b": "Hausa Sign Language"
+    },
+    {
+     "code": "lab",
+     "a": "lab()",
+     "b": "Linear A"
+    }
+   ]
+  },
+  {
+   "a": "cmp/dns",
+   "b": "fin/tck",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1443,
+   "share_of_b": 0.0013,
+   "jaccard": 0.0013,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "a host address",
+     "b": "AGILENT TECHNOLOGIES, INC."
+    },
+    {
+     "code": "brid",
+     "a": "UAS Broadcast Remote Identification",
+     "b": "BRIDGFORD FOODS CORP"
+    },
+    {
+     "code": "cert",
+     "a": "CERT",
+     "b": "Certara, Inc."
+    },
+    {
+     "code": "key",
+     "a": "for security key",
+     "b": "KEYCORP /NEW/"
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "trp/ica2",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0545,
+   "share_of_b": 0.0024,
+   "jaccard": 0.0023,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "cr1",
+     "a": "Control register",
+     "b": "Regionalia Chile"
+    },
+    {
+     "code": "cr7",
+     "a": "Control register",
+     "b": "Sky Wing Pacific"
+    },
+    {
+     "code": "eax",
+     "a": "32-bit general-purpose register",
+     "b": "Eastern Air Executive"
+    },
+    {
+     "code": "ecx",
+     "a": "32-bit general-purpose register",
+     "b": "Ecomex Air Cargo"
+    }
+   ]
+  },
+  {
+   "a": "cmp/vim",
+   "b": "com/mor",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0538,
+   "share_of_b": 0.2917,
+   "jaccard": 0.0476,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "+",
+     "a": "[count] lines downward, on the first non-blank character |linewise|.",
+     "b": ".-.-."
+    },
+    {
+     "code": ",",
+     "a": "Repeat latest f, t, F or T in opposite direction [count] times.",
+     "b": "--..--"
+    },
+    {
+     "code": "0",
+     "a": "To the first character of the line.",
+     "b": "-----"
+    },
+    {
+     "code": "b",
+     "a": "[count] words backward.",
+     "b": "-..."
+    }
+   ]
+  },
+  {
+   "a": "com/tlg",
+   "b": "grf/vcd",
+   "shared": 14,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0009,
+   "share_of_b": 0.0986,
+   "jaccard": 0.0009,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "category",
+     "a": "Will you require certificate of discharge",
+     "b": "category"
+    },
+    {
+     "code": "child",
+     "a": "Do not claim",
+     "b": "Child"
+    },
+    {
+     "code": "colleague",
+     "a": "Require a share of the commission [business",
+     "b": "Colleague"
+    },
+    {
+     "code": "female",
+     "a": "I (we) shall fill up",
+     "b": "Female"
+    }
+   ]
+  },
+  {
+   "a": "fin/mic",
+   "b": "trp/tld",
+   "shared": 14,
+   "same_label": 1,
+   "same_label_share": 0.0714,
+   "share_of_a": 0.0049,
+   "share_of_b": 0.0097,
+   "jaccard": 0.0033,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "auto",
+     "a": "AUTOBAHN FX",
+     "b": "XYZ.COM LLC"
+    },
+    {
+     "code": "bbva",
+     "a": "BANCO BILBAO VIZCAYA ARGENTARIA S.A",
+     "b": "BANCO BILBAO VIZCAYA ARGENTARIA, S.A."
+    },
+    {
+     "code": "blue",
+     "a": "PRO SECURITIES ATS",
+     "b": "Identity Digital Limited"
+    },
+    {
+     "code": "bond",
+     "a": "BONDVISION ITALIA",
+     "b": "Shortdot SA"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "grf/shc",
+   "shared": 14,
+   "same_label": 13,
+   "same_label_share": 0.9286,
+   "share_of_a": 0.0048,
+   "share_of_b": 0.0657,
+   "jaccard": 0.0045,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "class",
+     "a": "Class",
+     "b": "class"
+    },
+    {
+     "code": "datatype",
+     "a": "DataType",
+     "b": "datatype"
+    },
+    {
+     "code": "defaultvalue",
+     "a": "defaultValue",
+     "b": "default value"
+    },
+    {
+     "code": "description",
+     "a": "description",
+     "b": "description"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa3",
+   "b": "lng/b47",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.65,
+   "share_of_b": 0.0015,
+   "jaccard": 0.0015,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ala",
+     "a": "Alanine",
+     "b": "Alago"
+    },
+    {
+     "code": "asn",
+     "a": "Asparagine",
+     "b": "Xingú Asuriní"
+    },
+    {
+     "code": "asp",
+     "a": "Aspartic acid",
+     "b": "Algerian Sign Language"
+    },
+    {
+     "code": "glu",
+     "a": "Glutamic acid",
+     "b": "Gula (Chad)"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa3",
+   "b": "lng/i63",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.65,
+   "share_of_b": 0.0016,
+   "jaccard": 0.0016,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ala",
+     "a": "Alanine",
+     "b": "Alago"
+    },
+    {
+     "code": "asn",
+     "a": "Asparagine",
+     "b": "Xingú Asuriní"
+    },
+    {
+     "code": "asp",
+     "a": "Aspartic acid",
+     "b": "Algerian Sign Language"
+    },
+    {
+     "code": "glu",
+     "a": "Glutamic acid",
+     "b": "Gula (Chad)"
+    }
+   ]
+  },
+  {
+   "a": "cls/atc",
+   "b": "fin/tck",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.002,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0008,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "ALIMENTARY TRACT AND METABOLISM",
+     "b": "AGILENT TECHNOLOGIES, INC."
+    },
+    {
+     "code": "b",
+     "a": "BLOOD AND BLOOD FORMING ORGANS",
+     "b": "BARRICK MINING CORP"
+    },
+    {
+     "code": "c",
+     "a": "CARDIOVASCULAR SYSTEM",
+     "b": "CITIGROUP INC"
+    },
+    {
+     "code": "d",
+     "a": "DERMATOLOGICALS",
+     "b": "DOMINION ENERGY, INC"
+    }
+   ]
+  },
+  {
+   "a": "cls/loc",
+   "b": "cmp/vim",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0556,
+   "share_of_b": 0.05,
+   "jaccard": 0.027,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ap",
+     "a": "Periodicals",
+     "b": "\"a paragraph\", select [count] paragraphs (see |paragraph|)."
+    },
+    {
+     "code": "as",
+     "a": "Academies and learned societies",
+     "b": "\"a sentence\", select [count] sentences (see |sentence|)."
+    },
+    {
+     "code": "b",
+     "a": "Philosophy.  Psychology.  Religion",
+     "b": "[count] words backward."
+    },
+    {
+     "code": "daw",
+     "a": "History of Central Europe",
+     "b": "delete a word"
+    }
+   ]
+  },
+  {
+   "a": "cmp/asm",
+   "b": "trp/tld",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0099,
+   "share_of_b": 0.009,
+   "jaccard": 0.0048,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "aaa",
+     "a": "ASCII adjust AL after addition.",
+     "b": "American Automobile Association, Inc."
+    },
+    {
+     "code": "bt",
+     "a": "Store selected bit in CF flag.",
+     "b": "Ministry of Information and Communications"
+    },
+    {
+     "code": "call",
+     "a": "Call near, relative, displacement relative to next instruction.",
+     "b": "Amazon Registry Services, Inc."
+    },
+    {
+     "code": "in",
+     "a": "Input byte from imm8 I/O port address into AL.",
+     "b": "National Internet Exchange of India"
+    }
+   ]
+  },
+  {
+   "a": "cmp/css",
+   "b": "trp/iata",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1238,
+   "share_of_b": 0.0014,
+   "jaccard": 0.0014,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abs",
+     "a": "abs()",
+     "b": "Abu Simbel Airport"
+    },
+    {
+     "code": "cos",
+     "a": "cos()",
+     "b": "City of Colorado Springs Municipal Airport"
+    },
+    {
+     "code": "env",
+     "a": "env()",
+     "b": "Wendover Airport"
+    },
+    {
+     "code": "hsl",
+     "a": "hsl()",
+     "b": "Huslia Airport"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "lng/i15",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0012,
+   "share_of_b": 0.0575,
+   "jaccard": 0.0012,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "blis",
+     "a": "NAPC Defense, Inc.",
+     "b": "Blissymbols"
+    },
+    {
+     "code": "brai",
+     "a": "Braiin Ltd",
+     "b": "Braille"
+    },
+    {
+     "code": "chrs",
+     "a": "Coherus Oncology, Inc.",
+     "b": "Chorasmian"
+    },
+    {
+     "code": "cprt",
+     "a": "COPART INC",
+     "b": "Cypriot syllabary"
+    }
+   ]
+  },
+  {
+   "a": "grf/vcd",
+   "b": "trp/tld",
+   "shared": 13,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0915,
+   "share_of_b": 0.009,
+   "jaccard": 0.0083,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "XYZ.COM LLC"
+    },
+    {
+     "code": "contact",
+     "a": "Contact",
+     "b": "Dog Beach, LLC"
+    },
+    {
+     "code": "date",
+     "a": "Date",
+     "b": "dot Date Limited"
+    },
+    {
+     "code": "email",
+     "a": "Email",
+     "b": "Binky Moon, LLC"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa1",
+   "b": "cls/atc",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.6,
+   "share_of_b": 0.0019,
+   "jaccard": 0.0019,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "Alanine",
+     "b": "ALIMENTARY TRACT AND METABOLISM"
+    },
+    {
+     "code": "c",
+     "a": "Cysteine",
+     "b": "CARDIOVASCULAR SYSTEM"
+    },
+    {
+     "code": "d",
+     "a": "Aspartic acid",
+     "b": "DERMATOLOGICALS"
+    },
+    {
+     "code": "g",
+     "a": "Glycine",
+     "b": "GENITO URINARY SYSTEM AND SEX HORMONES"
+    }
+   ]
+  },
+  {
+   "a": "bio/pdb",
+   "b": "wrt/uni",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0,
+   "share_of_b": 0.0023,
+   "jaccard": 0.0,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "261d",
+     "a": "CRYSTAL STRUCTURE OF THE DNA DECAMER D(CGCAATTGCG) COMPLEXED WITH THE MINOR GROOVE BINDING DRUG NETROPSIN",
+     "b": "index pointing up"
+    },
+    {
+     "code": "264d",
+     "a": "THREE-DIMENSIONAL CRYSTAL STRUCTURE OF THE A-TRACT DNA DODECAMER D(CGCAAATTTGCG) COMPLEXED WITH THE MINOR-GROOVE-BINDING DRUG HOECHST 33258",
+     "b": "Virgo"
+    },
+    {
+     "code": "270d",
+     "a": "STRUCTURAL STUDIES ON NUCLEIC ACIDS",
+     "b": "writing hand"
+    },
+    {
+     "code": "271d",
+     "a": "STRUCTURAL STUDIES ON NUCLEIC ACIDS",
+     "b": "latin cross"
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "trp/tld",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0467,
+   "share_of_b": 0.0084,
+   "jaccard": 0.0071,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "al",
+     "a": "8-bit general-purpose register",
+     "b": "Electronic and Postal Communications Authority - AKEP"
+    },
+    {
+     "code": "ax",
+     "a": "16-bit general-purpose register",
+     "b": "Ålands landskapsregering"
+    },
+    {
+     "code": "bh",
+     "a": "8-bit general-purpose register",
+     "b": "Telecommunications Regulatory Authority (TRA)"
+    },
+    {
+     "code": "ch",
+     "a": "8-bit general-purpose register",
+     "b": "SWITCH The Swiss Education &amp; Research Network"
+    }
+   ]
+  },
+  {
+   "a": "cmp/vim",
+   "b": "trp/unl",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0462,
+   "share_of_b": 0.0005,
+   "jaccard": 0.0005,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bar",
+     "a": "To screen column [count] in the current line.",
+     "b": "Baradero"
+    },
+    {
+     "code": "dab",
+     "a": "delete a '(' ')' block",
+     "b": "Dabou"
+    },
+    {
+     "code": "dap",
+     "a": "delete a paragraph",
+     "b": "Damp"
+    },
+    {
+     "code": "das",
+     "a": "delete a sentence",
+     "b": "Das Island"
+    }
+   ]
+  },
+  {
+   "a": "grf/vcd",
+   "b": "trp/iata",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0845,
+   "share_of_b": 0.0013,
+   "jaccard": 0.0013,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adr",
+     "a": "address",
+     "b": "Robert F Swinnie Airport"
+    },
+    {
+     "code": "bbs",
+     "a": "BBS",
+     "b": "Blackbushe Airport"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Caribou Municipal Airport"
+    },
+    {
+     "code": "dom",
+     "a": "Dom",
+     "b": "Douglas-Charles Airport"
+    }
+   ]
+  },
+  {
+   "a": "grf/vcd",
+   "b": "trp/ica2",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0845,
+   "share_of_b": 0.0021,
+   "jaccard": 0.002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adr",
+     "a": "address",
+     "b": "Adria Airways"
+    },
+    {
+     "code": "bbs",
+     "a": "BBS",
+     "b": "Beibars CJSC"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Inter RCA"
+    },
+    {
+     "code": "dom",
+     "a": "Dom",
+     "b": "Dos Mundos"
+    }
+   ]
+  },
+  {
+   "a": "lng/ioc",
+   "b": "wrt/iau",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0531,
+   "share_of_b": 0.1364,
+   "jaccard": 0.0397,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "Andorra",
+     "b": "Andromeda"
+    },
+    {
+     "code": "ant",
+     "a": "Antigua and Barbuda",
+     "b": "Antlia"
+    },
+    {
+     "code": "cam",
+     "a": "Cambodia",
+     "b": "Camelopardalis"
+    },
+    {
+     "code": "cha",
+     "a": "Chad",
+     "b": "Chamaeleon"
+    }
+   ]
+  },
+  {
+   "a": "lng/mdy",
+   "b": "trp/unl",
+   "shared": 12,
+   "same_label": 1,
+   "same_label_share": 0.0833,
+   "share_of_a": 1.0,
+   "share_of_b": 0.0005,
+   "jaccard": 0.0005,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apr",
+     "a": "April",
+     "b": "Athol Park"
+    },
+    {
+     "code": "aug",
+     "a": "August",
+     "b": "Aubange"
+    },
+    {
+     "code": "dec",
+     "a": "December",
+     "b": "Decker"
+    },
+    {
+     "code": "feb",
+     "a": "February",
+     "b": "Feuerbach"
+    }
+   ]
+  },
+  {
+   "a": "trp/icao",
+   "b": "trp/tld",
+   "shared": 12,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0012,
+   "share_of_b": 0.0084,
+   "jaccard": 0.001,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bike",
+     "a": "Kerlingafjöll Airport",
+     "b": "Binky Moon, LLC"
+    },
+    {
+     "code": "fans",
+     "a": "Nelspruit Airport",
+     "b": "ZDNS International Limited"
+    },
+    {
+     "code": "food",
+     "a": "Moanda Airport",
+     "b": "Internet Naming Co."
+    },
+    {
+     "code": "goog",
+     "a": "Linguère Airport",
+     "b": "Charleston Road Registry Inc."
+    }
+   ]
+  },
+  {
+   "a": "bio/aa1",
+   "b": "cls/elm",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.55,
+   "share_of_b": 0.0932,
+   "jaccard": 0.0866,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "c",
+     "a": "Cysteine",
+     "b": "Carbon"
+    },
+    {
+     "code": "f",
+     "a": "Phenylalanine",
+     "b": "Fluorine"
+    },
+    {
+     "code": "h",
+     "a": "Histidine",
+     "b": "Hydrogen"
+    },
+    {
+     "code": "i",
+     "a": "Isoleucine",
+     "b": "Iodine"
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "trp/iata",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0428,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0012,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bpl",
+     "a": "8-bit general-purpose register (X86-64 only, requires REX)",
+     "b": "Bole Alashankou Airport"
+    },
+    {
+     "code": "dil",
+     "a": "8-bit general-purpose register (X86-64 only, requires REX)",
+     "b": "Presidente Nicolau Lobato International Airport"
+    },
+    {
+     "code": "eax",
+     "a": "32-bit general-purpose register",
+     "b": "Eduard Alexander Gummels Airport"
+    },
+    {
+     "code": "edi",
+     "a": "32-bit general-purpose register",
+     "b": "Edinburgh Airport"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "lng/b47",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0038,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0009,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bed",
+     "a": "bed",
+     "b": "Bedoanas"
+    },
+    {
+     "code": "box",
+     "a": "box",
+     "b": "Buamu"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Galibi Carib"
+    },
+    {
+     "code": "cod",
+     "a": "COD",
+     "b": "Cocama-Cocamilla"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "lng/i63",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0038,
+   "share_of_b": 0.0014,
+   "jaccard": 0.001,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bed",
+     "a": "bed",
+     "b": "Bedoanas"
+    },
+    {
+     "code": "box",
+     "a": "box",
+     "b": "Buamu"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Galibi Carib"
+    },
+    {
+     "code": "cod",
+     "a": "COD",
+     "b": "Cocama-Cocamilla"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "trp/ica2",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0038,
+   "share_of_b": 0.0019,
+   "jaccard": 0.0013,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bed",
+     "a": "bed",
+     "b": "Belgorod Aviation Enterprise"
+    },
+    {
+     "code": "box",
+     "a": "box",
+     "b": "Tiphook PLC"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Inter RCA"
+    },
+    {
+     "code": "cod",
+     "a": "COD",
+     "b": "Concordavia"
+    }
+   ]
+  },
+  {
+   "a": "grf/vcd",
+   "b": "lng/b47",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0775,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0012,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "adr",
+     "a": "address",
+     "b": "Adonara"
+    },
+    {
+     "code": "bbs",
+     "a": "BBS",
+     "b": "Bakpinka"
+    },
+    {
+     "code": "car",
+     "a": "Car",
+     "b": "Galibi Carib"
+    },
+    {
+     "code": "fax",
+     "a": "Fax",
+     "b": "Fala"
+    }
+   ]
+  },
+  {
+   "a": "lng/mdy",
+   "b": "trp/iata",
+   "shared": 11,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.9167,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0012,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "apr",
+     "a": "April",
+     "b": "April River Airport"
+    },
+    {
+     "code": "aug",
+     "a": "August",
+     "b": "Augusta State Airport"
+    },
+    {
+     "code": "dec",
+     "a": "December",
+     "b": "Decatur Airport"
+    },
+    {
+     "code": "feb",
+     "a": "February",
+     "b": "Sanfebagar Airport"
+    }
+   ]
+  },
+  {
+   "a": "bio/aa1",
+   "b": "cmp/ext",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.5,
+   "share_of_b": 0.035,
+   "jaccard": 0.0338,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "Alanine",
+     "b": "AR archive"
+    },
+    {
+     "code": "c",
+     "a": "Cysteine",
+     "b": "C++ source code"
+    },
+    {
+     "code": "d",
+     "a": "Aspartic acid",
+     "b": "D source code"
+    },
+    {
+     "code": "e",
+     "a": "Glutamic acid",
+     "b": "Eiffel source code"
+    }
+   ]
+  },
+  {
+   "a": "bio/gen",
+   "b": "cmp/ext",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0002,
+   "share_of_b": 0.035,
+   "jaccard": 0.0002,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "ada",
+     "a": "adenosine deaminase",
+     "b": "Ada source file"
+    },
+    {
+     "code": "ar",
+     "a": "androgen receptor",
+     "b": "AR archive"
+    },
+    {
+     "code": "cbl",
+     "a": "Cbl proto-oncogene",
+     "b": "COBOL source code"
+    },
+    {
+     "code": "cpp",
+     "a": "ceruloplasmin pseudogene",
+     "b": "C++ source code"
+    }
+   ]
+  },
+  {
+   "a": "cls/icd",
+   "b": "fin/cus",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0001,
+   "share_of_b": 0.0002,
+   "jaccard": 0.0001,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "e11351",
+     "a": "Type 2 diabetes mellitus with proliferative diabetic retinopathy with macular edema",
+     "b": "LIGHTLAKE THERAPEUTICS INC."
+    },
+    {
+     "code": "m11111",
+     "a": "Familial chondrocalcinosis, right shoulder",
+     "b": "CHEMUNG FINANCIAL CORP"
+    },
+    {
+     "code": "m25722",
+     "a": "Osteophyte, left elbow",
+     "b": "COMPUGEN LTD"
+    },
+    {
+     "code": "m67872",
+     "a": "Other specified disorders of synovium, left ankle and foot",
+     "b": "MACROCURE LTD."
+    }
+   ]
+  },
+  {
+   "a": "cmp/css",
+   "b": "com/tlg",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0952,
+   "share_of_b": 0.0006,
+   "jaccard": 0.0006,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "brightness",
+     "a": "brightness()",
+     "b": "I (we) can buy free on board"
+    },
+    {
+     "code": "circle",
+     "a": "circle()",
+     "b": "Shall I (we) close"
+    },
+    {
+     "code": "contrast",
+     "a": "contrast()",
+     "b": "The consul must give you all assistance required"
+    },
+    {
+     "code": "counter",
+     "a": "counter()",
+     "b": "Telegraph cost, freight, and insurance"
+    }
+   ]
+  },
+  {
+   "a": "cmp/css",
+   "b": "trp/ica2",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0952,
+   "share_of_b": 0.0017,
+   "jaccard": 0.0017,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "abs",
+     "a": "abs()",
+     "b": "Transwest Air"
+    },
+    {
+     "code": "env",
+     "a": "env()",
+     "b": "Victoria Aviation"
+    },
+    {
+     "code": "exp",
+     "a": "exp()",
+     "b": "Business Express Delivery"
+    },
+    {
+     "code": "lab",
+     "a": "lab()",
+     "b": "L.A.B. Flying Service"
+    }
+   ]
+  },
+  {
+   "a": "cmp/ext",
+   "b": "com/mor",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.035,
+   "share_of_b": 0.2083,
+   "jaccard": 0.0309,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "a",
+     "a": "AR archive",
+     "b": ".-"
+    },
+    {
+     "code": "c",
+     "a": "C++ source code",
+     "b": "-.-."
+    },
+    {
+     "code": "d",
+     "a": "D source code",
+     "b": "-.."
+    },
+    {
+     "code": "e",
+     "a": "Eiffel source code",
+     "b": "."
+    }
+   ]
+  },
+  {
+   "a": "cmp/reg",
+   "b": "lng/i63",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0389,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0012,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bpl",
+     "a": "8-bit general-purpose register (X86-64 only, requires REX)",
+     "b": "Broome Pearling Lugger Pidgin"
+    },
+    {
+     "code": "dil",
+     "a": "8-bit general-purpose register (X86-64 only, requires REX)",
+     "b": "Dilling"
+    },
+    {
+     "code": "eip",
+     "a": "32-bit registers",
+     "b": "Eipomek"
+    },
+    {
+     "code": "esi",
+     "a": "32-bit general-purpose register",
+     "b": "North Alaskan Inupiatun"
+    }
+   ]
+  },
+  {
+   "a": "cmp/vim",
+   "b": "trp/iata",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0385,
+   "share_of_b": 0.0011,
+   "jaccard": 0.0011,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "bar",
+     "a": "To screen column [count] in the current line.",
+     "b": "Qionghai Bo'ao Airport"
+    },
+    {
+     "code": "dab",
+     "a": "delete a '(' ')' block",
+     "b": "Daytona Beach International Airport"
+    },
+    {
+     "code": "dap",
+     "a": "delete a paragraph",
+     "b": "Darchula Airport"
+    },
+    {
+     "code": "das",
+     "a": "delete a sentence",
+     "b": "Great Bear Lake Airport"
+    }
+   ]
+  },
+  {
+   "a": "fin/tck",
+   "b": "grf/gql",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.001,
+   "share_of_b": 0.1639,
+   "jaccard": 0.001,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "all",
+     "a": "ALLSTATE CORP",
+     "b": "Keyword in atom, union"
+    },
+    {
+     "code": "any",
+     "a": "Sphere 3D Corp.",
+     "b": "Keyword in atom"
+    },
+    {
+     "code": "as",
+     "a": "Amer Sports, Inc.",
+     "b": "Keyword in projection item, unwind, yield item"
+    },
+    {
+     "code": "asc",
+     "a": "Ardmore Shipping Corp",
+     "b": "Keyword in sort item"
+    }
+   ]
+  },
+  {
+   "a": "grf/gql",
+   "b": "lng/i63",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1639,
+   "share_of_b": 0.0012,
+   "jaccard": 0.0012,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "add",
+     "a": "Reserved word, used by no rule of the grammar",
+     "b": "Lidzonka"
+    },
+    {
+     "code": "all",
+     "a": "Keyword in atom, union",
+     "b": "Allar"
+    },
+    {
+     "code": "and",
+     "a": "Keyword in and expression",
+     "b": "Ansus"
+    },
+    {
+     "code": "any",
+     "a": "Keyword in atom",
+     "b": "Anyin"
+    }
+   ]
+  },
+  {
+   "a": "grf/gql",
+   "b": "trp/unl",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.1639,
+   "share_of_b": 0.0004,
+   "jaccard": 0.0004,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "add",
+     "a": "Reserved word, used by no rule of the grammar",
+     "b": "Au an der Donau"
+    },
+    {
+     "code": "all",
+     "a": "Keyword in atom, union",
+     "b": "Allen"
+    },
+    {
+     "code": "and",
+     "a": "Keyword in and expression",
+     "b": "Andalgalá"
+    },
+    {
+     "code": "any",
+     "a": "Keyword in atom",
+     "b": "Andoy"
+    }
+   ]
+  },
+  {
+   "a": "grf/sch",
+   "b": "grf/sio",
+   "shared": 10,
+   "same_label": 10,
+   "same_label_share": 1.0,
+   "share_of_a": 0.0034,
+   "share_of_b": 0.101,
+   "jaccard": 0.0033,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "about",
+     "a": "about",
+     "b": "about"
+    },
+    {
+     "code": "description",
+     "a": "description",
+     "b": "description"
+    },
+    {
+     "code": "email",
+     "a": "email",
+     "b": "email"
+    },
+    {
+     "code": "follows",
+     "a": "follows",
+     "b": "follows"
+    }
+   ]
+  },
+  {
+   "a": "lng/i31",
+   "b": "wrt/iau",
+   "shared": 10,
+   "same_label": 0,
+   "same_label_share": 0.0,
+   "share_of_a": 0.0402,
+   "share_of_b": 0.1136,
+   "jaccard": 0.0306,
+   "derived_pair": false,
+   "examples": [
+    {
+     "code": "and",
+     "a": "Andorra",
+     "b": "Andromeda"
+    },
+    {
+     "code": "col",
+     "a": "Colombia",
+     "b": "Columba"
+    },
+    {
+     "code": "com",
+     "a": "Comoros",
+     "b": "Coma Berenices"
+    },
+    {
+     "code": "eri",
+     "a": "Eritrea",
+     "b": "Eridanus"
+    }
+   ]
+  }
+ ],
+ "cross_references": [
+  {
+   "system": "lng/i31",
+   "field": "aliases",
+   "target": "lng/b47",
+   "values": 249,
+   "coverage": 1.0,
+   "target_covered": 0.0276,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "extra.iso2",
+   "target": "lng/b47",
+   "values": 226,
+   "coverage": 1.0,
+   "target_covered": 0.025,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "extra.iso3",
+   "target": "lng/i31",
+   "values": 226,
+   "coverage": 1.0,
+   "target_covered": 0.9076,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "extra.iso3",
+   "target": "trp/unl",
+   "values": 226,
+   "coverage": 1.0,
+   "target_covered": 0.0086,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "fin/mic",
+   "field": "extra.country",
+   "target": "lng/b47",
+   "values": 149,
+   "coverage": 1.0,
+   "target_covered": 0.0165,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "aliases",
+   "target": "trp/unl",
+   "values": 107,
+   "coverage": 1.0,
+   "target_covered": 0.0041,
+   "cardinality": "n:1"
+  },
+  {
+   "system": "lng/i63",
+   "field": "extra.preferred_value",
+   "target": "lng/b47",
+   "values": 91,
+   "coverage": 1.0,
+   "target_covered": 0.0101,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "lng/i63",
+   "field": "extra.macrolanguage",
+   "target": "lng/b47",
+   "values": 62,
+   "coverage": 1.0,
+   "target_covered": 0.0069,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "com/bau",
+   "field": "aliases",
+   "target": "com/mor",
+   "values": 25,
+   "coverage": 1.0,
+   "target_covered": 0.5208,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa1",
+   "field": "aliases",
+   "target": "bio/aa3",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 1.0,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa1",
+   "field": "extra.one_letter",
+   "target": "com/mor",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 0.4167,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa1",
+   "field": "extra.three_letter",
+   "target": "bio/aa3",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 1.0,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa3",
+   "field": "aliases",
+   "target": "bio/aa1",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 1.0,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa3",
+   "field": "aliases",
+   "target": "com/mor",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 0.4167,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa3",
+   "field": "extra.one_letter",
+   "target": "bio/aa1",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 1.0,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/aa3",
+   "field": "extra.one_letter",
+   "target": "com/mor",
+   "values": 20,
+   "coverage": 1.0,
+   "target_covered": 0.4167,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "trp/unl",
+   "field": "extra.country",
+   "target": "lng/b47",
+   "values": 249,
+   "coverage": 0.996,
+   "target_covered": 0.0274,
+   "cardinality": "n:n"
+  },
+  {
+   "system": "trp/icao",
+   "field": "extra.country",
+   "target": "lng/b47",
+   "values": 239,
+   "coverage": 0.9958,
+   "target_covered": 0.0263,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "trp/iata",
+   "field": "extra.country",
+   "target": "lng/b47",
+   "values": 238,
+   "coverage": 0.9958,
+   "target_covered": 0.0262,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "extra.iso2",
+   "target": "trp/tld",
+   "values": 226,
+   "coverage": 0.9956,
+   "target_covered": 0.1566,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "extra.fifa",
+   "target": "trp/unl",
+   "values": 224,
+   "coverage": 0.9955,
+   "target_covered": 0.0085,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "fin/mic",
+   "field": "extra.country",
+   "target": "trp/tld",
+   "values": 149,
+   "coverage": 0.9933,
+   "target_covered": 0.103,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "lng/i31",
+   "field": "aliases",
+   "target": "trp/tld",
+   "values": 249,
+   "coverage": 0.9799,
+   "target_covered": 0.1698,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "trp/unl",
+   "field": "extra.country",
+   "target": "trp/tld",
+   "values": 249,
+   "coverage": 0.9759,
+   "target_covered": 0.1691,
+   "cardinality": "n:n"
+  },
+  {
+   "system": "trp/iata",
+   "field": "extra.country",
+   "target": "trp/tld",
+   "values": 238,
+   "coverage": 0.9748,
+   "target_covered": 0.1614,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "trp/icao",
+   "field": "extra.country",
+   "target": "trp/tld",
+   "values": 239,
+   "coverage": 0.9707,
+   "target_covered": 0.1614,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "lng/glt",
+   "field": "aliases",
+   "target": "lng/b47",
+   "values": 8184,
+   "coverage": 0.9588,
+   "target_covered": 0.8683,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "lng/glt",
+   "field": "aliases",
+   "target": "lng/i63",
+   "values": 8184,
+   "coverage": 0.9588,
+   "target_covered": 0.9707,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "lng/ioc",
+   "field": "aliases",
+   "target": "lng/i31",
+   "values": 107,
+   "coverage": 0.9533,
+   "target_covered": 0.4096,
+   "cardinality": "1:1"
+  },
+  {
+   "system": "bio/cdn",
+   "field": "extra.standard_aa",
+   "target": "bio/aa1",
+   "values": 21,
+   "coverage": 0.9524,
+   "target_covered": 1.0,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "bio/cdn",
+   "field": "extra.standard_aa",
+   "target": "com/mor",
+   "values": 21,
+   "coverage": 0.9524,
+   "target_covered": 0.4167,
+   "cardinality": "1:n"
+  },
+  {
+   "system": "lng/b47",
+   "field": "extra.preferred_value",
+   "target": "lng/i63",
+   "values": 374,
+   "coverage": 0.9439,
+   "target_covered": 0.0437,
+   "cardinality": "n:n"
+  }
+ ],
+ "readings": [
+  {
+   "literal": "and",
+   "systems": 11,
+   "readings": [
+    {
+     "system": "cmp/asm",
+     "code": "AND",
+     "label": "AL AND imm8."
+    },
+    {
+     "system": "grf/gql",
+     "code": "AND",
+     "label": "Keyword in and expression"
+    },
+    {
+     "system": "grf/shc",
+     "code": "and",
+     "label": "and"
+    },
+    {
+     "system": "lng/b47",
+     "code": "and",
+     "label": "Ansus"
+    },
+    {
+     "system": "lng/i31",
+     "code": "AND",
+     "label": "Andorra"
+    },
+    {
+     "system": "lng/i63",
+     "code": "and",
+     "label": "Ansus"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "AND",
+     "label": "Andorra"
+    },
+    {
+     "system": "trp/iata",
+     "code": "AND",
+     "label": "Anderson Regional Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "AND",
+     "label": "National Jet Service"
+    },
+    {
+     "system": "trp/unl",
+     "code": "AND",
+     "label": "Andalgalá"
+    },
+    {
+     "system": "wrt/iau",
+     "code": "And",
+     "label": "Andromeda"
+    }
+   ]
+  },
+  {
+   "literal": "car",
+   "systems": 11,
+   "readings": [
+    {
+     "system": "cmp/ext",
+     "code": "car",
+     "label": "Archive used for storing and transporting IPLD (InterPlanetary Linked Data)"
+    },
+    {
+     "system": "fin/tck",
+     "code": "CAR",
+     "label": "AVIS BUDGET GROUP, INC."
+    },
+    {
+     "system": "grf/sch",
+     "code": "Car",
+     "label": "Car"
+    },
+    {
+     "system": "grf/vcd",
+     "code": "Car",
+     "label": "Car"
+    },
+    {
+     "system": "lng/b47",
+     "code": "car",
+     "label": "Galibi Carib"
+    },
+    {
+     "system": "lng/i63",
+     "code": "car",
+     "label": "Galibi Carib"
+    },
+    {
+     "system": "trp/iata",
+     "code": "CAR",
+     "label": "Caribou Municipal Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "CAR",
+     "label": "Inter RCA"
+    },
+    {
+     "system": "trp/tld",
+     "code": "CAR",
+     "label": "XYZ.COM LLC"
+    },
+    {
+     "system": "trp/unl",
+     "code": "CAR",
+     "label": "Carina Heights"
+    },
+    {
+     "system": "wrt/iau",
+     "code": "Car",
+     "label": "Carina"
+    }
+   ]
+  },
+  {
+   "literal": "com",
+   "systems": 10,
+   "readings": [
+    {
+     "system": "cmp/ext",
+     "code": "com",
+     "label": "File of media type application/x-msdownload"
+    },
+    {
+     "system": "lng/b47",
+     "code": "com",
+     "label": "Comanche"
+    },
+    {
+     "system": "lng/i31",
+     "code": "COM",
+     "label": "Comoros"
+    },
+    {
+     "system": "lng/i63",
+     "code": "com",
+     "label": "Comanche"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "COM",
+     "label": "Comoros"
+    },
+    {
+     "system": "trp/iata",
+     "code": "COM",
+     "label": "Coleman Municipal Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "COM",
+     "label": "Comair"
+    },
+    {
+     "system": "trp/tld",
+     "code": "COM",
+     "label": "VeriSign Global Registry Services"
+    },
+    {
+     "system": "trp/unl",
+     "code": "COM",
+     "label": "Las Compuertas"
+    },
+    {
+     "system": "wrt/iau",
+     "code": "Com",
+     "label": "Coma Berenices"
+    }
+   ]
+  },
+  {
+   "literal": "for",
+   "systems": 10,
+   "readings": [
+    {
+     "system": "cmp/ext",
+     "code": "for",
+     "label": "Fortran source code"
+    },
+    {
+     "system": "fin/tck",
+     "code": "FOR",
+     "label": "Forestar Group Inc."
+    },
+    {
+     "system": "grf/gql",
+     "code": "FOR",
+     "label": "Reserved word, used by no rule of the grammar"
+    },
+    {
+     "system": "grf/lpg",
+     "code": "FOR",
+     "label": "Opens a PG-Keys constraint: FOR p(x) <qualifier> q(x, y)"
+    },
+    {
+     "system": "lng/b47",
+     "code": "for",
+     "label": "Fore"
+    },
+    {
+     "system": "lng/i63",
+     "code": "for",
+     "label": "Fore"
+    },
+    {
+     "system": "trp/iata",
+     "code": "FOR",
+     "label": "Pinto Martins International Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "FOR",
+     "label": "Formula One Management"
+    },
+    {
+     "system": "trp/unl",
+     "code": "FOR",
+     "label": "The Forest"
+    },
+    {
+     "system": "wrt/iau",
+     "code": "For",
+     "label": "Fornax"
+    }
+   ]
+  },
+  {
+   "literal": "met",
+   "systems": 10,
+   "readings": [
+    {
+     "system": "bio/aa3",
+     "code": "Met",
+     "label": "Methionine"
+    },
+    {
+     "system": "bio/gen",
+     "code": "MET",
+     "label": "MET proto-oncogene, receptor tyrosine kinase"
+    },
+    {
+     "system": "fin/tck",
+     "code": "MET",
+     "label": "METLIFE INC"
+    },
+    {
+     "system": "grf/vcd",
+     "code": "Met",
+     "label": "Met"
+    },
+    {
+     "system": "lng/b47",
+     "code": "met",
+     "label": "Mato"
+    },
+    {
+     "system": "lng/i63",
+     "code": "met",
+     "label": "Mato"
+    },
+    {
+     "system": "trp/iata",
+     "code": "MET",
+     "label": "Moreton Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "MET",
+     "label": "Meteorological Research Flight"
+    },
+    {
+     "system": "trp/unl",
+     "code": "MET",
+     "label": "Moreton"
+    },
+    {
+     "system": "wrt/tz",
+     "code": "MET",
+     "label": "MET"
+    }
+   ]
+  },
+  {
+   "literal": "add",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "cmp/asm",
+     "code": "ADD",
+     "label": "Add imm8 to AL."
+    },
+    {
+     "system": "cmp/git",
+     "code": "add",
+     "label": "Add file contents to the index"
+    },
+    {
+     "system": "grf/act",
+     "code": "Add",
+     "label": "Add"
+    },
+    {
+     "system": "grf/gql",
+     "code": "ADD",
+     "label": "Reserved word, used by no rule of the grammar"
+    },
+    {
+     "system": "lng/b47",
+     "code": "add",
+     "label": "Lidzonka"
+    },
+    {
+     "system": "lng/i63",
+     "code": "add",
+     "label": "Lidzonka"
+    },
+    {
+     "system": "trp/iata",
+     "code": "ADD",
+     "label": "Addis Ababa Bole International Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "ADD",
+     "label": "Advanced Air Co."
+    },
+    {
+     "system": "trp/unl",
+     "code": "ADD",
+     "label": "Au an der Donau"
+    }
+   ]
+  },
+  {
+   "literal": "bar",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "cmp/vim",
+     "code": "bar",
+     "label": "To screen column [count] in the current line."
+    },
+    {
+     "system": "fin/tck",
+     "code": "BAR",
+     "label": "GraniteShares Gold Trust"
+    },
+    {
+     "system": "lng/b47",
+     "code": "bar",
+     "label": "Bavarian"
+    },
+    {
+     "system": "lng/i63",
+     "code": "bar",
+     "label": "Bavarian"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "BAR",
+     "label": "Barbados"
+    },
+    {
+     "system": "trp/iata",
+     "code": "BAR",
+     "label": "Qionghai Bo'ao Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "BAR",
+     "label": "Bradly Air (Charter) Services"
+    },
+    {
+     "system": "trp/tld",
+     "code": "BAR",
+     "label": "Punto 2012 Sociedad Anonima Promotora de Inversion de Capital Variable"
+    },
+    {
+     "system": "trp/unl",
+     "code": "BAR",
+     "label": "Baradero"
+    }
+   ]
+  },
+  {
+   "literal": "max",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "bio/gen",
+     "code": "MAX",
+     "label": "MYC associated transcriptional regulator X"
+    },
+    {
+     "system": "cmp/css",
+     "code": "max",
+     "label": "max()"
+    },
+    {
+     "system": "cmp/ext",
+     "code": "max",
+     "label": "Image file"
+    },
+    {
+     "system": "fin/tck",
+     "code": "MAX",
+     "label": "MediaAlpha, Inc."
+    },
+    {
+     "system": "lng/b47",
+     "code": "max",
+     "label": "North Moluccan Malay"
+    },
+    {
+     "system": "lng/i63",
+     "code": "max",
+     "label": "North Moluccan Malay"
+    },
+    {
+     "system": "trp/iata",
+     "code": "MAX",
+     "label": "Ouro Sogui Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "MAX",
+     "label": "Max-Aviation"
+    },
+    {
+     "system": "trp/unl",
+     "code": "MAX",
+     "label": "Maripá"
+    }
+   ]
+  },
+  {
+   "literal": "mov",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "cmp/asm",
+     "code": "MOV",
+     "label": "Move r8 to r/m8."
+    },
+    {
+     "system": "cmp/ext",
+     "code": "mov",
+     "label": "QuickTime video"
+    },
+    {
+     "system": "fin/tck",
+     "code": "MOV",
+     "label": "MOVADO GROUP INC"
+    },
+    {
+     "system": "lng/b47",
+     "code": "mov",
+     "label": "Mohave"
+    },
+    {
+     "system": "lng/i63",
+     "code": "mov",
+     "label": "Mohave"
+    },
+    {
+     "system": "trp/iata",
+     "code": "MOV",
+     "label": "Moranbah Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "MOV",
+     "label": "VIM Airlines"
+    },
+    {
+     "system": "trp/tld",
+     "code": "MOV",
+     "label": "Charleston Road Registry Inc."
+    },
+    {
+     "system": "trp/unl",
+     "code": "MOV",
+     "label": "Moranbah"
+    }
+   ]
+  },
+  {
+   "literal": "png",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "cmp/ext",
+     "code": "png",
+     "label": "PNG image"
+    },
+    {
+     "system": "cmp/frc",
+     "code": "png",
+     "label": "PNG Image"
+    },
+    {
+     "system": "lng/b47",
+     "code": "png",
+     "label": "Pangu"
+    },
+    {
+     "system": "lng/i31",
+     "code": "PNG",
+     "label": "Papua New Guinea"
+    },
+    {
+     "system": "lng/i63",
+     "code": "png",
+     "label": "Pangu"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "PNG",
+     "label": "Papua New Guinea"
+    },
+    {
+     "system": "trp/iata",
+     "code": "PNG",
+     "label": "Paranaguá Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "PNG",
+     "label": "Puerto Rico National Guard"
+    },
+    {
+     "system": "trp/unl",
+     "code": "PNG",
+     "label": "Piangil"
+    }
+   ]
+  },
+  {
+   "literal": "sle",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "fin/i42",
+     "code": "SLE",
+     "label": "Leone"
+    },
+    {
+     "system": "fin/tck",
+     "code": "SLE",
+     "label": "Super League Enterprise, Inc."
+    },
+    {
+     "system": "lng/b47",
+     "code": "sle",
+     "label": "Sholaga"
+    },
+    {
+     "system": "lng/i31",
+     "code": "SLE",
+     "label": "Sierra Leone"
+    },
+    {
+     "system": "lng/i63",
+     "code": "sle",
+     "label": "Sholaga"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "SLE",
+     "label": "Sierra Leone"
+    },
+    {
+     "system": "trp/iata",
+     "code": "SLE",
+     "label": "Salem-Willamette Valley Airport/McNary Field"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "SLE",
+     "label": "Streamline"
+    },
+    {
+     "system": "trp/unl",
+     "code": "SLE",
+     "label": "Sleidinge"
+    }
+   ]
+  },
+  {
+   "literal": "tga",
+   "systems": 9,
+   "readings": [
+    {
+     "system": "bio/cdn",
+     "code": "TGA",
+     "label": "stop"
+    },
+    {
+     "system": "cmp/ext",
+     "code": "tga",
+     "label": "TGA image"
+    },
+    {
+     "system": "cmp/frc",
+     "code": "tga",
+     "label": "Truevision Targa Image"
+    },
+    {
+     "system": "lng/b47",
+     "code": "tga",
+     "label": "Sagalla"
+    },
+    {
+     "system": "lng/i63",
+     "code": "tga",
+     "label": "Sagalla"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "TGA",
+     "label": "Tonga"
+    },
+    {
+     "system": "trp/iata",
+     "code": "TGA",
+     "label": "Tengah Air Base"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "TGA",
+     "label": "Air Togo"
+    },
+    {
+     "system": "trp/unl",
+     "code": "TGA",
+     "label": "Topolovgrad"
+    }
+   ]
+  },
+  {
+   "literal": "aaa",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "bio/cdn",
+     "code": "AAA",
+     "label": "K"
+    },
+    {
+     "system": "cmp/asm",
+     "code": "AAA",
+     "label": "ASCII adjust AL after addition."
+    },
+    {
+     "system": "lng/b47",
+     "code": "aaa",
+     "label": "Ghotuo"
+    },
+    {
+     "system": "lng/i63",
+     "code": "aaa",
+     "label": "Ghotuo"
+    },
+    {
+     "system": "trp/iata",
+     "code": "AAA",
+     "label": "Anaa Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "AAA",
+     "label": "Ansett Australia"
+    },
+    {
+     "system": "trp/tld",
+     "code": "AAA",
+     "label": "American Automobile Association, Inc."
+    },
+    {
+     "system": "trp/unl",
+     "code": "AAA",
+     "label": "Araçuaí"
+    }
+   ]
+  },
+  {
+   "literal": "aac",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "bio/cdn",
+     "code": "AAC",
+     "label": "N"
+    },
+    {
+     "system": "cmp/ext",
+     "code": "aac",
+     "label": "AAC audio"
+    },
+    {
+     "system": "cmp/frc",
+     "code": "aac",
+     "label": "MPEG AAC Audio"
+    },
+    {
+     "system": "lng/b47",
+     "code": "aac",
+     "label": "Ari"
+    },
+    {
+     "system": "lng/i63",
+     "code": "aac",
+     "label": "Ari"
+    },
+    {
+     "system": "trp/iata",
+     "code": "AAC",
+     "label": "El Arish International Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "AAC",
+     "label": "Army Air Corps"
+    },
+    {
+     "system": "trp/unl",
+     "code": "AAC",
+     "label": "Aliança"
+    }
+   ]
+  },
+  {
+   "literal": "amt",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "bio/gen",
+     "code": "AMT",
+     "label": "aminomethyltransferase"
+    },
+    {
+     "system": "fin/tck",
+     "code": "AMT",
+     "label": "AMERICAN TOWER CORP /MA/"
+    },
+    {
+     "system": "lng/b47",
+     "code": "amt",
+     "label": "Amto"
+    },
+    {
+     "system": "lng/i63",
+     "code": "amt",
+     "label": "Amto"
+    },
+    {
+     "system": "trp/iata",
+     "code": "AMT",
+     "label": "Amata Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "AMT",
+     "label": "ATA Airlines"
+    },
+    {
+     "system": "trp/unl",
+     "code": "AMT",
+     "label": "Amata"
+    },
+    {
+     "system": "wrt/tz",
+     "code": "AMT",
+     "label": "Local mean time of Asunción, Athens"
+    }
+   ]
+  },
+  {
+   "literal": "app",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "bio/gen",
+     "code": "APP",
+     "label": "amyloid beta precursor protein"
+    },
+    {
+     "system": "fin/tck",
+     "code": "APP",
+     "label": "AppLovin Corp"
+    },
+    {
+     "system": "lng/b47",
+     "code": "app",
+     "label": "Apma"
+    },
+    {
+     "system": "lng/i63",
+     "code": "app",
+     "label": "Apma"
+    },
+    {
+     "system": "trp/iata",
+     "code": "APP",
+     "label": "Asapa Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "APP",
+     "label": "Aerolineas Pacifico Atlantico"
+    },
+    {
+     "system": "trp/tld",
+     "code": "APP",
+     "label": "Charleston Road Registry Inc."
+    },
+    {
+     "system": "trp/unl",
+     "code": "APP",
+     "label": "Applecross"
+    }
+   ]
+  },
+  {
+   "literal": "as",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "cls/elm",
+     "code": "As",
+     "label": "Arsenic"
+    },
+    {
+     "system": "cls/loc",
+     "code": "AS",
+     "label": "Academies and learned societies"
+    },
+    {
+     "system": "cmp/vim",
+     "code": "as",
+     "label": "\"a sentence\", select [count] sentences (see |sentence|)."
+    },
+    {
+     "system": "fin/tck",
+     "code": "AS",
+     "label": "Amer Sports, Inc."
+    },
+    {
+     "system": "grf/gql",
+     "code": "AS",
+     "label": "Keyword in projection item, unwind, yield item"
+    },
+    {
+     "system": "lng/b47",
+     "code": "as",
+     "label": "Assamese"
+    },
+    {
+     "system": "lng/i39",
+     "code": "as",
+     "label": "Assamese"
+    },
+    {
+     "system": "trp/tld",
+     "code": "AS",
+     "label": "AS Domain Registry"
+    }
+   ]
+  },
+  {
+   "literal": "bid",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "bio/gen",
+     "code": "BID",
+     "label": "BH3 interacting domain death agonist"
+    },
+    {
+     "system": "fin/tck",
+     "code": "BID",
+     "label": "Tribeca Strategic Acquisition Corp."
+    },
+    {
+     "system": "lng/b47",
+     "code": "bid",
+     "label": "Bidiyo"
+    },
+    {
+     "system": "lng/i63",
+     "code": "bid",
+     "label": "Bidiyo"
+    },
+    {
+     "system": "trp/iata",
+     "code": "BID",
+     "label": "Block Island State Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "BID",
+     "label": "Binair"
+    },
+    {
+     "system": "trp/tld",
+     "code": "BID",
+     "label": "dot Bid Limited"
+    },
+    {
+     "system": "trp/unl",
+     "code": "BID",
+     "label": "Brasilândia do Sul"
+    }
+   ]
+  },
+  {
+   "literal": "bot",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "fin/tck",
+     "code": "BOT",
+     "label": "RoboStrategy, Inc."
+    },
+    {
+     "system": "lng/b47",
+     "code": "bot",
+     "label": "Bongo"
+    },
+    {
+     "system": "lng/i63",
+     "code": "bot",
+     "label": "Bongo"
+    },
+    {
+     "system": "lng/ioc",
+     "code": "BOT",
+     "label": "Botswana"
+    },
+    {
+     "system": "trp/iata",
+     "code": "BOT",
+     "label": "Bosset Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "BOT",
+     "label": "Air Botswana"
+    },
+    {
+     "system": "trp/tld",
+     "code": "BOT",
+     "label": "Amazon Registry Services, Inc."
+    },
+    {
+     "system": "trp/unl",
+     "code": "BOT",
+     "label": "Boort"
+    }
+   ]
+  },
+  {
+   "literal": "box",
+   "systems": 8,
+   "readings": [
+    {
+     "system": "fin/tck",
+     "code": "BOX",
+     "label": "BOX INC"
+    },
+    {
+     "system": "grf/sch",
+     "code": "box",
+     "label": "box"
+    },
+    {
+     "system": "lng/b47",
+     "code": "box",
+     "label": "Buamu"
+    },
+    {
+     "system": "lng/i63",
+     "code": "box",
+     "label": "Buamu"
+    },
+    {
+     "system": "trp/iata",
+     "code": "BOX",
+     "label": "Borroloola Airport"
+    },
+    {
+     "system": "trp/ica2",
+     "code": "BOX",
+     "label": "Tiphook PLC"
+    },
+    {
+     "system": "trp/tld",
+     "code": "BOX",
+     "label": "Intercap Registry Inc."
+    },
+    {
+     "system": "trp/unl",
+     "code": "BOX",
+     "label": "Borroloola"
+    }
+   ]
+  }
+ ]
+}

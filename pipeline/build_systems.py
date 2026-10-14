@@ -1,7 +1,8 @@
 """Build systems.tsv from history/SOURCES.tsv, the curated metadata in systems_meta.py and the raw files on disk."""
-import csv, datetime, pathlib, sys
+import csv, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from systems_meta import SYSTEMS, DERIVED_PATTERN, DERIVED_FROM, NOTES
+from systems_meta import SYSTEMS, DERIVED_PATTERN, DERIVED_FROM, NOTES, LABEL_SOURCES
+LABEL_FILES = {name for files in LABEL_SOURCES.values() for name, _, _ in files}
 from versions import version_of
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -43,14 +44,27 @@ def raw_dir(sid):
     """A derived system has no raw file of its own and reads its parent's."""
     return ROOT/"data"/DERIVED_FROM.get(sid, sid)/"raw"
 
-def raw_target(sid):
-    entries = sorted(raw_dir(sid).iterdir())
+def raw_target(sid, src):
+    """The source file named in SOURCES.tsv; a label source next to it is never the raw file."""
+    named = raw_dir(sid)/src[DERIVED_FROM.get(sid, sid)]["file"]
+    if named.exists(): return str(named.relative_to(ROOT))
+    entries = sorted(p for p in raw_dir(sid).iterdir() if p.name not in LABEL_FILES)
     if not entries: sys.exit(f"{sid}: raw/ is empty")
     return str(entries[0].relative_to(ROOT))
 
-def retrieved(sid):
-    m = max(p.stat().st_mtime for p in raw_dir(sid).rglob("*") if p.is_file())
-    return datetime.date.fromtimestamp(m).isoformat()
+def retrieved(sid, src):
+    """The fetch date recorded in SOURCES.tsv. File modification times are not used: copying a
+    raw file resets them, and the date they gave was the copy, not the retrieval."""
+    d = src[DERIVED_FROM.get(sid, sid)].get("retrieved_at", "")
+    if not d: sys.exit(f"{sid}: no retrieved_at in SOURCES.tsv")
+    return d
+
+def notes(sid):
+    """Curator notes, plus the URL of the file the labels come from when it is not the main source."""
+    n = NOTES.get(sid, "")
+    for name, url, date in LABEL_SOURCES.get(sid, []):
+        n = (n + " " if n else "") + f"labels from {url}, retrieved {date}."
+    return n
 
 def main():
     src = sources()
@@ -66,10 +80,10 @@ def main():
             "url": src[sid]["url"], "license": lic, "license_status": status,
             "code_pattern": pattern,
             "pattern_status": "derived" if sid in DERIVED_PATTERN else "provisional",
-            "case_sensitive": str(cs).lower(), "raw_file": raw_target(sid),
+            "case_sensitive": str(cs).lower(), "raw_file": raw_target(sid, src),
             "derived_from": DERIVED_FROM.get(sid, ""),
-            "version": version_of(sid, ROOT/raw_target(sid)),
-            "retrieved_at": retrieved(sid), "notes": NOTES.get(sid, ""),
+            "version": version_of(sid, ROOT/raw_target(sid, src)),
+            "retrieved_at": retrieved(sid, src), "notes": notes(sid),
         })
     rows = [{k: flat(v) for k, v in r.items()} for r in rows]
 

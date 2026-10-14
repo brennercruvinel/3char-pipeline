@@ -4,7 +4,7 @@ a checksum mismatch is a hard failure. upstream moving is real and normal, but i
 not something a build gets to absorb silently: the parquet would change underneath
 whoever is reading it. re-run with --accept-new to rewrite CHECKSUMS.tsv on purpose.
 """
-import argparse, csv, hashlib, io, pathlib, sys, tarfile, urllib.request
+import argparse, csv, hashlib, io, os, pathlib, sys, tarfile, urllib.request, zipfile
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -22,7 +22,9 @@ def read_tsv(path):
         return list(csv.DictReader(fh, delimiter="\t"))
 
 def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    # sec.gov refuses requests without a declared contact; set CH3_SEC_USER_AGENT to "Name email"
+    ua = os.environ.get("CH3_SEC_USER_AGENT", UA) if "sec.gov" in url else UA
+    req = urllib.request.Request(url, headers={"User-Agent": ua})
     with urllib.request.urlopen(req, timeout=120) as r:
         return r.read()
 
@@ -34,7 +36,22 @@ def systems_to_fetch():
             continue
         yield r["system_id"], r["url"], ROOT/r["raw_file"]
 
+def label_sources():
+    """files read only for labels, kept as downloaded next to the main source."""
+    sys.path.insert(0, str(ROOT/"pipeline"))
+    from systems_meta import LABEL_SOURCES
+    for sid, files in LABEL_SOURCES.items():
+        for name, url, _ in files:
+            yield sid, url, ROOT/"data"/sid/"raw"/name
+
 def download_all():
+    for sid, url, dest in label_sources():
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        try:
+            dest.write_bytes(fetch(url))
+        except Exception as e:
+            print(f"  FAIL {sid} labels: {e}", file=sys.stderr); yield sid; continue
+        print(f"  ok   {sid}  labels")
     for sid, url, dest in systems_to_fetch():
         dest.parent.mkdir(parents=True, exist_ok=True)
         try:
@@ -46,6 +63,11 @@ def download_all():
             root.mkdir(parents=True, exist_ok=True)
             with tarfile.open(fileobj=io.BytesIO(blob)) as tf:
                 tf.extractall(root, filter="data")
+        elif url.endswith(".zip"):
+            # the CDC ships ICD-10-CM as a zip of several files; only the one named in raw_file is kept
+            with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+                member = next(n for n in zf.namelist() if n.rsplit("/", 1)[-1] == dest.name)
+                dest.write_bytes(zf.read(member))
         else:
             dest.write_bytes(blob)
         print(f"  ok   {sid}  {len(blob):>9,} bytes")

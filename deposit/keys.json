@@ -53,6 +53,33 @@
    "code"
   ]
  },
+ "cls/atc": {
+  "rows": 6440,
+  "distinct_codes": 6440,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cls/bsc": {
+  "rows": 3887,
+  "distinct_codes": 3887,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cls/dew": {
+  "rows": 525,
+  "distinct_codes": 525,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
  "cls/elm": {
   "rows": 118,
   "distinct_codes": 118,
@@ -216,8 +243,8 @@
   ]
  },
  "com/tlg": {
-  "rows": 7359,
-  "distinct_codes": 7359,
+  "rows": 15672,
+  "distinct_codes": 15672,
   "code_unique": true,
   "repeated_codes": 0,
   "key": [
@@ -233,9 +260,27 @@
    "code"
   ]
  },
+ "fin/cus": {
+  "rows": 43485,
+  "distinct_codes": 43485,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
  "fin/i42": {
   "rows": 178,
   "distinct_codes": 178,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "fin/mic": {
+  "rows": 2853,
+  "distinct_codes": 2853,
   "code_unique": true,
   "repeated_codes": 0,
   "key": [
@@ -270,8 +315,8 @@
   ]
  },
  "grf/gql": {
-  "rows": 63,
-  "distinct_codes": 63,
+  "rows": 61,
+  "distinct_codes": 61,
   "code_unique": true,
   "repeated_codes": 0,
   "key": [
@@ -279,8 +324,8 @@
   ]
  },
  "grf/lpg": {
-  "rows": 34,
-  "distinct_codes": 34,
+  "rows": 26,
+  "distinct_codes": 26,
   "code_unique": true,
   "repeated_codes": 0,
   "key": [
@@ -489,6 +534,15 @@
   "rows_still_repeated_under_key": 146,
   "code_label_unique": false
  },
+ "trp/w3w": {
+  "rows": 6,
+  "distinct_codes": 6,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
  "wrt/abj": {
   "rows": 84,
   "distinct_codes": 83,
@@ -511,10 +565,10 @@
   ]
  },
  "wrt/tz": {
-  "rows": 806,
-  "distinct_codes": 797,
+  "rows": 777,
+  "distinct_codes": 769,
   "code_unique": false,
-  "repeated_codes": 9,
+  "repeated_codes": 8,
   "key": [
    "code",
    "extra.kind"
