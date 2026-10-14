@@ -1,12 +1,10 @@
 # 3char
 
-3char is a curated collection of code systems, identifiers, symbols and controlled vocabularies from documented reference sources. It brings 751,870 heterogeneous records from 58 sources into a common Parquet schema, while preserving each record's source namespace and, for every source, its provenance, format constraints and licensing information.
+3char is a curated collection of code systems, identifiers, symbols and controlled vocabularies from documented reference sources. It gathers 751,870 records from 58 sources into one Parquet schema: ISO country, currency and language codes, IATA and ICAO airport codes, UN/LOCODE, ICD-10-CM, HGNC gene symbols, chemical element symbols, IANA registries, W3C vocabularies and others. Every record keeps the namespace of its source, and every source is documented with its provenance, version, format constraint and license.
 
-Short codes are reused across sources. `BRA` is Brazil in both ISO 3166-1 and the IOC country list, the Braj language in the IANA Language Subtag Registry, and an airport in the IATA list. Registries of identifier systems such as the Bioregistry describe these systems without redistributing their contents, and Wikidata records identifiers as statements about entities rather than as the lists their authorities publish. Keeping the lists side by side, each in its own namespace, makes it possible to see where the same string occurs in different sources, which lists describe the same entities with the same or with different codes, how each code compares with the form its source defines, and under which terms each list may be reused.
+The collection is meant for work that needs these lists as data rather than as documentation: validating and normalizing codes, grounding language models and search systems in authoritative lists, and studying how codes and lists relate across sources. This card describes release 0.1.3; the data files are unchanged since release 0.1.1 (2026-09-12).
 
-This card describes release 0.1.3. The data files are unchanged since release 0.1.1 (2026-09-12).
-
-## What the collection contains
+## Contents
 
 The 58 sources span ten domains, from biology and finance to language, transport and time. They are not all the same kind of list, and the difference matters when a record is read:
 
@@ -18,7 +16,7 @@ The 58 sources span ten domains, from biology and finance to language, transport
 | Conventions maintained by a community | 2 | File extensions, FourCC codec identifiers |
 | Test vectors | 1 | The reference test cases of the Open Location Code encoder |
 
-Entries also differ in status within a list. The HTTP status code registry is included together with its unassigned values, one row per unassigned code (436 rows, marked `unassigned`), and five sources keep entries they mark as no longer in use (6,793 rows, marked `deprecated`). The [appendix](#appendix-all-58-systems) lists every system with its kind, authority and size. The `systems` configuration holds the full metadata of each system, including its regular expression, license, version and retrieval date.
+Entries also differ in status within a list. The HTTP status code registry is included together with its unassigned values, one row per unassigned code (436 rows, marked `unassigned`), and five sources keep entries they mark as no longer in use (6,793 rows, marked `deprecated`). Every system is listed, with its kind, authority, size and regular expression, in [All 58 systems](#all-58-systems) at the end of this card; the `systems` configuration holds the rest of its metadata.
 
 The name comes from the three-character codes, such as airport, currency and country codes, with which the collection began. Codes in the collection range from one character to media types of 84.
 
@@ -26,12 +24,12 @@ The name comes from the three-character codes, such as airport, currency and cou
 
 - **Validating and normalizing codes.** Each list and its regular expression show whether a string is an entry in the recorded edition of the list, and whether it has the form the source defines.
 - **Grounding language models and search.** The lists can serve as lookup tables or retrieval corpora that map codes to names and back. [Retrieval](#retrieval) summarizes how the presentation of records affected retrieval in a controlled sample.
-- **Studying shared codes and equivalent lists.** The collision census identifies every string that occurs in more than one system, and [Lists that describe the same entities](#lists-that-describe-the-same-entities) shows which lists can be mapped onto each other. Whether a shared string denotes the same entity has to be established for each pair of systems: `BRA` names Brazil in two of them and unrelated entities in others. The closed study [poc-nsi](https://github.com/brennercruvinel/poc-nsi) used seven systems in this way to test whether language models confuse such codes.
+- **Studying codes across lists.** The same string often occurs in several lists, sometimes for the same entity and sometimes not; [Analyses](#analyses) measures both. The closed study [poc-nsi](https://github.com/brennercruvinel/poc-nsi) used seven systems in this way to test whether language models confuse such codes.
 - **Linking tables.** Country codes stored in `extra`, such as `extra.country` in the airport systems and `extra.iso3` in `lng/ioc`, connect several systems to ISO 3166-1.
 
 For operational work that depends on the latest edition of a list, such as billing with ICD-10-CM, compare `version` and `retrieved_at` with the source's current release.
 
-## Using the data
+## Dataset structure
 
 ```python
 from datasets import load_dataset
@@ -80,7 +78,7 @@ Every system has the same Arrow schema, with one row per entry:
 
 Across systems, a record is identified by `(system_id, code)`, or by `(system_id, extra.locode)` in `trp/unl`. A code without its system does not identify a record.
 
-## How the collection was built
+## Construction
 
 The data is produced by [3char-pipeline](https://github.com/brennercruvinel/3char-pipeline), which downloads each source, parses it into the common schema and checks the result. A source is included when four conditions hold, each checked by a column or a file in the pipeline:
 
@@ -99,9 +97,9 @@ Eight systems first taken from secondary copies (gists, unlicensed repositories,
 
 Every build verifies each raw file against its recorded checksum and tests each entry against its system's regular expression; either check stops the build on a mismatch. Only systems whose `license_status` is `ok` or `check` are published (see [Licensing](#licensing)).
 
-## What the collection shows
+## Analyses
 
-Every figure in this section is produced by a script in the pipeline (`census.py`, `keys.py`, `equivalences.py`, `crosscheck_wikidata.py`) and checked against this card by `card_check.py`.
+These analyses use the published files. Every figure in this section is produced by a script in the pipeline (`census.py`, `keys.py`, `equivalences.py`, `crosscheck_wikidata.py`) and checked against this card by `card_check.py`.
 
 ### Codes shared between systems
 
@@ -115,7 +113,7 @@ Codes are compared after case folding, and a code is shared when the same folded
 | In eleven systems, the maximum | 2 (`and`, `car`) |
 | In two or more systems, counting the derived pair `lng/b47` and `lng/i63` once | 14,845 |
 
-A shared string is not necessarily a shared meaning. Some systems describe the same entities with the same codes, as ISO 3166-1 alpha-3 and the IOC list do for many countries, and `lng/i63` is derived from `lng/b47`. Others share strings by coincidence: `Arg` is arginine among the amino acid codes, while `ARG` is Argentina in the country lists and an airport in the IATA list. The census counts shared strings; it does not decide whether they refer to the same entity.
+A shared string is not necessarily a shared meaning. `BRA` is Brazil in both ISO 3166-1 and the IOC list, the Braj language in the IANA Language Subtag Registry, and an airport in the IATA list. The census counts shared strings; whether they refer to the same entity is examined in the next section.
 
 Every code in eight systems also occurs in at least one other system: `bio/aa1`, `bio/aa3`, `bio/cdn`, `lng/i31`, `lng/i39`, `lng/i63`, `lng/mdy` and `wrt/iau`. In `trp/iata`, `lng/ioc`, `lng/i15`, `trp/ica2` and `fin/i42`, more than 98% of codes do. Without case folding there are 632,457 distinct strings, of which 21,255 occur in more than one system. Within `trp/unl`, 18,748 codes repeat because the key is the country plus the code; these repetitions are not counted as sharing between systems.
 
@@ -168,30 +166,7 @@ In each divergence, the rejected codes appear in the source's current file and t
 
 In a separate test, a bare code shared by several sampled systems retrieved a record of the intended system in 33.0% of 182 cases, the rate of a random choice among those systems; with the system name in both the chunk and the query, it did so in all cases. With 51 questions, one question is worth 1.96 points of recall, and the results describe this sample only.
 
-## Licensing
-
-The dataset has no single license. Each row of the `systems` configuration records `license` and `license_status`. The `license` column takes 27 distinct values: an SPDX identifier where one applies, and otherwise a short tag defined in `LICENSES.md`. Of the 58 published systems, 56 have the status `ok` and 2 have the status `check`.
-
-- **No stated terms (`check`).** `fin/cfi` and `fin/i42` come from SIX Group, which publishes both lists free of charge but states no terms for redistribution, so their redistribution status is unconfirmed. They are included because the codes are plain facts in worldwide use; this is the curator's judgment, not a grant of rights. Anyone who redistributes them commercially should first obtain SIX Group's terms.
-- **Copyleft and share-alike (seven systems).** `cmp/frc` (GPL-2.0-or-later) and `cmp/git` (GPL-2.0-only) are lists extracted from GPL source trees; `cmp/vim` is under the Vim license; `grf/sch` and `grf/sio` are under CC-BY-SA-3.0; `lng/i31` is under CC-BY-SA-4.0, the license of its mirror; and `trp/ica2` is under ODbL-1.0. Their attribution requirements apply to any redistribution, and the share-alike terms also apply to redistributed copies of the tables.
-- **ISO code lists.** `lng/i31` and `lng/i39` have the status `ok` on the basis of their mirrors' licenses. ISO asserts copyright over its code lists, and a mirror's license does not change the upstream terms.
-- **Excluded systems.** The WHO ATC index, the BISAC subject headings, the Dewey summaries, the CUSIP mapping, the ISO 10383 MIC list and the what3words API description are parsed but never published, because their terms do not permit redistribution. The SIL ISO 639-3 table was removed for the same reason; `lng/i63` is a different list, the three-letter subtags of the IANA registry.
-
-Only Parquet files are published. Raw source files are downloaded by the pipeline and are not stored in either repository.
-
-## Relation to existing resources
-
-| Resource | Contents | Relation to 3char |
-| --- | --- | --- |
-| [Bioregistry](https://bioregistry.io) (2,936 prefixes, snapshot of 2026-10-13) | A registry of identifier systems, mostly biomedical, with prefixes, regular expressions and resolvers | Describes systems without redistributing their contents; 3char distributes the lists, across ten domains |
-| [N2T](https://n2t.net) (511 prefix entries in the full list) | Resolver prefixes | As for the Bioregistry. Four 3char IDs (`elm`, `icd`, `mim`, `pdb`) are also N2T prefixes, and two of them denote other systems there |
-| Wikidata external-identifier properties (9,846 with a format constraint, 2026-10-13) | One property per system, with a regular expression and identifiers attached to entities | Identifiers are statements about entities rather than the authority's list; the two are compared in [Agreement with Wikidata format constraints](#agreement-with-wikidata-format-constraints) |
-| pycountry 26.2.16 | ISO 3166-1 (249), ISO 3166-2 (5,046), ISO 4217 (178), ISO 639 (7,923) and ISO 15924 (226), as a Python package built from the Debian iso-codes files | Covers five ISO standards; 3char takes ISO 3166-1, 4217, 639-1 and 15924 from other sources and includes 54 other systems |
-| `datasets/country-codes`, OurAirports, OpenFlights, IANA registries | Source files for single domains | Sources of individual 3char systems, cited in `systems.url` |
-
-A search of the Hugging Face Hub on 2026-10-14, with queries that included ISO 3166, ISO 4217, IATA, ICAO, ICD-10, HGNC, LOCODE, country codes, currency codes, identifiers, code systems, controlled vocabulary and three letter, returned 29 datasets, each covering a single system. No multi-domain collection of code lists with per-system license status was found. The search was not exhaustive, and this is not a claim of priority.
-
-## Known limitations
+## Limitations
 
 Labels come from each source and are not reconciled across systems: the same airport is `São Paulo/Guarulhos–Governor André Franco Montoro International Airport` in `trp/iata` and `trp/icao`, and `Guarulhos Apt / São Paulo`, under `BRGRU`, in `trp/unl`. Airports have no city-name alias.
 
@@ -215,6 +190,29 @@ Labels come from each source and are not reconciled across systems: the same air
 
 Coverage follows what sources publish under terms that permit redistribution. Standards bodies that publish in English and computing registries are well represented, while national schemes outside the United States and the UN system are not yet included. The collision census describes this collection, so adding a system changes it.
 
+## Licensing
+
+The dataset has no single license. Each row of the `systems` configuration records `license` and `license_status`. The `license` column takes 27 distinct values: an SPDX identifier where one applies, and otherwise a short tag defined in `LICENSES.md`. Of the 58 published systems, 56 have the status `ok` and 2 have the status `check`.
+
+- **No stated terms (`check`).** `fin/cfi` and `fin/i42` come from SIX Group, which publishes both lists free of charge but states no terms for redistribution, so their redistribution status is unconfirmed. They are included because the codes are plain facts in worldwide use; this is the curator's judgment, not a grant of rights. Anyone who redistributes them commercially should first obtain SIX Group's terms.
+- **Copyleft and share-alike (seven systems).** `cmp/frc` (GPL-2.0-or-later) and `cmp/git` (GPL-2.0-only) are lists extracted from GPL source trees; `cmp/vim` is under the Vim license; `grf/sch` and `grf/sio` are under CC-BY-SA-3.0; `lng/i31` is under CC-BY-SA-4.0, the license of its mirror; and `trp/ica2` is under ODbL-1.0. Their attribution requirements apply to any redistribution, and the share-alike terms also apply to redistributed copies of the tables.
+- **ISO code lists.** `lng/i31` and `lng/i39` have the status `ok` on the basis of their mirrors' licenses. ISO asserts copyright over its code lists, and a mirror's license does not change the upstream terms.
+- **Excluded systems.** The WHO ATC index, the BISAC subject headings, the Dewey summaries, the CUSIP mapping, the ISO 10383 MIC list and the what3words API description are parsed but never published, because their terms do not permit redistribution. The SIL ISO 639-3 table was removed for the same reason; `lng/i63` is a different list, the three-letter subtags of the IANA registry.
+
+Only Parquet files are published. Raw source files are downloaded by the pipeline and are not stored in either repository.
+
+## Related resources
+
+| Resource | Contents | Relation to 3char |
+| --- | --- | --- |
+| [Bioregistry](https://bioregistry.io) (2,936 prefixes, snapshot of 2026-10-13) | A registry of identifier systems, mostly biomedical, with prefixes, regular expressions and resolvers | Describes systems without redistributing their contents; 3char distributes the lists, across ten domains |
+| [N2T](https://n2t.net) (511 prefix entries in the full list) | Resolver prefixes | As for the Bioregistry. Four 3char IDs (`elm`, `icd`, `mim`, `pdb`) are also N2T prefixes, and two of them denote other systems there |
+| Wikidata external-identifier properties (9,846 with a format constraint, 2026-10-13) | One property per system, with a regular expression and identifiers attached to entities | Identifiers are statements about entities rather than the authority's list; the two are compared in [Agreement with Wikidata format constraints](#agreement-with-wikidata-format-constraints) |
+| pycountry 26.2.16 | ISO 3166-1 (249), ISO 3166-2 (5,046), ISO 4217 (178), ISO 639 (7,923) and ISO 15924 (226), as a Python package built from the Debian iso-codes files | Covers five ISO standards; 3char takes ISO 3166-1, 4217, 639-1 and 15924 from other sources and includes 54 other systems |
+| `datasets/country-codes`, OurAirports, OpenFlights, IANA registries | Source files for single domains | Sources of individual 3char systems, cited in `systems.url` |
+
+A search of the Hugging Face Hub on 2026-10-14, with queries that included ISO 3166, ISO 4217, IATA, ICAO, ICD-10, HGNC, LOCODE, country codes, currency codes, identifiers, code systems, controlled vocabulary and three letter, returned 29 datasets, each covering a single system. No multi-domain collection of code lists with per-system license status was found. The search was not exhaustive, and this is not a claim of priority.
+
 ## Versions and citation
 
 Releases are numbered `MAJOR.MINOR.PATCH`. A change to the schema increments the major version, a change to any Parquet file increments the minor version, and a change limited to the card or the changelog increments the patch version. The changelog is maintained in the pipeline repository and copied here.
@@ -231,13 +229,8 @@ Release tags on the Hub and a Zenodo deposit are planned but have not been creat
 }
 ```
 
-## Appendix: all 58 systems
+## All 58 systems
 
-Kinds are those described in [What the collection contains](#what-the-collection-contains). Regular expressions, licenses, versions, retrieval dates and curator notes are in the `systems` configuration.
-
-<details>
-<summary>Systems by domain</summary>
+Kinds are those described in [Contents](#contents). Licenses, versions, retrieval dates and curator notes are in the `systems` configuration.
 
 {{SYSTEMS_TABLES}}
-
-</details>

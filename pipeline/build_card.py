@@ -11,6 +11,9 @@ CFG = lambda sid: sid.replace("/", "-")
 # Names and authorities in systems.parquet are stored as written in the metadata, often in lowercase. The card shows
 # them with an initial capital, except where the first word is a name that is lowercase by convention.
 KEEP_CASE = {"x86", "x86-64", "openCypher", "vCard", "schema.org", "tz", "wwPDB", "arXiv"}
+# A regex goes inside a table cell, and a bare | ends the cell even inside backticks.
+# GFM resolves \| before inline parsing, so it survives into the code span.
+md_cell = lambda v: v.replace("|", r"\|")
 display = lambda v: v if not v or v.split()[0] in KEEP_CASE else v[0].upper() + v[1:]
 
 # The kind of list each system is. The card explains the five kinds; regular expressions and the remaining
@@ -56,10 +59,10 @@ def systems_tables(publish, counts, sysrows):
     b = []
     for dom in sorted(doms):
         b.append(f"### {DOMAIN_NAME[dom].capitalize()} (`{dom}`)\n")
-        b.append("| ID | System | Kind | Authority | Codes |\n| --- | --- | --- | --- | ---: |")
+        b.append("| ID | System | Kind | Authority | Codes | Pattern |\n| --- | --- | --- | --- | ---: | --- |")
         for sid in sorted(doms[dom]):
             r = sysrows[sid]
-            b.append(f"| `{sid}` | {display(r['name'])} | {KIND[sid]} | {display(r['authority'])} | {counts[sid]:,} |")
+            b.append(f"| `{sid}` | {display(r['name'])} | {KIND[sid]} | {display(r['authority'])} | {counts[sid]:,} | `{md_cell(r['code_pattern'])}` |")
         b.append("")
     return "\n".join(b).strip("\n")
 
