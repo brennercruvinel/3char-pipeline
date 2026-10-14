@@ -7,9 +7,9 @@ type: software
 version: "0.1.3"
 date-released: "2026-10-14"
 authors:
-  - name: "Brenner Viana Cruvinel"
+  - name: "Brenner Cruvinel"
     given-names: Brenner
-    family-names: Viana Cruvinel
+    family-names: Cruvinel
     orcid: https://orcid.org/0009-0002-3079-8829
     affiliation: Hoff Research
     website: https://hoffresearch.com
