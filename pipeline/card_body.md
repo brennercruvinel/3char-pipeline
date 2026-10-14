@@ -1,8 +1,10 @@
 # 3char
 
-3char is a curated collection of code systems, identifiers, symbols and controlled vocabularies from documented reference sources. It gathers 751,870 records from 58 sources into one Parquet schema: ISO country, currency and language codes, IATA and ICAO airport codes, UN/LOCODE, ICD-10-CM, HGNC gene symbols, chemical element symbols, IANA registries, W3C vocabularies and others. Every record keeps the namespace of its source, and every source is documented with its provenance, version, format constraint and license.
+3char is a curated collection of code systems, identifiers, symbols and controlled vocabularies, each taken from a documented reference source: ISO country and currency codes, IATA airport codes, HGNC gene symbols, IANA registries and 54 other lists, 58 in all.
 
-The collection is meant for work that needs these lists as data rather than as documentation: validating and normalizing codes, grounding language models and search systems in authoritative lists, and studying how codes and lists relate across sources. This card describes release 0.1.3; the data files are unchanged since release 0.1.1 (2026-09-12).
+The name comes from the three-character codes with which the collection began, such as `GRU` for São Paulo's international airport, `BRL` for the Brazilian real and `BRA` for Brazil. Codes like these appear throughout data, yet the lists that define them are spread across standards bodies, registries and projects, each with its own format, edition and terms of use. The collection has since grown to include shorter and longer codes, symbols and vocabulary terms.
+
+Its purpose is to make these lists usable as data. All 751,870 records share one Parquet schema, every record keeps the namespace of the list it comes from, and every list is documented with its source, edition, format and license. A code can therefore be validated, looked up or compared across lists without losing track of who defined it and under which terms it may be reused.
 
 ## Contents
 
@@ -17,8 +19,6 @@ The 58 sources span ten domains, from biology and finance to language, transport
 | Test vectors | 1 | The reference test cases of the Open Location Code encoder |
 
 Entries also differ in status within a list. The HTTP status code registry is included together with its unassigned values, one row per unassigned code (436 rows, marked `unassigned`), and five sources keep entries they mark as no longer in use (6,793 rows, marked `deprecated`). Every system is listed, with its kind, authority, size and regular expression, in [All 58 systems](#all-58-systems) at the end of this card; the `systems` configuration holds the rest of its metadata.
-
-The name comes from the three-character codes, such as airport, currency and country codes, with which the collection began. Codes in the collection range from one character to media types of 84.
 
 ## Uses
 
@@ -89,11 +89,11 @@ The data is produced by [3char-pipeline](https://github.com/brennercruvinel/3cha
 | The source's terms permit redistribution, or state nothing and the entries are plain facts in everyday use | `systems.license` and `systems.license_status`, with the terms quoted in `LICENSES.md` |
 | The SHA-256 of the raw file is recorded | `CHECKSUMS.tsv`; `download.py` fails when a file changes |
 
-For the two community conventions, the maintaining project is the one named in `systems.authority` and `systems.url`. A source is excluded, with the reason recorded, when its terms forbid redistribution, when no lawfully redistributable file exists, or when the file describes the codes instead of listing them. The first ICD-10-CM source, for example, was an instruction-tuning dataset; it was replaced by the CDC order file.
+For the two community conventions, the maintaining project is the one named in `systems.authority` and `systems.url`. A source is excluded, with the reason recorded, when its terms forbid redistribution, when no lawfully redistributable file exists, or when the file describes the codes instead of listing them.
 
 All 58 raw files were retrieved on 2026-09-10. Ten systems come from sources that publish a version string, which the pipeline reads from the file and stores in `systems.version`: ENZYME 28-Jan-2026, ICD-10-CM FY2027, IANA media types 2026-06-05, the ISO 4217 list of 2026-01-01, the IANA Language Subtag Registry of 2026-05-05 (used by both `lng/b47` and `lng/i63`), Open English WordNet 2024, the IANA TLD list 2026060600, tzdb 2026b and Unicode emoji 17.0. For the other 48, `retrieved_at` is the only date. Updates are made by re-running the pipeline, which detects any change in a source through its checksum.
 
-Eight systems first taken from secondary copies (gists, unlicensed repositories, a third-party scan and a community mirror) were re-derived from the bodies that maintain them, and two systems built from the wrong kind of file were rebuilt from the right one; [CHANGELOG.md](CHANGELOG.md) records each case. No annotation was added: labels, descriptions and aliases are those of each source, and the curated layer is the `systems` table.
+No annotation was added: labels, descriptions and aliases are those of each source, and the curated layer is the `systems` table.
 
 Every build verifies each raw file against its recorded checksum and tests each entry against its system's regular expression; either check stops the build on a mismatch. Only systems whose `license_status` is `ok` or `check` are published (see [Licensing](#licensing)).
 
@@ -186,7 +186,7 @@ Labels come from each source and are not reconciled across systems: the same air
 
 `trp/olc`: the test vectors of the reference encoder, not a registry of assigned codes.
 
-`lng/ioc`: ISO 3166 alpha-3 codes are in `extra.iso3` and FIFA codes in `extra.fifa`; `aliases` contains only codes that differ from the IOC code. Release 0.1.0 shipped these aliases unlabelled, with a footnote marker stored as a code; release 0.1.1 corrected this.
+`lng/ioc`: ISO 3166 alpha-3 codes are in `extra.iso3` and FIFA codes in `extra.fifa`; `aliases` contains only codes that differ from the IOC code.
 
 Coverage follows what sources publish under terms that permit redistribution. Standards bodies that publish in English and computing registries are well represented, while national schemes outside the United States and the UN system are not yet included. The collision census describes this collection, so adding a system changes it.
 
@@ -215,7 +215,7 @@ A search of the Hugging Face Hub on 2026-10-14, with queries that included ISO 3
 
 ## Versions and citation
 
-Releases are numbered `MAJOR.MINOR.PATCH`. A change to the schema increments the major version, a change to any Parquet file increments the minor version, and a change limited to the card or the changelog increments the patch version. The changelog is maintained in the pipeline repository and copied here.
+Releases are numbered `MAJOR.MINOR.PATCH`. A change to the schema increments the major version, a change to any Parquet file increments the minor version, and a change limited to the documentation increments the patch version.
 
 Release tags on the Hub and a Zenodo deposit are planned but have not been created yet; until then, a Hub commit identifies the exact files of a release. Each Zenodo version will contain the published Parquet files, `MANIFEST.tsv` (SHA-256, size and row count for each file), `SCHEMA.md`, `LICENSES.md`, the census, key, equivalence and cross-check outputs, and the scripts that produce them.
 
