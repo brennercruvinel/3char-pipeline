@@ -4,7 +4,7 @@ message: >-
   metadata in this file.
 title: 3char-pipeline
 type: software
-version: "0.1.2"
+version: "0.1.3"
 date-released: "2026-10-14"
 authors:
   - name: "Brenner Viana Cruvinel"
@@ -14,10 +14,11 @@ authors:
     affiliation: Hoff Research
     website: https://hoffresearch.com
 abstract: >-
-  Build pipeline for the 3char dataset: 64 parsers that read code lists published by their assigning
-  authorities and emit one Parquet file per system in a common schema, with per-system provenance,
-  license triage, a regex enforced at build time, checksums of every raw source, and the scripts that
-  reproduce the statistics in the dataset card. The dataset itself is cited by its release DOI.
+  Build pipeline for the 3char dataset. It contains 64 parsers that read code lists published by their
+  assigning authorities and write one Parquet file per system in a common schema, together with
+  per-system provenance, a license triage, a regular expression enforced at build time, checksums of
+  every raw source, and the scripts that reproduce the statistics in the dataset card. Cite the dataset
+  itself separately, as described in its card.
 license: MIT
 repository-code: https://github.com/brennercruvinel/3char-pipeline
 url: https://huggingface.co/datasets/brennercruvinel/3char

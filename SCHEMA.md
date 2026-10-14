@@ -1,29 +1,29 @@
-# schema
+# Schema
 
-two tables. `systems` describes each code system; `codes` holds every code from every system, one row per code, joined on `system_id`. everything is parquet; the arrow schema of `codes` is identical across systems, which is what lets the `all` config on the Hub concatenate them.
+The dataset has two tables. `systems` describes each code system; `codes` holds every code from every system, one row per code, and joins to `systems` on `system_id`. Both are stored as Parquet. The Arrow schema of `codes` is identical across systems, which is what allows the `all` configuration on the Hub to concatenate them.
 
 ## codes
 
-| column | type | null | description |
+| Column | Type | Nullable | Description |
 | --- | --- | --- | --- |
 | `system_id` | string | no | `<domain>/<id>`; joins to `systems.system_id` |
-| `code` | string | no | the code as the authority writes it; no case folding, no padding stripped |
-| `label` | string | no | short human readable name, one line |
-| `description` | string | yes | longer gloss when the source carries one |
-| `parent_code` | string | yes | `code` of the parent in the same system, for hierarchical systems; among published systems: `bio/ec`, `cls/icd`, `cls/loc` |
-| `status` | string | yes | the status word the source publishes; vocabulary per system, see below |
-| `aliases` | list<string> | yes | other strings that resolve to the same referent; empty list when none |
-| `extra` | string | yes | JSON object as a string with source specific fields |
+| `code` | string | no | The code as the authority writes it, without case folding or stripped padding |
+| `label` | string | no | Short human-readable name, on one line |
+| `description` | string | yes | Longer description, when the source provides one |
+| `parent_code` | string | yes | `code` of the parent in the same system, for hierarchical systems; among published systems, `bio/ec`, `cls/icd` and `cls/loc` |
+| `status` | string | yes | Status value published by the source; the vocabulary differs by system (see below) |
+| `aliases` | list<string> | yes | Other strings that refer to the same entity; an empty list when there are none |
+| `extra` | string | yes | JSON object, stored as a string, with source-specific fields |
 
-`extra` is a string, not a struct. the sources disagree on almost every field beyond code and label; a struct would force a union of about 200 nullable columns onto every row and break schema identity across configs.
+`extra` is a string rather than a struct. The sources share almost no fields beyond the code and the label, so a struct would force a union of about 200 nullable columns onto every row and break the identity of the schema across configurations.
 
-### status vocabulary
+### Status vocabulary
 
-`status` is not a closed list. counts on the published set, release 0.1.1:
+`status` is not a closed list. The counts below cover the published set, which is unchanged since release 0.1.1.
 
-| value | rows | systems |
+| Value | Rows | Systems |
 | --- | --- | --- |
-| null | 693,350 | all systems that publish no status |
+| null | 693,350 | All systems that publish no status |
 | `approved` | 44,997 | `bio/gen` (HGNC symbol status) |
 | `deprecated` | 6,793 | IANA registries, Glottolog, tz |
 | `fully-qualified` | 3,944 | `wrt/uni` (Unicode emoji qualification) |
@@ -33,45 +33,45 @@ two tables. `systems` describes each code system; `codes` holds every code from 
 | `unqualified` | 243 | `wrt/uni` |
 | `component` | 9 | `wrt/uni` |
 
-filter on `status` only per system, after reading that system's `notes` in `systems`.
+Filter on `status` only within a single system, after reading that system's `notes` in `systems`.
 
-### record identification
+### Record identification
 
-`code` is unique within 54 of the 58 published systems. the four exceptions and the field that resolves a record:
+`code` is unique within 54 of the 58 published systems. The four exceptions, and the fields that identify a record in each, are:
 
-| system | rows | distinct codes | key | residual |
+| System | Rows | Distinct codes | Key | Remaining duplicates |
 | --- | --- | --- | --- | --- |
-| `trp/unl` | 116,213 | 26,162 | `extra.locode` (country plus code) | 139 locodes appear on more than one row as bilingual name variants, 146 extra rows |
-| `lng/b47` | 9,295 | 9,037 | `code` plus `extra.type` (language, extlang, script, region, variant, grandfathered, redundant) | none |
-| `wrt/tz` | 806 | 797 | `code` plus `extra.kind` (zone name or abbreviation) | none |
-| `wrt/abj` | 84 | 83 | `code` plus `label` | U+05BC appears twice, as `dagesh` and as `mapiq`, two names of one mark; a later release folds them into one row with an alias |
+| `trp/unl` | 116,213 | 26,162 | `extra.locode` (country plus code) | 139 locodes occur on more than one row as bilingual variants of the same name, adding 146 rows |
+| `lng/b47` | 9,295 | 9,037 | `code` and `extra.type` (language, extlang, script, region, variant, grandfathered, redundant) | None |
+| `wrt/tz` | 806 | 797 | `code` and `extra.kind` (zone name or abbreviation) | None |
+| `wrt/abj` | 84 | 83 | `code` and `label` | None; U+05BC appears twice, as `dagesh` and as `mapiq`, two names for one mark. Folding them into one row with an alias is planned for a later release |
 
-`keys.py` regenerates this table. across systems the same literal is claimed by more than one system 14,911 times; `(system_id, code)` is the only cross-system key, and in `trp/unl` it is `(system_id, extra.locode)`.
+`keys.py` regenerates this table. Across systems, 14,911 literals are claimed by more than one system, so `(system_id, code)` is the only cross-system key; in `trp/unl` it is `(system_id, extra.locode)`.
 
 ## systems
 
-one row per code system; 64 in `systems.tsv`, 58 in `hub/systems.parquet`.
+One row per code system: 64 rows in `systems.tsv` and 58 in `hub/systems.parquet`.
 
-| column | type | null | description |
+| Column | Type | Nullable | Description |
 | --- | --- | --- | --- |
-| `system_id` | string | no | `<domain>/<id>`, primary key |
-| `domain` | string | no | one of bio, cls, cmp, com, fin, grf, lng, nte, trp, wrt |
-| `name` | string | no | what the system is called by its authority |
-| `authority` | string | no | the body that assigns the codes |
-| `url` | string | no | exact retrieval url of the raw file |
-| `license` | string | no | spdx id when one applies, otherwise a short tag defined in `LICENSES.md` |
+| `system_id` | string | no | `<domain>/<id>`; primary key |
+| `domain` | string | no | One of `bio`, `cls`, `cmp`, `com`, `fin`, `grf`, `lng`, `nte`, `trp`, `wrt` |
+| `name` | string | no | The name the authority gives the system |
+| `authority` | string | no | The body that assigns the codes |
+| `url` | string | no | Exact retrieval URL of the raw file |
+| `license` | string | no | SPDX identifier where one applies, otherwise a short tag defined in `LICENSES.md` |
 | `license_status` | string | no | `ok`, `check` or `problem`; only `ok` and `check` are published |
-| `code_pattern` | string | no | anchored regex every `code` in the system matches |
+| `code_pattern` | string | no | Anchored regular expression that every `code` in the system matches |
 | `pattern_status` | string | no | `derived` (written against the real file) or `provisional` |
-| `case_sensitive` | bool | no | whether two codes differing only in case are distinct codes |
-| `raw_file` | string | no | path of the raw file under `data/` |
-| `derived_from` | string | yes | system this one is built from; `lng/i63` from `lng/b47` |
-| `version` | string | yes | version string the source publishes, read from the file by `versions.py`; empty when it publishes none |
-| `retrieved_at` | date | no | fetch date of the raw file |
-| `notes` | string | yes | curator notes, including how to read `status` and `extra` for that system |
+| `case_sensitive` | bool | no | Whether two codes that differ only in case are distinct codes |
+| `raw_file` | string | no | Path of the raw file under `data/` |
+| `derived_from` | string | yes | The system this one is built from; `lng/i63` is built from `lng/b47` |
+| `version` | string | yes | Version string published by the source, read from the file by `versions.py`; empty when the source publishes none |
+| `retrieved_at` | date | no | Fetch date of the raw file |
+| `notes` | string | yes | Curator notes, including how to read `status` and `extra` for the system |
 
-`authority` and `url` are separate because they disagree often: ISO 3166 is assigned by the ISO 3166 Maintenance Agency and the file comes from a CC-BY-SA mirror; collapsing the two would hide exactly the provenance worth knowing.
+`authority` and `url` are kept separate because they often differ. ISO 3166, for example, is assigned by the ISO 3166 Maintenance Agency, while the file comes from a CC-BY-SA mirror. Merging the two columns would hide exactly the provenance worth knowing.
 
 ## code_pattern
 
-anchored, enforced by `validate.py`, which exits non-zero on any mismatch not listed in `known_exceptions.py`. three characters is the organizing thesis of the collection, not a constraint of the schema; the pattern records what each system actually is.
+Every pattern is anchored and enforced by `validate.py`, which exits with an error on any mismatch not listed in `known_exceptions.py`. Three characters is the organizing theme of the collection, not a constraint of the schema; each pattern records the form the system's codes actually take.

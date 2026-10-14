@@ -1,58 +1,60 @@
-# licenses
+# Licenses
 
-triage of all 64 sources, checked against each authority's own published terms rather than inferred from whichever mirror the file came through. `ok` means redistribution is granted or the content is plain fact from the authority, `check` means no grant exists either way, `problem` means the authority asserts rights that block republishing the code set.
+This document records the license triage of all 64 sources. Each source was checked against the published terms of the authority that assigns the codes, not inferred from the mirror the file came through. The status values are:
 
-as of 2026-09-10: 55 ok, 2 check, 7 problem, of 64 sources. 58 systems are published: the 55 `ok`, the 2 `check`, and `lng/i63`, which was in the `problem` group as the SIL ISO 639-3 table and is published as a derivative of `lng/b47`, the IANA registry, under IANA terms; it is not ISO 639-3 and its card entry says so. the 6 remaining `problem` systems are parsed by the pipeline and never written to `hub/`.
+- `ok`: redistribution is granted, or the content is plain fact published by the authority.
+- `check`: no grant or prohibition has been found; redistribution is not confirmed.
+- `problem`: the authority asserts rights that prevent republishing the code set.
 
-### what never reaches the Hub
+As of 2026-09-10, the triage stands at 55 `ok`, 2 `check` and 7 `problem`, out of 64 sources. 58 systems are published: the 55 `ok`, the 2 `check`, and `lng/i63`. `lng/i63` was in the `problem` group as the SIL ISO 639-3 table; it is now built from `lng/b47`, the IANA registry, and published under IANA terms. It is not ISO 639-3, and the dataset card says so. The remaining 6 `problem` systems are parsed by the pipeline and never written to `hub/`.
 
-only parquet is published. the raw files under `data/<domain>/<id>/raw/` stay local, are fetched by the download script, and are never uploaded. that distinction carries real weight for the ITU recommendations and the IUPAC table, where the facts are free to state and the document is not free to mirror.
+## What is never published
 
-### problem, blocked by the authority's own terms
+Only Parquet files are published. The raw files under `data/<domain>/<id>/raw/` stay local: they are fetched by the download script and never uploaded. The distinction matters most for the ITU recommendations and the IUPAC table, where the facts may be stated freely but the documents may not be mirrored.
 
-| system | authority | what blocks it |
+## Problem: blocked by the authority's own terms
+
+| System | Authority | What blocks it |
 | --- | --- | --- |
-| `cls/atc` | WHO Collaborating Centre for Drug Statistics Methodology | WHO CC: "Copying and distribution for commercial purposes is not allowed. Changing or manipulating the material is not allowed." parsing to parquet is manipulation |
+| `cls/atc` | WHO Collaborating Centre for Drug Statistics Methodology | WHO CC: "Copying and distribution for commercial purposes is not allowed. Changing or manipulating the material is not allowed." Converting the index to Parquet counts as manipulation |
 | `cls/bsc` | Book Industry Study Group | BISG: "No part of these lists or any attached documents may be distributed or reproduced in any manner whatsoever without the express permission of the Book Industry Study Group, Inc." |
-| `cls/dew` | OCLC | OCLC, from the copyright page of the PDF itself: "All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means" |
-| `fin/cus` | CUSIP Global Services / SEC | CUSIP identifiers are licensed by CUSIP Global Services, the github mapping is a derived scrape |
+| `cls/dew` | OCLC | OCLC, on the copyright page of the PDF itself: "All rights reserved. No part of this publication may be reproduced, stored in a retrieval system, or transmitted, in any form or by any means" |
+| `fin/cus` | CUSIP Global Services / SEC | CUSIP identifiers are licensed by CUSIP Global Services; the GitHub mapping is a derived scrape |
 | `fin/mic` | ISO 20022 RA / SWIFT | ISO 20022 RA: "excluding the right to reproduce all or substantial part of this website for the purpose of making such reproductions available to third parties" |
-| `lng/i63` | SIL International (RA) | SIL: "the product, system, or device does not provide a means to redistribute the code set", and the SIL site is named the only authorized distribution point |
-| `trp/w3w` | what3words | the OpenAPI document describes a commercial API whose word list is the product being sold |
+| `lng/i63` | SIL International (RA) | SIL: "the product, system, or device does not provide a means to redistribute the code set"; the SIL site is named as the only authorized distribution point |
+| `trp/w3w` | what3words | The OpenAPI document describes a commercial API whose word list is the product being sold |
 
-`lng/i63` and `fin/mic` started as `check` and moved here after someone read the terms. both looked like ordinary standards downloads.
+`lng/i63` and `fin/mic` were first classified as `check` and moved here once their terms were read; both had looked like ordinary downloads of standards.
 
-### check
+## Check
 
-| system | authority | status |
+| System | Authority | Status |
 | --- | --- | --- |
-| `fin/cfi` | SIX Group / ISO | publishes "free of charge" and then says nothing at all about redistribution |
-| `fin/i42` | SIX Group / ISO | same silence. ISO 4217 is the most widely mirrored code table on the internet, which is evidence about practice, not permission |
+| `fin/cfi` | SIX Group / ISO | Published "free of charge", with no statement on redistribution |
+| `fin/i42` | SIX Group / ISO | Published with no statement on redistribution. ISO 4217 is among the most widely mirrored code tables, but that is evidence of practice, not permission |
 
-both ship with `license_status` set to `check` in `systems.parquet`, visible to anyone who loads the dataset.
+Both systems carry `license_status` `check` in `systems.parquet`, visible to anyone who loads the dataset. Anyone who redistributes them commercially should first obtain SIX Group's terms.
 
-### eight sources replaced
+## Eight sources replaced
 
-eight systems used to come from github gists and unlicensed repos. a gist is not the rights holder of the ITU morse table or the POSIX errno list, so the provenance was wrong regardless of what the license said. they were re-derived from the body that actually assigns the codes.
+Eight systems were first taken from secondary copies: GitHub gists, unlicensed repositories, a third-party scan and a community mirror. A gist is not the rights holder of the ITU Morse table or the POSIX errno list, so the provenance was wrong whatever license the copy carried. Each system was re-derived from the body that assigns the codes.
 
-| system | was | now | authority |
+| System | Previous source | Current source | Authority |
 | --- | --- | --- | --- |
-| `bio/aa1` `bio/aa3` | github repo, no LICENSE | JCBN Recommendations 1983, Table 1 | IUPAC-IUB JCBN |
-| `cmp/ern` | github gist | POSIX.1-2024 `<errno.h>` | IEEE / The Open Group |
-| `cmp/reg` | github gist | `X86RegisterInfo.td` | LLVM Project, Apache-2.0 with LLVM exception |
-| `com/mor` | github gist | Recommendation ITU-R M.1677-1 | ITU-R |
-| `com/bau` | third party PDF scan | Recommendation ITU-T S.1 | ITU-T |
-| `grf/sio` | community mirror | the canonical `rdfs.org/sioc/ns#` namespace | SIOC Project / DERI |
-| `lng/mdy` | github gist | CLDR `ca-gregorian.json` | Unicode CLDR |
+| `bio/aa1`, `bio/aa3` | GitHub repository without a license | JCBN Recommendations 1983, Table 1 | IUPAC-IUB JCBN |
+| `cmp/ern` | GitHub gist | POSIX.1-2024 `<errno.h>` | IEEE / The Open Group |
+| `cmp/reg` | GitHub gist | `X86RegisterInfo.td` | LLVM Project, Apache-2.0 with LLVM exception |
+| `com/mor` | GitHub gist | Recommendation ITU-R M.1677-1 | ITU-R |
+| `com/bau` | Third-party PDF scan | Recommendation ITU-T S.1 | ITU-T |
+| `grf/sio` | Community mirror | The canonical `rdfs.org/sioc/ns#` namespace | SIOC Project / DERI |
+| `lng/mdy` | GitHub gist | CLDR `ca-gregorian.json` | Unicode CLDR |
 
-### ok
+## OK
 
-55 systems. IANA registries, W3C vocabularies, US government sources (NCBI, PubChem, SEC, CDC), CC licensed corpora (Glottolog, WordNet, HGNC, ENZYME, the PG-Schema paper), public domain dedications (OurAirports, tzdb, edsu/lcco), permissively licensed community repos, and the eight authorities above.
+55 sources: IANA registries, W3C vocabularies, US government sources (NCBI, PubChem, SEC, CDC), CC-licensed corpora (Glottolog, WordNet, HGNC, ENZYME, the PG-Schema paper), public domain dedications (OurAirports, tzdb, edsu/lcco), permissively licensed community repositories, and the authorities of the eight replaced sources above.
 
-copyleft shows up in four. `cmp/git` and `cmp/frc` come out of GPL-2.0 source trees, `cmp/vim` carries the Vim license, `trp/ica2` is ODbL-1.0 with share-alike. pulling a factual code list out of a GPL source file is not the same as distributing that file, but the attribution obligation travels either way and `systems.parquet` records it.
+Copyleft and share-alike terms apply to seven published systems: `cmp/frc` (GPL-2.0-or-later) and `cmp/git` (GPL-2.0-only) are code lists extracted from GPL source trees; `cmp/vim` is under the Vim license; `grf/sch` and `grf/sio` are under CC-BY-SA-3.0; `lng/i31` is under CC-BY-SA-4.0 through its mirror; and `trp/ica2` is under ODbL-1.0. Extracting a factual code list from a GPL source file is not the same as distributing that file, but the attribution requirement applies either way, and `systems.parquet` records it. A downstream collection that includes these tables inherits the attribution requirements and, for the share-alike licenses, the share-alike terms for the tables themselves.
 
-copyleft and share-alike terms apply to seven published systems and travel with any redistribution: `cmp/frc` (GPL-2.0-or-later) and `cmp/git` (GPL-2.0-only) are code lists extracted from GPL source trees; `cmp/vim` carries the Vim license; `grf/sch` and `grf/sio` are CC-BY-SA-3.0; `lng/i31` is CC-BY-SA-4.0 through its mirror; `trp/ica2` is ODbL-1.0. a downstream collection that includes these tables inherits the attribution and, for the share-alike ones, the share-alike obligation on the table itself. the two `check` systems from SIX Group carry no grant; a user who redistributes them commercially should obtain SIX's terms first.
+## The ISO caveat
 
-### the ISO caveat
-
-`lng/i31` (ISO 3166) and `lng/i39` (ISO 639-1) sit at `ok` on the strength of their mirrors, CC-BY-SA-4.0 and ODC-PDDL-1.0. ISO asserts copyright over its code lists as a matter of course, and a permissive license applied by a mirror does not launder upstream terms. they are `ok` because the packaging is licensed and the codes are two and three letter facts in worldwide daily use, not because ISO said yes.
+`lng/i31` (ISO 3166) and `lng/i39` (ISO 639-1) are `ok` on the basis of their mirrors' licenses, CC-BY-SA-4.0 and ODC-PDDL-1.0 respectively. ISO routinely asserts copyright over its code lists, and a permissive license applied by a mirror does not override upstream terms. The two systems are `ok` because the packaging is licensed and the codes are two- and three-letter facts in worldwide daily use, not because ISO has granted permission.

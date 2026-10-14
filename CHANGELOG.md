@@ -1,70 +1,102 @@
-# changelog
+# Changelog
+
+## 0.1.3, 2026-10-14
+
+Documentation only. No Parquet file has changed since 0.1.1.
+
+### Card
+
+The text was revised throughout for language and accuracy. A section on uses was added, and system names and authorities in the systems tables are shown with an initial capital (the stored values are unchanged). Factual corrections:
+
+- The retrieval summary reported a single ranking of configurations. It now reports the ranking for each embedder: with all-MiniLM-L6-v2, the whole system as one chunk ranks first (82.4% recall@1), ahead of one record per sentence (52.9%).
+- The retrieval summary now states that the questions and prose chunks are in Portuguese, while all-MiniLM-L6-v2 is an English model.
+- Release tags and the Zenodo deposit were described as existing. They are now described as planned.
+- `license_link` in the YAML header pointed to a section that did not exist. It now points to the licensing section.
+- The inclusion condition on file provenance mentioned only the authority and public domain derivatives. It now covers any derivative whose terms permit redistribution, which matches the mirrors actually used.
+- The eight replaced sources were described as unlicensed gists. The description now matches `LICENSES.md`: gists, unlicensed repositories, a third-party scan and a community mirror.
+- The claim that the Wikidata format constraints are older than the codes they reject was removed, because it had not been verified.
+- The ratios against the uniform null are now described as upper bounds on the excess over chance.
+
+### Pipeline
+
+`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `build_card.py` writes the per-domain headings one level below the systems heading, and the license link points to an existing anchor.
 
 ## 0.1.2, 2026-10-14
 
-card only. no parquet changed since 0.1.1.
+Card only. No Parquet file changed since 0.1.1.
 
-### card
+### Card
 
-rewritten as a data resource description. it now states, with the script that reproduces each figure: how to obtain the data and pin a revision; how to identify a record in the four systems where `code` is not unique (`trp/unl`, `lng/b47`, `wrt/tz`, `wrt/abj`); the inclusion conditions and the column or file that checks each; the status vocabulary as published, which earlier versions of the card and of SCHEMA.md described as a closed list that did not match the data; the collision census with definitions and denominators (14,911 of 623,141 distinct casefolded literals in two or more systems; 14,845 after collapsing the one derived family); the collision rate by code length against a uniform null; the agreement of every published code with the Wikidata format constraint of the matching property, with the verified cause of each divergence; the retrieval evidence with its sample and its limits; licensing per system, including the seven copyleft or share-alike systems and the two with no stated terms; the relation to the Bioregistry, N2T, Wikidata and pycountry with counts; versioning and deposit policy.
+The card was rewritten as a description of a data resource. Each figure now names the script that reproduces it. The card covers the following:
 
-### pipeline
+- How to obtain the data and pin a revision.
+- How to identify a record in the four systems where `code` is not unique (`trp/unl`, `lng/b47`, `wrt/tz`, `wrt/abj`).
+- The inclusion conditions, and the column or file that checks each.
+- The status vocabulary as published, which earlier versions of the card and of `SCHEMA.md` described as a closed list that did not match the data.
+- The collision census, with definitions and denominators (14,911 of 623,141 distinct case-folded literals belong to two or more systems; 14,845 after collapsing the one derived family).
+- The collision rate by code length against a uniform null.
+- The agreement of every published code with the Wikidata format constraint of the corresponding property, with the verified cause of each divergence.
+- The retrieval evidence, with its sample and its limits.
+- Licensing per system, including the seven copyleft or share-alike systems and the two with no stated terms.
+- The relation to the Bioregistry, N2T, Wikidata and pycountry, with counts.
+- The versioning and deposit policy.
 
-`census.py`, `keys.py`, `crosscheck_wikidata.py`, `manifest.py` and `card_check.py` added; `build_card.py` reads the prose from `card_body.md`; `SCHEMA.md` lists all 15 columns of `systems` and the observed `status` values; `LICENSES.md` explains why 58 systems are published when 57 sources are `ok` or `check` (`lng/i63` is a derivative of `lng/b47`); `SOURCES.tsv` moved to `history/`.
+### Pipeline
 
+`census.py`, `keys.py`, `crosscheck_wikidata.py`, `manifest.py` and `card_check.py` were added. `build_card.py` reads the prose from `card_body.md`. `SCHEMA.md` lists all 15 columns of `systems` and the observed `status` values. `LICENSES.md` explains why 58 systems are published when 57 sources are `ok` or `check`: `lng/i63` is a derivative of `lng/b47`. `SOURCES.tsv` moved to `history/`.
 
 ## 0.1.1, 2026-09-12
 
-one system rebuilt, one count corrected, one section added. no other parquet changed.
+One system rebuilt, one count corrected and one section added. No other Parquet file changed.
 
 ### lng/ioc
 
-`aliases` mixed the ISO 3166 alpha-3 code and the FIFA code without labels, and for the United Kingdom the FIFA slot carried `1`, a footnote marker from the source where the UK has four FIFA members. `extra.iso3` and `extra.fifa` are now named fields, and `aliases` holds only the codes that differ from the IOC code, so `GER` lists `DEU` and `BRA` lists nothing. identified while using the dataset as a retrieval corpus, where a check that every IOC alias resolves in ISO 3166 returned 84 percent.
+`aliases` mixed the ISO 3166 alpha-3 code and the FIFA code without labels. For the United Kingdom, the FIFA slot held `1`, a footnote marker carried over from the source, where the United Kingdom has four FIFA members. `extra.iso3` and `extra.fifa` are now named fields, and `aliases` holds only the codes that differ from the IOC code, so `GER` lists `DEU` and `BRA` lists nothing. The defect was found while using the dataset as a retrieval corpus, when a check that every IOC alias resolves in ISO 3166 returned 84%.
 
-### card
+### Card
 
-the validator identified 25 incorrect assumptions, not 13. the card said 13 while the README and this changelog said 25. corrected.
+The validator identified 25 incorrect assumptions, not 13. The card said 13, while the README and this changelog said 25; the card was corrected.
 
-a retrieval section was added with the measured chunking configuration and the collision census over the published set: 14,911 of 623,141 distinct codes are claimed by more than one system. the rig behind those numbers is at [github.com/brennercruvinel/3char-bench](https://github.com/brennercruvinel/3char-bench).
+A retrieval section was added, with the measured chunking configuration and the collision census over the published set: 14,911 of 623,141 distinct codes are claimed by more than one system. The rig behind these numbers is [3char-bench](https://github.com/brennercruvinel/3char-bench).
 
 ## 0.1.0, 2026-09-10
 
-first release. 64 code systems parse and validate, 58 of them published on the Hub, 751,870 codes in one schema.
+First release. 64 code systems parse and validate, and 58 of them are published on the Hub: 751,870 codes in one schema.
 
-### what shipped
+### Contents
 
-58 systems across 10 domains, one parquet each plus `systems.parquet`, 60 configs counting `all` and `systems`. every code is tested against its system's regex at build time and the build fails on any mismatch, so the published set has zero codes that do not match their own pattern.
+58 systems across 10 domains, one Parquet file each, plus `systems.parquet`; 60 configurations including `all` and `systems`. Every code is tested against its system's regular expression at build time, and the build fails on any mismatch, so no published code fails its own pattern.
 
-`systems.parquet` carries the provenance next to the data: authority separate from url, license and license status per system, the regex, and how much that regex is worth.
+`systems.parquet` keeps the provenance next to the data: the authority separately from the URL, the license and license status of each system, the regular expression, and how far that expression has been verified.
 
-### six systems held back
+### Six systems withheld
 
-the WHO ATC index, BISAC subject headings, the Dewey summaries, the CIK to CUSIP mapping, the ISO 10383 MIC list and the what3words API surface parse locally and are never uploaded. their authorities forbid republishing the code set, in language quoted verbatim in `LICENSES.md`.
+The WHO ATC index, the BISAC subject headings, the Dewey summaries, the CIK to CUSIP mapping, the ISO 10383 MIC list and the what3words API description are parsed locally and never uploaded. Their authorities forbid republishing the code sets, in terms quoted verbatim in `LICENSES.md`.
 
-two of those six were found late. `lng/i63` and `fin/mic` both looked like ordinary standards downloads until someone read the terms: SIL names its own site as the only authorized distribution point for ISO 639-3, and the ISO 10383 registration authority excludes reproducing a substantial part for third parties.
+Two of these six were identified late. `lng/i63` and `fin/mic` both looked like ordinary downloads of standards until their terms were read: SIL names its own site as the only authorized distribution point for ISO 639-3, and the ISO 10383 registration authority excludes reproducing a substantial part of the list for third parties.
 
-### eight sources replaced
+### Eight sources replaced
 
-eight systems used to come from github gists and repos with no license. a gist is not the rights holder of the ITU morse table or the POSIX errno list, so the provenance was wrong regardless of what the license said. each was re-derived from the body that assigns the codes: the JCBN Recommendations 1983 for the amino acid symbols, POSIX.1-2024 for errno, the LLVM x86 tablegen for register names, Recommendation ITU-R M.1677-1 for morse, ITU-T S.1 for ITA2, the canonical `rdfs.org/sioc/ns#` namespace, and CLDR for month names.
+Eight systems were first taken from secondary copies: GitHub gists, unlicensed repositories, a third-party scan and a community mirror. A gist is not the rights holder of the ITU Morse table or the POSIX errno list, so the provenance was wrong whatever license the copy carried. Each system was re-derived from the body that assigns the codes: the JCBN Recommendations 1983 for the amino acid symbols, POSIX.1-2024 for errno, the LLVM x86 TableGen definitions for register names, Recommendation ITU-R M.1677-1 for Morse, ITU-T S.1 for ITA2, the canonical `rdfs.org/sioc/ns#` namespace, and CLDR for month names.
 
-### two sources were the wrong file entirely
+### Two sources were the wrong kind of file
 
-`cls/icd` was an instruction-tuning dataset with ICD codes embedded in question and answer text. that is training data about the codes, not the code list. replaced with the FY2027 order file from the CDC, 98,403 codes with the billable flag that separates a category from a diagnosis you can put on a claim.
+`cls/icd` came from an instruction-tuning dataset with ICD codes embedded in question and answer text: training data about the codes, not the code list. It was replaced with the FY2027 order file from the CDC, which has 98,403 codes and the billable flag that distinguishes a category from a diagnosis code that can be used on a claim.
 
-`com/tlg` came from the plain OCR text of a 1901 book scan, which is unusable for the job. the book sets code number, code word and phrase in three columns, and the text derivative emits the columns as separate runs of lines, destroying the pairing that makes a code a code. now parsed from the djvu xml, where every word keeps a bounding box, rebuilding the columns from the x coordinate. 92 percent of the code words come back with their phrase attached.
+`com/tlg` came from the plain OCR text of a 1901 book scan, which cannot serve the purpose. The book sets the code number, code word and phrase in three columns, and the text derivative emits the columns as separate runs of lines, which destroys the pairing that makes a code a code. The system is now parsed from the DjVu XML, where every word keeps its bounding box, and the columns are rebuilt from the x coordinate. 92% of the code words are recovered with their phrase.
 
-`lng/i63` was rebuilt from the IANA registry that also feeds `lng/b47`, and renamed to say what it is. it is not ISO 639-3: RFC 5646 omits the three letter form whenever a two letter subtag exists, so `eng`, `deu` and `por` are absent, and it carries 115 ISO 639-5 collections and 224 deprecated subtags that ISO 639-3 does not.
+`lng/i63` was rebuilt from the IANA registry that also feeds `lng/b47`, and renamed to reflect what it is. It is not ISO 639-3: RFC 5646 omits the three-letter form whenever a two-letter subtag exists, so `eng`, `deu` and `por` are absent, and it contains 115 ISO 639-5 collections and 224 deprecated subtags that ISO 639-3 does not.
 
-### the validator earned its place
+### What the validator found
 
-writing a regex per system and enforcing it caught 25 wrong assumptions of mine and exactly one malformed row upstream.
+Writing a regular expression for each system and enforcing it exposed 25 incorrect assumptions in the initial patterns and exactly one malformed row upstream.
 
-mine included the ATC fourth level being one letter and not two, AVX-512 mnemonics using a lowercase x, `*` being a real entry in both the IANA DNS and HTTP method registries, `0` being valid padding in a plus code, preliminary EC numbers carrying an `n` suffix, x87 registers spelled `st(1)`, glottocodes allowing a digit in the first block, and schema.org shipping `3DModel`.
+The facts that corrected those assumptions include the following: the fourth ATC level has one letter, not two; AVX-512 mnemonics use a lowercase x; `*` is a real entry in both the IANA DNS and HTTP method registries; `0` is valid padding in a plus code; preliminary EC numbers carry an `n` suffix; x87 registers are spelled `st(1)`; glottocodes can have a digit in the first block; and schema.org ships `3DModel`.
 
-upstream's was `FIC05700`, a BISAC code with five digits where the standard is six. it is listed in `known_exceptions.py` with the reason, still reported by the validator, never silently dropped.
+The upstream error was `FIC05700`, a BISAC code with five digits where the standard has six. It is listed in `known_exceptions.py` with the reason; the validator still reports it, and it is never dropped silently.
 
-### three parsers were wrong in a way only duplicates revealed
+### Three parser bugs revealed by duplicates
 
-counting duplicate codes per system surfaced three modelling bugs: ATC repeated a code once per administration route, IAU repeated Serpens once per half, and the plus code test vectors repeated a code across wrapped longitudes. all three now collapse to one row per code with the variation in `extra`.
+Counting duplicate codes per system revealed three modelling bugs: ATC repeated a code once per administration route, IAU repeated Serpens once for each of its two halves, and the plus code test vectors repeated a code across wrapped longitudes. All three now produce one row per code, with the variation recorded in `extra`.
 
-`trp/unl` still has about 90,000 repeated codes and that one is correct: a UN/LOCODE three letter code is only unique inside its country.
+`trp/unl` still has about 90,000 rows that repeat a code, and these are correct: a UN/LOCODE three-letter code is unique only within its country.

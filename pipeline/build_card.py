@@ -1,4 +1,4 @@
-"""generate hub/README.md: the yaml front matter and the per-domain systems tables come from systems.parquet and
+"""Generate hub/README.md. The YAML front matter and the per-domain systems tables come from systems.parquet and
 hub_manifest.json; the prose comes from pipeline/card_body.md, where {{SYSTEMS_TABLES}} marks where the tables go.
 CH3_HUB_DIR overrides the hub folder."""
 import json, os, pathlib, sys
@@ -8,9 +8,13 @@ from core import ROOT
 
 HUB = pathlib.Path(os.environ.get("CH3_HUB_DIR", ROOT/"hub"))
 CFG = lambda sid: sid.replace("/", "-")
-# a regex goes inside a table cell, and a bare | ends the cell even inside backticks.
+# A regex goes inside a table cell, and a bare | ends the cell even inside backticks.
 # GFM resolves \| before inline parsing, so it survives into the code span.
 md_cell = lambda v: v.replace("|", r"\|")
+# Names and authorities in systems.parquet are stored as written in the metadata, often in lowercase. The card shows
+# them with an initial capital, except where the first word is a name that is lowercase by convention.
+KEEP_CASE = {"x86", "x86-64", "openCypher", "vCard", "schema.org", "tz", "wwPDB", "arXiv"}
+display = lambda v: v if not v or v.split()[0] in KEEP_CASE else v[0].upper() + v[1:]
 
 DOMAIN_NAME = {
  "bio":"biology","cls":"classification","cmp":"computing","com":"communication",
@@ -21,7 +25,7 @@ DOMAIN_NAME = {
 
 def yaml_front_matter(publish):
     y = ["---", "pretty_name: 3char", "license: other", "license_name: mixed-per-system",
-         "license_link: https://huggingface.co/datasets/brennercruvinel/3char#provenance-and-licensing",
+         "license_link: https://huggingface.co/datasets/brennercruvinel/3char#licensing",
          "language:", "- en",
          "tags:", "- code-systems", "- controlled-vocabulary",
          "- taxonomy", "- identifiers", "- three-letter-codes", "- knowledge-base",
@@ -38,11 +42,11 @@ def systems_tables(publish, counts, sysrows):
     for sid in publish: doms.setdefault(sid.split("/")[0], []).append(sid)
     b = []
     for dom in sorted(doms):
-        b.append(f"##### {dom}, {DOMAIN_NAME[dom]}\n")
-        b.append("| id | system | authority | codes | pattern |\n| --- | --- | --- | --- | --- |")
+        b.append(f"#### {DOMAIN_NAME[dom].capitalize()} (`{dom}`)\n")
+        b.append("| ID | System | Authority | Codes | Pattern |\n| --- | --- | --- | --- | --- |")
         for sid in sorted(doms[dom]):
             r = sysrows[sid]
-            b.append(f"| `{sid}` | {r['name']} | {r['authority']} | {counts[sid]:,} | `{md_cell(r['code_pattern'])}` |")
+            b.append(f"| `{sid}` | {display(r['name'])} | {display(r['authority'])} | {counts[sid]:,} | `{md_cell(r['code_pattern'])}` |")
         b.append("")
     return "\n".join(b).strip("\n")
 
