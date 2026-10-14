@@ -1,5 +1,18 @@
 # changelog
 
+## 0.1.2, 2026-10-14
+
+card only. no parquet changed since 0.1.1.
+
+### card
+
+rewritten as a data resource description. it now states, with the script that reproduces each figure: how to obtain the data and pin a revision; how to identify a record in the four systems where `code` is not unique (`trp/unl`, `lng/b47`, `wrt/tz`, `wrt/abj`); the inclusion conditions and the column or file that checks each; the status vocabulary as published, which earlier versions of the card and of SCHEMA.md described as a closed list that did not match the data; the collision census with definitions and denominators (14,911 of 623,141 distinct casefolded literals in two or more systems; 14,845 after collapsing the one derived family); the collision rate by code length against a uniform null; the agreement of every published code with the Wikidata format constraint of the matching property, with the verified cause of each divergence; the retrieval evidence with its sample and its limits; licensing per system, including the seven copyleft or share-alike systems and the two with no stated terms; the relation to the Bioregistry, N2T, Wikidata and pycountry with counts; versioning and deposit policy.
+
+### pipeline
+
+`census.py`, `keys.py`, `crosscheck_wikidata.py`, `manifest.py` and `card_check.py` added; `build_card.py` reads the prose from `card_body.md`; `SCHEMA.md` lists all 15 columns of `systems` and the observed `status` values; `LICENSES.md` explains why 58 systems are published when 57 sources are `ok` or `check` (`lng/i63` is a derivative of `lng/b47`); `SOURCES.tsv` moved to `history/`.
+
+
 ## 0.1.1, 2026-09-12
 
 one system rebuilt, one count corrected, one section added. no other parquet changed.

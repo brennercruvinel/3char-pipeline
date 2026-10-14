@@ -2,7 +2,7 @@
 
 triage of all 64 sources, checked against each authority's own published terms rather than inferred from whichever mirror the file came through. `ok` means redistribution is granted or the content is plain fact from the authority, `check` means no grant exists either way, `problem` means the authority asserts rights that block republishing the code set.
 
-as of 2026-09-10: 55 ok, 2 check, 7 problem. the 57 in the first two groups are what gets published, the 7 in the last are parsed by the pipeline and never uploaded.
+as of 2026-09-10: 55 ok, 2 check, 7 problem, of 64 sources. 58 systems are published: the 55 `ok`, the 2 `check`, and `lng/i63`, which was in the `problem` group as the SIL ISO 639-3 table and is published as a derivative of `lng/b47`, the IANA registry, under IANA terms; it is not ISO 639-3 and its card entry says so. the 6 remaining `problem` systems are parsed by the pipeline and never written to `hub/`.
 
 ### what never reaches the Hub
 
@@ -50,6 +50,8 @@ eight systems used to come from github gists and unlicensed repos. a gist is not
 55 systems. IANA registries, W3C vocabularies, US government sources (NCBI, PubChem, SEC, CDC), CC licensed corpora (Glottolog, WordNet, HGNC, ENZYME, the PG-Schema paper), public domain dedications (OurAirports, tzdb, edsu/lcco), permissively licensed community repos, and the eight authorities above.
 
 copyleft shows up in four. `cmp/git` and `cmp/frc` come out of GPL-2.0 source trees, `cmp/vim` carries the Vim license, `trp/ica2` is ODbL-1.0 with share-alike. pulling a factual code list out of a GPL source file is not the same as distributing that file, but the attribution obligation travels either way and `systems.parquet` records it.
+
+copyleft and share-alike terms apply to seven published systems and travel with any redistribution: `cmp/frc` (GPL-2.0-or-later) and `cmp/git` (GPL-2.0-only) are code lists extracted from GPL source trees; `cmp/vim` carries the Vim license; `grf/sch` and `grf/sio` are CC-BY-SA-3.0; `lng/i31` is CC-BY-SA-4.0 through its mirror; `trp/ica2` is ODbL-1.0. a downstream collection that includes these tables inherits the attribution and, for the share-alike ones, the share-alike obligation on the table itself. the two `check` systems from SIX Group carry no grant; a user who redistributes them commercially should obtain SIX's terms first.
 
 ### the ISO caveat
 

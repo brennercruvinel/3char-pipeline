@@ -1,0 +1,542 @@
+{
+ "systems": 58,
+ "rows": 751870,
+ "distinct_literals": 623141,
+ "in_two_or_more": 14911,
+ "in_three_or_more": 10237,
+ "k_hist": {
+  "1": 608230,
+  "2": 4674,
+  "3": 2966,
+  "4": 3324,
+  "5": 2672,
+  "6": 961,
+  "7": 245,
+  "8": 56,
+  "9": 8,
+  "10": 3,
+  "11": 2
+ },
+ "after_collapsing_derived_families": 14845,
+ "derived_families": {
+  "lng/i63": "lng/b47"
+ },
+ "fully_contained_systems": [
+  "bio/aa1",
+  "bio/aa3",
+  "bio/cdn",
+  "lng/i31",
+  "lng/i39",
+  "lng/i63",
+  "lng/mdy",
+  "wrt/iau"
+ ],
+ "share_claimed_elsewhere": {
+  "bio/aa1": 1.0,
+  "bio/aa3": 1.0,
+  "bio/cdn": 1.0,
+  "bio/ec": 0.0,
+  "bio/gen": 0.01593439562637509,
+  "bio/pdb": 7.451623277302356e-05,
+  "cls/elm": 0.9491525423728814,
+  "cls/icd": 0.004969360690222859,
+  "cls/loc": 0.8034188034188035,
+  "cmp/asm": 0.08632543926661573,
+  "cmp/css": 0.34285714285714286,
+  "cmp/dns": 0.4536082474226804,
+  "cmp/ern": 0.012987012987012988,
+  "cmp/ext": 0.7797202797202797,
+  "cmp/frc": 0.15834767641996558,
+  "cmp/git": 0.16455696202531644,
+  "cmp/hex": 0.16891891891891891,
+  "cmp/htt": 0.5365853658536586,
+  "cmp/mim": 0.0,
+  "cmp/reg": 0.377431906614786,
+  "cmp/sts": 0.092,
+  "cmp/vim": 0.17692307692307693,
+  "com/bau": 0.0,
+  "com/mor": 0.5833333333333334,
+  "com/tlg": 0.04936414604129632,
+  "fin/cfi": 0.0,
+  "fin/i42": 0.9887640449438202,
+  "fin/tck": 0.2504565112926478,
+  "grf/act": 0.5362318840579711,
+  "grf/foa": 0.33783783783783783,
+  "grf/gql": 0.6666666666666666,
+  "grf/lpg": 0.7647058823529411,
+  "grf/oid": 0.0,
+  "grf/org": 0.32558139534883723,
+  "grf/rdf": 0.4666666666666667,
+  "grf/sch": 0.08071135430916553,
+  "grf/shc": 0.16901408450704225,
+  "grf/sio": 0.2828282828282828,
+  "grf/vcd": 0.43661971830985913,
+  "lng/b47": 0.9701726844583988,
+  "lng/glt": 0.0,
+  "lng/i15": 0.9911504424778761,
+  "lng/i31": 1.0,
+  "lng/i39": 1.0,
+  "lng/i63": 1.0,
+  "lng/ioc": 0.995575221238938,
+  "lng/mdy": 1.0,
+  "nte/wnt": 0.0,
+  "trp/iata": 0.9959143109540636,
+  "trp/ica2": 0.9904126005820921,
+  "trp/icao": 0.02501723628484192,
+  "trp/olc": 0.0,
+  "trp/tld": 0.4913013221990257,
+  "trp/unl": 0.5052366027062152,
+  "wrt/abj": 0.0,
+  "wrt/iau": 1.0,
+  "wrt/tz": 0.15432873274780426,
+  "wrt/uni": 0.0022966507177033493
+ },
+ "top_literals": [
+  {
+   "literal": "and",
+   "systems": [
+    "cmp/asm",
+    "grf/gql",
+    "grf/shc",
+    "lng/b47",
+    "lng/i31",
+    "lng/i63",
+    "lng/ioc",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl",
+    "wrt/iau"
+   ]
+  },
+  {
+   "literal": "car",
+   "systems": [
+    "cmp/ext",
+    "fin/tck",
+    "grf/sch",
+    "grf/vcd",
+    "lng/b47",
+    "lng/i63",
+    "trp/iata",
+    "trp/ica2",
+    "trp/tld",
+    "trp/unl",
+    "wrt/iau"
+   ]
+  },
+  {
+   "literal": "met",
+   "systems": [
+    "bio/aa3",
+    "bio/gen",
+    "fin/tck",
+    "grf/vcd",
+    "lng/b47",
+    "lng/i63",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl",
+    "wrt/tz"
+   ]
+  },
+  {
+   "literal": "com",
+   "systems": [
+    "cmp/ext",
+    "lng/b47",
+    "lng/i31",
+    "lng/i63",
+    "lng/ioc",
+    "trp/iata",
+    "trp/ica2",
+    "trp/tld",
+    "trp/unl",
+    "wrt/iau"
+   ]
+  },
+  {
+   "literal": "for",
+   "systems": [
+    "cmp/ext",
+    "fin/tck",
+    "grf/gql",
+    "grf/lpg",
+    "lng/b47",
+    "lng/i63",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl",
+    "wrt/iau"
+   ]
+  },
+  {
+   "literal": "tga",
+   "systems": [
+    "bio/cdn",
+    "cmp/ext",
+    "cmp/frc",
+    "lng/b47",
+    "lng/i63",
+    "lng/ioc",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl"
+   ]
+  },
+  {
+   "literal": "max",
+   "systems": [
+    "bio/gen",
+    "cmp/css",
+    "cmp/ext",
+    "fin/tck",
+    "lng/b47",
+    "lng/i63",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl"
+   ]
+  },
+  {
+   "literal": "add",
+   "systems": [
+    "cmp/asm",
+    "cmp/git",
+    "grf/act",
+    "grf/gql",
+    "lng/b47",
+    "lng/i63",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl"
+   ]
+  },
+  {
+   "literal": "mov",
+   "systems": [
+    "cmp/asm",
+    "cmp/ext",
+    "fin/tck",
+    "lng/b47",
+    "lng/i63",
+    "trp/iata",
+    "trp/ica2",
+    "trp/tld",
+    "trp/unl"
+   ]
+  },
+  {
+   "literal": "png",
+   "systems": [
+    "cmp/ext",
+    "cmp/frc",
+    "lng/b47",
+    "lng/i31",
+    "lng/i63",
+    "lng/ioc",
+    "trp/iata",
+    "trp/ica2",
+    "trp/unl"
+   ]
+  }
+ ],
+ "length_curve": [
+  {
+   "length": 1,
+   "space": 26,
+   "claimed": 26,
+   "in_two_or_more": 25,
+   "observed_rate": 0.9615384615384616,
+   "null_rate": 0.9986871728206759,
+   "null_expected_claimed": 26.0
+  },
+  {
+   "length": 2,
+   "space": 676,
+   "claimed": 522,
+   "in_two_or_more": 395,
+   "observed_rate": 0.7567049808429118,
+   "null_rate": 0.7550257628510775,
+   "null_expected_claimed": 630.8398048012573
+  },
+  {
+   "length": 3,
+   "space": 17576,
+   "claimed": 17151,
+   "in_two_or_more": 12705,
+   "observed_rate": 0.7407731327619381,
+   "null_rate": 0.9191258245158276,
+   "null_expected_claimed": 17532.37242800412
+  },
+  {
+   "length": 4,
+   "space": 456976,
+   "claimed": 17130,
+   "in_two_or_more": 734,
+   "observed_rate": 0.0428488032691185,
+   "null_rate": 0.011827969299720027,
+   "null_expected_claimed": 17770.87943801791
+  },
+  {
+   "length": 5,
+   "space": 11881376,
+   "claimed": 4479,
+   "in_two_or_more": 96,
+   "observed_rate": 0.021433355659745478,
+   "null_rate": 0.0001223109985324691,
+   "null_expected_claimed": 4610.436061892598
+  },
+  {
+   "length": 6,
+   "space": 308915776,
+   "claimed": 2971,
+   "in_two_or_more": 99,
+   "observed_rate": 0.03332211376640862,
+   "null_rate": 3.7204113357879436e-06,
+   "null_expected_claimed": 3095.988481551397
+  },
+  {
+   "length": 7,
+   "space": 8031810176,
+   "claimed": 1752,
+   "in_two_or_more": 54,
+   "observed_rate": 0.030821917808219176,
+   "null_rate": 6.319002813063242e-08,
+   "null_expected_claimed": 1813.999896897961
+  }
+ ],
+ "per_system": {
+  "bio/aa1": {
+   "rows": 20,
+   "distinct_codes": 20
+  },
+  "bio/aa3": {
+   "rows": 20,
+   "distinct_codes": 20
+  },
+  "bio/cdn": {
+   "rows": 64,
+   "distinct_codes": 64
+  },
+  "bio/ec": {
+   "rows": 8441,
+   "distinct_codes": 8441
+  },
+  "bio/gen": {
+   "rows": 44997,
+   "distinct_codes": 44997
+  },
+  "bio/pdb": {
+   "rows": 254978,
+   "distinct_codes": 254978
+  },
+  "cls/elm": {
+   "rows": 118,
+   "distinct_codes": 118
+  },
+  "cls/icd": {
+   "rows": 98403,
+   "distinct_codes": 98403
+  },
+  "cls/loc": {
+   "rows": 234,
+   "distinct_codes": 234
+  },
+  "cmp/asm": {
+   "rows": 1309,
+   "distinct_codes": 1309
+  },
+  "cmp/css": {
+   "rows": 105,
+   "distinct_codes": 105
+  },
+  "cmp/dns": {
+   "rows": 97,
+   "distinct_codes": 97
+  },
+  "cmp/ern": {
+   "rows": 77,
+   "distinct_codes": 77
+  },
+  "cmp/ext": {
+   "rows": 286,
+   "distinct_codes": 286
+  },
+  "cmp/frc": {
+   "rows": 672,
+   "distinct_codes": 672
+  },
+  "cmp/git": {
+   "rows": 158,
+   "distinct_codes": 158
+  },
+  "cmp/hex": {
+   "rows": 148,
+   "distinct_codes": 148
+  },
+  "cmp/htt": {
+   "rows": 41,
+   "distinct_codes": 41
+  },
+  "cmp/mim": {
+   "rows": 2300,
+   "distinct_codes": 2300
+  },
+  "cmp/reg": {
+   "rows": 257,
+   "distinct_codes": 257
+  },
+  "cmp/sts": {
+   "rows": 500,
+   "distinct_codes": 500
+  },
+  "cmp/vim": {
+   "rows": 289,
+   "distinct_codes": 289
+  },
+  "com/bau": {
+   "rows": 30,
+   "distinct_codes": 30
+  },
+  "com/mor": {
+   "rows": 48,
+   "distinct_codes": 48
+  },
+  "com/tlg": {
+   "rows": 7359,
+   "distinct_codes": 7359
+  },
+  "fin/cfi": {
+   "rows": 1216,
+   "distinct_codes": 1216
+  },
+  "fin/i42": {
+   "rows": 178,
+   "distinct_codes": 178
+  },
+  "fin/tck": {
+   "rows": 10405,
+   "distinct_codes": 10405
+  },
+  "grf/act": {
+   "rows": 141,
+   "distinct_codes": 141
+  },
+  "grf/foa": {
+   "rows": 75,
+   "distinct_codes": 75
+  },
+  "grf/gql": {
+   "rows": 63,
+   "distinct_codes": 63
+  },
+  "grf/lpg": {
+   "rows": 34,
+   "distinct_codes": 34
+  },
+  "grf/oid": {
+   "rows": 17,
+   "distinct_codes": 17
+  },
+  "grf/org": {
+   "rows": 45,
+   "distinct_codes": 45
+  },
+  "grf/rdf": {
+   "rows": 15,
+   "distinct_codes": 15
+  },
+  "grf/sch": {
+   "rows": 2987,
+   "distinct_codes": 2987
+  },
+  "grf/shc": {
+   "rows": 221,
+   "distinct_codes": 221
+  },
+  "grf/sio": {
+   "rows": 99,
+   "distinct_codes": 99
+  },
+  "grf/vcd": {
+   "rows": 146,
+   "distinct_codes": 146
+  },
+  "lng/b47": {
+   "rows": 9295,
+   "distinct_codes": 9037
+  },
+  "lng/glt": {
+   "rows": 27177,
+   "distinct_codes": 27177
+  },
+  "lng/i15": {
+   "rows": 226,
+   "distinct_codes": 226
+  },
+  "lng/i31": {
+   "rows": 249,
+   "distinct_codes": 249
+  },
+  "lng/i39": {
+   "rows": 183,
+   "distinct_codes": 183
+  },
+  "lng/i63": {
+   "rows": 8084,
+   "distinct_codes": 8084
+  },
+  "lng/ioc": {
+   "rows": 226,
+   "distinct_codes": 226
+  },
+  "lng/mdy": {
+   "rows": 12,
+   "distinct_codes": 12
+  },
+  "nte/wnt": {
+   "rows": 120630,
+   "distinct_codes": 120630
+  },
+  "trp/iata": {
+   "rows": 9056,
+   "distinct_codes": 9056
+  },
+  "trp/ica2": {
+   "rows": 5841,
+   "distinct_codes": 5841
+  },
+  "trp/icao": {
+   "rows": 10153,
+   "distinct_codes": 10153
+  },
+  "trp/olc": {
+   "rows": 292,
+   "distinct_codes": 292
+  },
+  "trp/tld": {
+   "rows": 1437,
+   "distinct_codes": 1437
+  },
+  "trp/unl": {
+   "rows": 116213,
+   "distinct_codes": 26162
+  },
+  "wrt/abj": {
+   "rows": 84,
+   "distinct_codes": 83
+  },
+  "wrt/iau": {
+   "rows": 88,
+   "distinct_codes": 88
+  },
+  "wrt/tz": {
+   "rows": 806,
+   "distinct_codes": 797
+  },
+  "wrt/uni": {
+   "rows": 5225,
+   "distinct_codes": 5225
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "upload_type": "dataset",
+ "title": "3char: 58 identifier systems in one schema, with per-system provenance and license status",
+ "version": "0.1.2",
+ "publication_date": "2026-10-14",
+ "creators": [{"name": "Viana Cruvinel, Brenner", "orcid": "0009-0002-3079-8829", "affiliation": "Hoff Research"}],
+ "description": "3char is a harmonized collection of 751,870 records from 58 identifier systems (airport, currency, country, language, gene, enzyme, HTTP, DNS and other short codes), distributed in a common Parquet schema. Records retain their source namespace (system_id); a systems table documents, per system, the assigning authority, the retrieval URL, the version and retrieval date of the source file, the license and its status, and the regex that every published code satisfies. Identifiers are not globally unique: 14,911 of 623,141 distinct casefolded literals are claimed by two or more systems, and four systems need an additional field to resolve a record. The deposit contains only material whose authority permits redistribution or states no terms (license_status ok or check), the manifest with sha256 and row counts per file, the schema, the per-system provenance, and the scripts that reproduce the statistics in the dataset card. Six further systems are parsed by the build pipeline and are not deposited because their authorities forbid redistribution.",
+ "access_right": "open",
+ "license": "other-open",
+ "keywords": ["identifier systems", "code lists", "controlled vocabularies", "provenance", "ISO 3166", "ISO 4217", "IATA", "ICD-10-CM", "collision census"],
+ "related_identifiers": [
+  {"identifier": "https://huggingface.co/datasets/brennercruvinel/3char", "relation": "isIdenticalTo", "resource_type": "dataset"},
+  {"identifier": "https://github.com/brennercruvinel/3char-pipeline", "relation": "isCompiledBy", "resource_type": "software"},
+  {"identifier": "https://github.com/brennercruvinel/3char-bench", "relation": "isReferencedBy", "resource_type": "software"}
+ ],
+ "notes": "License is per system and recorded in systems.parquet (license, license_status). Seven published systems carry copyleft or share-alike terms (GPL-2.0, Vim, CC-BY-SA, ODbL); two from SIX Group carry no stated redistribution terms (license_status = check). See LICENSES.md in the build pipeline for the verbatim terms."
+}

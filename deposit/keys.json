@@ -1,0 +1,532 @@
+{
+ "bio/aa1": {
+  "rows": 20,
+  "distinct_codes": 20,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "bio/aa3": {
+  "rows": 20,
+  "distinct_codes": 20,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "bio/cdn": {
+  "rows": 64,
+  "distinct_codes": 64,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "bio/ec": {
+  "rows": 8441,
+  "distinct_codes": 8441,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "bio/gen": {
+  "rows": 44997,
+  "distinct_codes": 44997,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "bio/pdb": {
+  "rows": 254978,
+  "distinct_codes": 254978,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cls/elm": {
+  "rows": 118,
+  "distinct_codes": 118,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cls/icd": {
+  "rows": 98403,
+  "distinct_codes": 98403,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cls/loc": {
+  "rows": 234,
+  "distinct_codes": 234,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/asm": {
+  "rows": 1309,
+  "distinct_codes": 1309,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/css": {
+  "rows": 105,
+  "distinct_codes": 105,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/dns": {
+  "rows": 97,
+  "distinct_codes": 97,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/ern": {
+  "rows": 77,
+  "distinct_codes": 77,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/ext": {
+  "rows": 286,
+  "distinct_codes": 286,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/frc": {
+  "rows": 672,
+  "distinct_codes": 672,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/git": {
+  "rows": 158,
+  "distinct_codes": 158,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/hex": {
+  "rows": 148,
+  "distinct_codes": 148,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/htt": {
+  "rows": 41,
+  "distinct_codes": 41,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/mim": {
+  "rows": 2300,
+  "distinct_codes": 2300,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/reg": {
+  "rows": 257,
+  "distinct_codes": 257,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/sts": {
+  "rows": 500,
+  "distinct_codes": 500,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "cmp/vim": {
+  "rows": 289,
+  "distinct_codes": 289,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "com/bau": {
+  "rows": 30,
+  "distinct_codes": 30,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "com/mor": {
+  "rows": 48,
+  "distinct_codes": 48,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "com/tlg": {
+  "rows": 7359,
+  "distinct_codes": 7359,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "fin/cfi": {
+  "rows": 1216,
+  "distinct_codes": 1216,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "fin/i42": {
+  "rows": 178,
+  "distinct_codes": 178,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "fin/tck": {
+  "rows": 10405,
+  "distinct_codes": 10405,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/act": {
+  "rows": 141,
+  "distinct_codes": 141,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/foa": {
+  "rows": 75,
+  "distinct_codes": 75,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/gql": {
+  "rows": 63,
+  "distinct_codes": 63,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/lpg": {
+  "rows": 34,
+  "distinct_codes": 34,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/oid": {
+  "rows": 17,
+  "distinct_codes": 17,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/org": {
+  "rows": 45,
+  "distinct_codes": 45,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/rdf": {
+  "rows": 15,
+  "distinct_codes": 15,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/sch": {
+  "rows": 2987,
+  "distinct_codes": 2987,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/shc": {
+  "rows": 221,
+  "distinct_codes": 221,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/sio": {
+  "rows": 99,
+  "distinct_codes": 99,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "grf/vcd": {
+  "rows": 146,
+  "distinct_codes": 146,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/b47": {
+  "rows": 9295,
+  "distinct_codes": 9037,
+  "code_unique": false,
+  "repeated_codes": 258,
+  "key": [
+   "code",
+   "extra.type"
+  ]
+ },
+ "lng/glt": {
+  "rows": 27177,
+  "distinct_codes": 27177,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/i15": {
+  "rows": 226,
+  "distinct_codes": 226,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/i31": {
+  "rows": 249,
+  "distinct_codes": 249,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/i39": {
+  "rows": 183,
+  "distinct_codes": 183,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/i63": {
+  "rows": 8084,
+  "distinct_codes": 8084,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/ioc": {
+  "rows": 226,
+  "distinct_codes": 226,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "lng/mdy": {
+  "rows": 12,
+  "distinct_codes": 12,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "nte/wnt": {
+  "rows": 120630,
+  "distinct_codes": 120630,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "trp/iata": {
+  "rows": 9056,
+  "distinct_codes": 9056,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "trp/ica2": {
+  "rows": 5841,
+  "distinct_codes": 5841,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "trp/icao": {
+  "rows": 10153,
+  "distinct_codes": 10153,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "trp/olc": {
+  "rows": 292,
+  "distinct_codes": 292,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "trp/tld": {
+  "rows": 1437,
+  "distinct_codes": 1437,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "trp/unl": {
+  "rows": 116213,
+  "distinct_codes": 26162,
+  "code_unique": false,
+  "repeated_codes": 18748,
+  "key": [
+   "code",
+   "extra.locode"
+  ],
+  "rows_still_repeated_under_key": 146,
+  "code_label_unique": false
+ },
+ "wrt/abj": {
+  "rows": 84,
+  "distinct_codes": 83,
+  "code_unique": false,
+  "repeated_codes": 1,
+  "key": [
+   "code",
+   "extra.group"
+  ],
+  "rows_still_repeated_under_key": 1,
+  "code_label_unique": true
+ },
+ "wrt/iau": {
+  "rows": 88,
+  "distinct_codes": 88,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ },
+ "wrt/tz": {
+  "rows": 806,
+  "distinct_codes": 797,
+  "code_unique": false,
+  "repeated_codes": 9,
+  "key": [
+   "code",
+   "extra.kind"
+  ]
+ },
+ "wrt/uni": {
+  "rows": 5225,
+  "distinct_codes": 5225,
+  "code_unique": true,
+  "repeated_codes": 0,
+  "key": [
+   "code"
+  ]
+ }
+}
