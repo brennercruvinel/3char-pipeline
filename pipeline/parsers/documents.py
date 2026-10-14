@@ -88,68 +88,125 @@ def dewey(path, sysrow):
 
 @parser("grf/lpg")
 def pg_schema(path, sysrow):
-    """PG-Schema, arXiv 2211.10962. the paper defines a schema language, and its keywords
-    are set in all caps throughout. those keywords are the codes."""
+    """PG-Schema, arXiv 2211.10962. the keywords are those of the core grammar (Fig. 3), labelled by
+    the productions that use them, plus the PG-Keys constraint keywords and the base property types
+    the paper writes in its schemas (sections 4.3 and 4.4). counting every all-caps word in the paper
+    picked up affiliations and acronyms (ACM, CNRS, USA), which are not part of the language."""
     text = "\n".join(_pages(path))
-    counts = {}
-    for m in re.finditer(r"\b([A-Z][A-Z]{2,})\b", text):
-        k = m.group(1)
-        counts[k] = counts.get(k, 0) + 1
-    for k in sorted(counts):
-        if counts[k] < 3: continue
-        yield row("grf/lpg", k, "", extra={"occurrences": counts[k]})
+    words = lambda name: re.sub(r"(?<=[a-z])(?=[A-Z])", " ", name).lower()
+    used, prod = {}, None
+    for line in text.splitlines():
+        m = re.match(r"^(\w+) ::= (.*)$", line.strip())
+        if m: prod, body = m.group(1), m.group(2)
+        elif prod and line.strip().startswith("|"): body = line
+        else:
+            prod = None if not line.strip().startswith("|") else prod
+            continue
+        for k in re.findall(r"\b([A-Z]{2,})\b", body):
+            used.setdefault(k, []).append(prod) if prod not in used.get(k, []) else None
+    other = {
+        "FOR": "Opens a PG-Keys constraint: FOR p(x) <qualifier> q(x, y)",
+        "EXCLUSIVE": "PG-Keys qualifier: no result of q is shared by two values of x",
+        "MANDATORY": "PG-Keys qualifier: every x has at least one result of q",
+        "SINGLETON": "PG-Keys qualifier: every x has at most one result of q",
+        "WITHIN": "Marks what a PG-Keys query returns",
+        "WHERE": "Condition inside a PG-Keys query",
+        "COUNT": "Cardinality constraint, COUNT <lower>..<upper> OF",
+        "OF": "Cardinality constraint, COUNT <lower>..<upper> OF",
+        "ARRAY": "Array property type, as in STRING ARRAY {1,2}",
+    }
+    types = {"STRING", "INT", "DATE", "FLOAT", "DOUBLE", "BOOL"}
+    for k in sorted(set(used) | set(other) | types):
+        if k not in text: continue
+        label = ("Keyword in " + ", ".join(words(p) for p in used[k])) if k in used \
+            else other.get(k) or "Base property type"
+        yield row("grf/lpg", k, label, extra={"occurrences": len(re.findall(rf"\b{k}\b", text)),
+                                             "grammar": used.get(k)})
 
 
 @parser("com/tlg")
 def abc_telegraphic(path, sysrow):
     """the ABC Universal Commercial Electric Telegraphic Code, Clauson-Thue 1901.
 
-    the plain OCR text of this scan is unusable for the job: the book sets code number,
-    code word and phrase in three columns, and the text derivative emits the columns as
-    separate runs of lines, so the pairing that makes the code a code is gone. the djvu
-    xml keeps a bounding box per word, which puts the columns back. the code word sits
-    around x=410, the phrase starts past x=700, and the code number on the left is the
-    worst OCR on the page, 08554 comes out as ^8554, so it rides in extra rather than
-    being trusted as the code."""
+    each line of the code proper is code number, code word and phrase, in three columns. the
+    columns sit at different x positions from page to page, so they are found per page: a column
+    starts wherever a word opens a line or follows a wide gap, the code-word column is the first
+    one whose words are mostly capitalised, and the phrase column is the next one to the right.
+    the code number is the worst OCR on the page (08554 comes out as ^8554), so it rides in extra.
+
+    a page is kept only when its code words run in alphabetical order, as they do in the code
+    proper. that drops the front matter and the extended index, which are not alphabetical by
+    code word, and pages whose phrases are mostly figures (the index's page numbers and the
+    number tables at the end, whose two-up layout the OCR does not keep apart)."""
     from lxml import etree
-    import statistics
-    CODEWORD_X, PHRASE_X = 380, 700
-    seen = set()
-    for _, page in etree.iterparse(str(ROOT/path), tag="OBJECT", events=("end",)):
-        words = []
+    import collections, statistics
+
+    def lines_of(page):
+        ws = []
         for w in page.findall(".//WORD"):
-            txt = (w.text or "").strip()
-            if not txt: continue
+            t = (w.text or "").strip()
+            if not t: continue
             try:
                 x1, y2, x2, y1 = (int(v) for v in w.get("coords", "").split(",")[:4])
             except ValueError:
                 continue
-            words.append((x1, (y1 + y2) / 2, y2 - y1, txt))
-        if len(words) < 20:
-            page.clear(); continue
-        tol = max(8, statistics.median(h for *_, h, _ in words) / 2)
-        words.sort(key=lambda w: (w[1], w[0]))
-        lines, cur, last = [], [], None
-        for w in words:
-            if last is None or abs(w[1] - last) <= tol:
-                cur.append(w)
+            ws.append((x1, x2, (y1 + y2) / 2, y2 - y1, t))
+        if len(ws) < 20: return []
+        tol = max(8, statistics.median(w[3] for w in ws) / 2)
+        ws.sort(key=lambda w: (w[2], w[0]))
+        lines, cur, mid = [], [], None
+        for w in ws:
+            if mid is None or abs(w[2] - mid) <= tol:
+                cur.append(w); mid = w[2] if mid is None else (mid + w[2]) / 2
             else:
-                lines.append(cur); cur = [w]
-            last = w[1] if last is None else (last + w[1]) / 2 if abs(w[1]-last) <= tol else w[1]
-        if cur: lines.append(cur)
+                lines.append(sorted(cur)); cur, mid = [w], w[2]
+        if cur: lines.append(sorted(cur))
+        return lines
 
+    def column_starts(lines):
+        starts = []
         for ln in lines:
-            ln.sort(key=lambda w: w[0])
-            num = " ".join(t for x, *_, t in ln if x < CODEWORD_X)
-            cw = [t for x, *_, t in ln if CODEWORD_X <= x < PHRASE_X]
-            phrase = " ".join(t for x, *_, t in ln if x >= PHRASE_X)
-            if len(cw) != 1: continue
-            code = re.sub(r"[^A-Za-z]", "", cw[0])
-            if len(code) < 4 or code in seen: continue
-            seen.add(code)
-            yield row("com/tlg", code, " ".join(phrase.split()),
-                      extra={"code_number_ocr": num.strip() or None,
-                             "phrase_words": len(phrase.split()) or None})
+            prev = None
+            for x1, x2, *_ in ln:
+                if prev is None or x1 - prev > 60: starts.append(x1)
+                prev = x2
+        hist = collections.Counter(x // 40 * 40 for x in starts)
+        peaks = sorted(b for b, n in hist.items() if n >= max(5, len(lines) // 4))
+        cols = []
+        for b in peaks:
+            if cols and b - cols[-1][-1] <= 80: cols[-1].append(b)
+            else: cols.append([b])
+        return [c[0] for c in cols]
+
+    seen = set()
+    for _, page in etree.iterparse(str(ROOT/path), tag="OBJECT", events=("end",)):
+        lines = lines_of(page)
         page.clear()
         while page.getprevious() is not None:
             del page.getparent()[0]
+        if not lines: continue
+        cols = column_starts(lines)
+        cw = next((c for c in cols
+                   if (toks := [w[4] for ln in lines for w in ln if c - 40 <= w[0] < c + 80])
+                   and sum(bool(re.match(r"^[A-Z][a-z]{2,}$", t)) for t in toks) / len(toks) > 0.6), None)
+        ph = next((c for c in cols if cw is not None and c > cw + 150), None)
+        if cw is None or ph is None: continue
+        entries = []
+        for ln in lines:
+            word = [w[4] for w in ln if cw - 50 <= w[0] < ph - 60]
+            phrase = " ".join(w[4] for w in ln if w[0] >= ph - 60).strip()
+            number = " ".join(w[4] for w in ln if w[0] < cw - 50).strip()
+            code = re.sub(r"[^A-Za-z]", "", "".join(word))
+            if not (4 <= len(code) <= 22) or not phrase: continue
+            if re.match(r"^Code\s*No|^Word", " ".join(word)) or "continued" in phrase.replace(" ", ""):
+                continue                                   # running header: "Code No. Code Word  <keyword> — continued."
+            entries.append((code, phrase, number))
+        if len(entries) < 10: continue
+        order = sum(a[0].lower() <= b[0].lower() for a, b in zip(entries, entries[1:])) / (len(entries) - 1)
+        figures = sum(bool(re.search(r"\d", e[1])) for e in entries) / len(entries)
+        if order < 0.8 or figures > 0.4: continue
+        for code, phrase, number in entries:
+            if code in seen: continue
+            seen.add(code)
+            yield row("com/tlg", code, " ".join(phrase.split()),
+                      extra={"code_number_ocr": number or None, "phrase_words": len(phrase.split())})

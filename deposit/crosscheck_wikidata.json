@@ -113,7 +113,7 @@
   "system": "wrt/tz",
   "property": "P6687",
   "regex": "[A-Za-z0-9\\+\\-_]{1,14}(?:/[A-Za-z0-9\\+\\-_]{1,14}){0,2}",
-  "tested": 806,
+  "tested": 777,
   "rejected": 0,
   "examples": []
  },

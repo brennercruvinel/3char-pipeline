@@ -1,7 +1,7 @@
 """csv, tab and headerless table sources. one spec per system, one generic reader."""
 import re, sys, pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from core import parser, row, read_csv
+from core import parser, row, read_csv, label_file
 
 def _first_token(s):
     return re.split(r"[\s,]", s.strip().strip('"'), 1)[0]
@@ -36,16 +36,27 @@ def http_status(path, sysrow):
         codes = expand_range(val) or [val]
         st = "unassigned" if desc.lower() == "unassigned" else None
         for c in codes:
-            yield row("cmp/sts", c, "" if st else desc, status=st,
-                      extra={"reference": r.get("Reference")})
+            yield row("cmp/sts", c, desc, status=st,
+                      extra={"reference": r.get("Reference"), "range": val if len(codes) > 1 else None})
 
 @parser("cmp/dns")
 def dns_types(path, sysrow):
     skip = {"unassigned", "reserved", "private use"}
+    # IANA leaves Meaning empty for nine types. The four ILNP types take the sentence of RFC 6742 that
+    # defines each, SPF takes the title of RFC 7208, and the IANA-reserved four take that reference.
+    ilnp = " ".join(label_file(path, "cmp/dns", 0).read_text(encoding="utf-8").split())
+    rfc7208 = label_file(path, "cmp/dns", 1).read_text(encoding="utf-8").splitlines()
+    at = next(i for i, l in enumerate(rfc7208) if l.strip().startswith("Sender Policy Framework"))
+    spf_title = " ".join(l.strip() for l in rfc7208[at:at + 2])   # the title runs over two centred lines
+    def meaning(t, ref):
+        if ref == "[IANA-Reserved]": return "IANA-Reserved"
+        if ref == "[RFC7208]": return spf_title
+        m = re.search(r"(The [^.]{0,40}\b%s\b[^.]*? is used(?: to)? hold [^.]*\.)" % re.escape(t), ilnp)
+        return re.sub(r"^The \S+ Resource Record ", "", m.group(1)) if m else ""   # drop the section heading
     for r in read_csv(path):
         t = (r.get("TYPE") or "").strip()
         if not t or t.lower() in skip: continue
-        yield row("cmp/dns", t, r.get("Meaning") or "",
+        yield row("cmp/dns", t, r.get("Meaning") or meaning(t, (r.get("Reference") or "").strip()),
                   extra={"value": r.get("Value"), "reference": r.get("Reference"),
                          "registered": r.get("Registration Date")})
 
@@ -144,7 +155,8 @@ def open_location_code(path, sysrow):
         c = (r.get("code") or "").strip()
         if not c or c in seen: continue
         seen.add(c)
-        yield row("trp/olc", c, "", extra={"lat": r.get("lat"), "lng": r.get("lng"),
+        # the label is the coordinate the test vector encodes, as the file writes it
+        yield row("trp/olc", c, f"{r.get('lat')}, {r.get('lng')}", extra={"lat": r.get("lat"), "lng": r.get("lng"),
                                            "length": r.get("length")})
 
 # ---------------------------------------------------------------- hierarchical
@@ -183,9 +195,17 @@ def bisac(path, sysrow):
 
 @parser("fin/cus")
 def cik_cusip(path, sysrow):
+    """the mapping gives CUSIP issuer prefixes and the SEC CIK of the filer; the issuer's name is the
+    one EDGAR registers for that CIK, from the SEC's CIK lookup file ("NAME:0000012345:")."""
+    names = {}
+    with open(label_file(path, "fin/cus"), encoding="latin-1") as fh:
+        for line in fh:
+            m = re.match(r"^(.*):(\d{10}):\s*$", line.rstrip("\n"))
+            if m and m.group(1).strip(): names.setdefault(int(m.group(2)), m.group(1).strip())
     seen = set()
     for r in read_csv(path):
         c = (r.get("cusip6") or "").strip()
         if not c or c in seen: continue
         seen.add(c)
-        yield row("fin/cus", c, "", extra={"cik": r.get("cik"), "cusip8": r.get("cusip8")})
+        cik = int(float(r["cik"])) if (r.get("cik") or "").strip() else None
+        yield row("fin/cus", c, names.get(cik, ""), extra={"cik": str(cik) if cik else None, "cusip8": r.get("cusip8")})

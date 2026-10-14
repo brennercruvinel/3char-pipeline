@@ -34,6 +34,11 @@ def row(system_id, code, label, description=None, parent_code=None,
             ensure_ascii=False, sort_keys=True) if extra else None,
     }
 
+def label_file(path, sid, i=0):
+    """the i-th label source of a system, next to its main raw file (systems_meta.LABEL_SOURCES)."""
+    from systems_meta import LABEL_SOURCES
+    return (ROOT/path).parent/LABEL_SOURCES[sid][i][0]
+
 def systems():
     with open(ROOT/"systems.tsv", encoding="utf-8") as fh:
         return {r["system_id"]: r for r in csv.DictReader(fh, delimiter="\t")}
