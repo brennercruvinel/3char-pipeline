@@ -6,21 +6,24 @@ Documentation only. No Parquet file has changed since 0.1.1.
 
 ### Card
 
-The text was revised throughout for language and accuracy. A section on uses was added, and system names and authorities in the systems tables are shown with an initial capital (the stored values are unchanged). Factual corrections:
+The card was restructured as the description of a scientific data resource. It now opens with a definition of the collection and the reason it exists, describes the five kinds of list it contains (assigned codes, symbols, vocabulary terms, community conventions and test vectors), and then covers uses, loading, construction, findings, licensing and limitations. The full inventory of the 58 systems moved to an appendix that lists each system's kind, authority and size; regular expressions and the other metadata remain in the `systems` configuration. System names are displayed with an initial capital, while the stored values are unchanged. The citation title now reads "58 code systems and controlled vocabularies" instead of "58 identifier systems".
 
-- The retrieval summary reported a single ranking of configurations. It now reports the ranking for each embedder: with all-MiniLM-L6-v2, the whole system as one chunk ranks first (82.4% recall@1), ahead of one record per sentence (52.9%).
-- The retrieval summary now states that the questions and prose chunks are in Portuguese, while all-MiniLM-L6-v2 is an English model.
+Corrections:
+
+- Shared codes were presented as strings with several meanings. The card now states that a shared string may denote the same entity in different systems (`BRA` is Brazil in both ISO 3166-1 and the IOC list) and that the census does not decide which.
+- The ratios against the uniform null are no longer interpreted beyond their departure from a uniform draw.
+- Retrieval results now separate record retrieval from system retrieval: a whole-system chunk that ranks first identifies the right list, not the right row.
+- The retrieval summary states that the questions and prose chunks are in Portuguese, while all-MiniLM-L6-v2 is an English model.
 - Release tags and the Zenodo deposit were described as existing. They are now described as planned.
 - `license_link` in the YAML header pointed to a section that did not exist. It now points to the licensing section.
-- The inclusion condition on file provenance mentioned only the authority and public domain derivatives. It now covers any derivative whose terms permit redistribution, which matches the mirrors actually used.
+- The inclusion condition on provenance now covers derivatives whose terms permit redistribution and the two community conventions, which matches the sources actually used.
 - The eight replaced sources were described as unlicensed gists. The description now matches `LICENSES.md`: gists, unlicensed repositories, a third-party scan and a community mirror.
 - The claim that the Wikidata format constraints are older than the codes they reject was removed, because it had not been verified.
-- The ratios against the uniform null are now described as upper bounds on the excess over chance.
 - The Hub search was described as fourteen queries while thirteen were listed. The count was removed, because the search record could not be found.
 
 ### Pipeline
 
-`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `build_card.py` writes the per-domain headings one level below the systems heading, and the license link points to an existing anchor. `build_systems.py` failed after 0.1.2, which moved `SOURCES.tsv` to `history/` and renamed its key column; it now reads `history/SOURCES.tsv` by `system_id`. `deposit/zenodo_metadata.json` no longer declares an open license for the whole deposit, because two systems have unconfirmed redistribution terms.
+`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised; `SCHEMA.md` attributed the `deprecated` and `current` status values to the wrong systems, and now lists the systems that use them. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `build_card.py` writes the appendix of systems with each system's kind, and the license link points to an existing anchor. `build_systems.py` failed after 0.1.2, which moved `SOURCES.tsv` to `history/` and renamed its key column; it now reads `history/SOURCES.tsv` by `system_id`. `deposit/zenodo_metadata.json` no longer declares an open license for the whole deposit, because two systems have unconfirmed redistribution terms.
 
 ## 0.1.2, 2026-10-14
 

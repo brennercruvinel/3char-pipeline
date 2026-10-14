@@ -25,11 +25,11 @@ The dataset has two tables. `systems` describes each code system; `codes` holds 
 | --- | --- | --- |
 | null | 693,350 | All systems that publish no status |
 | `approved` | 44,997 | `bio/gen` (HGNC symbol status) |
-| `deprecated` | 6,793 | IANA registries, Glottolog, tz |
+| `deprecated` | 6,793 | `bio/ec`, `cmp/mim`, `lng/b47`, `lng/i63`, `trp/ica2` |
 | `fully-qualified` | 3,944 | `wrt/uni` (Unicode emoji qualification) |
-| `current` | 1,069 | IANA registries |
+| `current` | 1,069 | `trp/ica2` |
 | `minimally-qualified` | 1,029 | `wrt/uni` |
-| `unassigned` | 436 | `cmp/sts` expanded ranges and IANA gaps |
+| `unassigned` | 436 | `cmp/sts` (unassigned ranges, one row per code) |
 | `unqualified` | 243 | `wrt/uni` |
 | `component` | 9 | `wrt/uni` |
 
@@ -74,4 +74,4 @@ One row per code system: 64 rows in `systems.tsv` and 58 in `hub/systems.parquet
 
 ## code_pattern
 
-Every pattern is anchored and enforced by `validate.py`, which exits with an error on any mismatch not listed in `known_exceptions.py`. Three characters is the organizing theme of the collection, not a constraint of the schema; each pattern records the form the system's codes actually take.
+Every pattern is anchored and enforced by `validate.py`, which exits with an error on any mismatch not listed in `known_exceptions.py`. The collection includes codes, symbols, vocabulary terms and test vectors of many lengths, so the schema imposes no format; each pattern records the form the system's entries actually take.

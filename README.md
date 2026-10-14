@@ -1,6 +1,6 @@
 # 3char-pipeline
 
-Build pipeline for the [3char](https://huggingface.co/datasets/brennercruvinel/3char) dataset. It contains 64 parsers that read code lists published by their assigning authorities and write one Parquet file per system in a common schema, together with the checks that must pass before an upload. The repository holds code and provenance records only: raw sources and Parquet files are not committed.
+Build pipeline for the [3char](https://huggingface.co/datasets/brennercruvinel/3char) dataset. It contains 64 parsers that read code systems, symbol sets and vocabularies from documented reference sources and write one Parquet file per system in a common schema, together with the checks that must pass before an upload. The repository holds code and provenance records only: raw sources and Parquet files are not committed.
 
 The dataset card on the Hub describes the data itself. This README covers how the data is built, checked and extended.
 
