@@ -1,4 +1,4 @@
-"""migrate SOURCES.tsv + curated metadata + disk state into systems.tsv."""
+"""Build systems.tsv from history/SOURCES.tsv, the curated metadata in systems_meta.py and the raw files on disk."""
 import csv, datetime, pathlib, sys
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
 from systems_meta import SYSTEMS, DERIVED_PATTERN, DERIVED_FROM, NOTES
@@ -10,16 +10,17 @@ COLS = ["system_id","domain","name","authority","url","license","license_status"
         "version","retrieved_at","notes"]
 
 def flat(v):
-    """systems.tsv is read by python, by awk and by eye, so it has to be strictly one
-    record per physical line. the csv module would happily quote a field containing a
-    newline and stay valid CSV, but `wc -l` and `awk -F'\t'` would then disagree with
-    the parser about how many rows exist. collapsing whitespace is the right call for
-    the prose fields, which are written across several source lines on purpose."""
+    """Collapse whitespace so that each record stays on one physical line.
+
+    systems.tsv is read by Python, by awk and by eye. The csv module would quote a field
+    containing a newline and still produce valid CSV, but `wc -l` and `awk -F'\t'` would
+    then disagree with the parser about the number of rows. The prose fields are written
+    across several source lines on purpose, so collapsing their whitespace is safe."""
     return " ".join(str(v).split()) if v is not None else ""
 
 def check(rows):
-    """prove the invariant instead of trusting it: the file must read back identical,
-    on the same number of physical lines, with every line carrying every column."""
+    """Verify the written file: it must read back identically, with one physical line per
+    row and every column on every line."""
     text = (ROOT/"systems.tsv").read_text(encoding="utf-8")
     lines = text.splitlines()
     if len(lines) != len(rows) + 1:
@@ -35,16 +36,16 @@ def check(rows):
         sys.exit(f"systems.tsv does not round-trip, first mismatch at {bad}")
 
 def sources():
-    with open(ROOT/"SOURCES.tsv", encoding="utf-8") as fh:
-        return {r["dom/id"]: r for r in csv.DictReader(fh, delimiter="\t")}
+    with open(ROOT/"history"/"SOURCES.tsv", encoding="utf-8") as fh:
+        return {r["system_id"]: r for r in csv.DictReader(fh, delimiter="\t")}
 
 def raw_dir(sid):
-    """a derived system has no raw of its own, it reads the parent's."""
+    """A derived system has no raw file of its own and reads its parent's."""
     return ROOT/"data"/DERIVED_FROM.get(sid, sid)/"raw"
 
 def raw_target(sid):
     entries = sorted(raw_dir(sid).iterdir())
-    if not entries: sys.exit(f"{sid}: raw/ vazio")
+    if not entries: sys.exit(f"{sid}: raw/ is empty")
     return str(entries[0].relative_to(ROOT))
 
 def retrieved(sid):
@@ -67,14 +68,14 @@ def main():
             "pattern_status": "derived" if sid in DERIVED_PATTERN else "provisional",
             "case_sensitive": str(cs).lower(), "raw_file": raw_target(sid),
             "derived_from": DERIVED_FROM.get(sid, ""),
-        "version": version_of(sid, ROOT/raw_target(sid)),
+            "version": version_of(sid, ROOT/raw_target(sid)),
             "retrieved_at": retrieved(sid), "notes": NOTES.get(sid, ""),
         })
     rows = [{k: flat(v) for k, v in r.items()} for r in rows]
 
     with open(ROOT/"systems.tsv", "w", newline="", encoding="utf-8") as fh:
-        # QUOTE_NONE with no escapechar: the writer raises rather than quietly quoting a
-        # field that would break the one-record-per-line contract.
+        # QUOTE_NONE without an escapechar makes the writer raise instead of silently quoting
+        # a field that would break the one-record-per-line contract.
         w = csv.DictWriter(fh, fieldnames=COLS, delimiter="\t", lineterminator="\n",
                            quoting=csv.QUOTE_NONE, quotechar=None)
         w.writeheader(); w.writerows(rows)

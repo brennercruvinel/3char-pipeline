@@ -6,12 +6,12 @@
  "creators": [{"name": "Viana Cruvinel, Brenner", "orcid": "0009-0002-3079-8829", "affiliation": "Hoff Research"}],
  "description": "3char is a collection of 751,870 records from 58 identifier systems (airport, currency, country, language, gene, enzyme, HTTP, DNS and other short codes), harmonized into a single Parquet schema. Each record keeps the namespace of its source system (system_id), and a systems table documents, for each system, the assigning authority, the retrieval URL, the version and retrieval date of the source file, the license and its status, and the regular expression that every published code matches. Identifiers are not globally unique: 14,911 of 623,141 distinct case-folded literals are claimed by two or more systems, and four systems need an additional field to identify a record. The deposit contains only systems whose authority permits redistribution (license_status ok) or states no terms (license_status check; redistribution not confirmed), together with a manifest of SHA-256 checksums and row counts per file, the schema, the per-system provenance, and the scripts that reproduce the statistics in the dataset card. Six further systems are parsed by the build pipeline but not deposited, because their authorities forbid redistribution.",
  "access_right": "open",
- "license": "other-open",
+ "license": "notspecified",
  "keywords": ["identifier systems", "code lists", "controlled vocabularies", "provenance", "ISO 3166", "ISO 4217", "IATA", "ICD-10-CM", "collision census"],
  "related_identifiers": [
   {"identifier": "https://huggingface.co/datasets/brennercruvinel/3char", "relation": "isIdenticalTo", "resource_type": "dataset"},
   {"identifier": "https://github.com/brennercruvinel/3char-pipeline", "relation": "isCompiledBy", "resource_type": "software"},
   {"identifier": "https://github.com/brennercruvinel/3char-bench", "relation": "isReferencedBy", "resource_type": "software"}
  ],
- "notes": "There is no single license: each system's license and license status are recorded in systems.parquet (license, license_status). Seven published systems carry copyleft or share-alike terms (GPL-2.0, Vim, CC-BY-SA, ODbL). Two systems from SIX Group (fin/cfi, fin/i42) have no stated redistribution terms and are marked license_status = check; their redistribution status is not confirmed. LICENSES.md, included in the deposit, quotes the terms of each source verbatim."
+ "notes": "No single license covers the deposit, so no deposit-level license is declared. Each system's license and license status are recorded in systems.parquet (license, license_status). Seven published systems carry copyleft or share-alike terms (GPL-2.0, Vim, CC-BY-SA, ODbL). Two systems from SIX Group (fin/cfi, fin/i42) have no stated redistribution terms and are marked license_status = check; their redistribution status is not confirmed. LICENSES.md, included in the deposit, quotes the terms of each source verbatim."
 }

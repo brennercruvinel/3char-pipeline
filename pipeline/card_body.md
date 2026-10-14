@@ -171,7 +171,7 @@ In a routing test over 182 (literal, system) pairs from the sampled systems, a b
 | pycountry 26.2.16 | ISO 3166-1 (249), ISO 3166-2 (5,046), ISO 4217 (178), ISO 639 (7,923) and ISO 15924 (226), as a Python package built from the Debian iso-codes files | Covers five ISO standards; 3char takes ISO 3166-1, 4217, 639-1 and 15924 from other sources and includes 54 other systems |
 | `datasets/country-codes`, OurAirports, OpenFlights, IANA registries | Source files for single domains | Sources of individual 3char systems, cited in `systems.url` |
 
-A search of the Hugging Face Hub on 2026-10-14, with fourteen queries including ISO 3166, ISO 4217, IATA, ICAO, ICD-10, HGNC, LOCODE, country codes, currency codes, identifiers, code systems, controlled vocabulary and three letter, returned 29 datasets, each covering a single system. No multi-domain collection of code lists with per-system license status was found. The search was not exhaustive, and this is not a claim of priority.
+A search of the Hugging Face Hub on 2026-10-14, with queries that included ISO 3166, ISO 4217, IATA, ICAO, ICD-10, HGNC, LOCODE, country codes, currency codes, identifiers, code systems, controlled vocabulary and three letter, returned 29 datasets, each covering a single system. No multi-domain collection of code lists with per-system license status was found. The search was not exhaustive, and this is not a claim of priority.
 
 ## Versions and citation
 

@@ -16,10 +16,11 @@ The text was revised throughout for language and accuracy. A section on uses was
 - The eight replaced sources were described as unlicensed gists. The description now matches `LICENSES.md`: gists, unlicensed repositories, a third-party scan and a community mirror.
 - The claim that the Wikidata format constraints are older than the codes they reject was removed, because it had not been verified.
 - The ratios against the uniform null are now described as upper bounds on the excess over chance.
+- The Hub search was described as fourteen queries while thirteen were listed. The count was removed, because the search record could not be found.
 
 ### Pipeline
 
-`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `build_card.py` writes the per-domain headings one level below the systems heading, and the license link points to an existing anchor.
+`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `build_card.py` writes the per-domain headings one level below the systems heading, and the license link points to an existing anchor. `build_systems.py` failed after 0.1.2, which moved `SOURCES.tsv` to `history/` and renamed its key column; it now reads `history/SOURCES.tsv` by `system_id`. `deposit/zenodo_metadata.json` no longer declares an open license for the whole deposit, because two systems have unconfirmed redistribution terms.
 
 ## 0.1.2, 2026-10-14
 
