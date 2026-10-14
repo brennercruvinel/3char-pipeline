@@ -1,6 +1,7 @@
-"""Every number the card quotes, checked against the outputs of census.py, keys.py and crosscheck_wikidata.py.
+"""Every number the card quotes, checked against the outputs of census.py, keys.py, crosscheck_wikidata.py and,
+when given, equivalences.py.
 
-usage: python card_check.py <README.md> <census.json> <keys.json> <crosscheck.json>
+usage: python card_check.py <README.md> <census.json> <keys.json> <crosscheck.json> [equivalences.json]
 Exits non-zero on the first mismatch or missing figure.
 """
 import json
@@ -11,7 +12,7 @@ import sys
 def fmt(n): return f"{n:,}"
 
 
-def main(card, census, keys, cross):
+def main(card, census, keys, cross, equiv=None):
     text = open(card, encoding="utf-8").read(); c = json.load(open(census)); k = json.load(open(keys)); x = json.load(open(cross))
     expect = {"systems": c["systems"], "rows": c["rows"], "distinct literals": c["distinct_literals"], "in one system": c["k_hist"]["1"],
               "in two or more": c["in_two_or_more"], "in three or more": c["in_three_or_more"], "collapsed": c["after_collapsing_derived_families"]}
@@ -21,6 +22,12 @@ def main(card, census, keys, cross):
         if not e["code_unique"]: expect[f"{sid} rows"] = e["rows"]; expect[f"{sid} distinct"] = e["distinct_codes"]
     for r in x:
         if r.get("rejected"): expect[f"{r['system']} rejected"] = r["rejected"]
+    if equiv:
+        e = json.load(open(equiv))
+        expect["shared codes, derived pair once"] = e["shared_codes"]; expect["same name in two systems"] = e["with_same_name_in_two_systems"]
+        for l in e["links"]:
+            n = l["linked"] if l["same_entity"] is None else l["same_entity"]
+            expect[f"{l['a']} {l['b']} {l['kind']}"] = n
     ok = True
     for name, n in expect.items():
         hit = fmt(n) in text or (n < 1000 and re.search(rf"\b{n}\b", text))

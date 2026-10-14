@@ -1,0 +1,129 @@
+{
+ "shared_codes": 14845,
+ "with_same_name_in_two_systems": 491,
+ "derived_systems_left_out": [
+  "lng/i63"
+ ],
+ "links": [
+  {
+   "kind": "same_code",
+   "a": "lng/i63",
+   "b": "lng/b47",
+   "test": "same code and same normalized label",
+   "a_entries": 8084,
+   "linked": 8084,
+   "same_entity": 8084,
+   "note": ""
+  },
+  {
+   "kind": "same_code",
+   "a": "lng/i39",
+   "b": "lng/b47",
+   "test": "same code and same normalized label",
+   "a_entries": 183,
+   "linked": 183,
+   "same_entity": 152,
+   "note": ""
+  },
+  {
+   "kind": "same_code",
+   "a": "lng/i15",
+   "b": "lng/b47",
+   "test": "same code and same normalized label",
+   "a_entries": 226,
+   "linked": 224,
+   "same_entity": 182,
+   "note": ""
+  },
+  {
+   "kind": "same_code",
+   "a": "lng/ioc",
+   "b": "lng/i31",
+   "test": "same code and same normalized label",
+   "a_entries": 226,
+   "linked": 126,
+   "same_entity": 116,
+   "note": ""
+  },
+  {
+   "kind": "same_code",
+   "a": "lng/i31",
+   "b": "lng/b47",
+   "test": "ISO 3166-1 alpha-2 code (alias) is a BCP 47 region subtag with the same normalized label",
+   "a_entries": 249,
+   "linked": 249,
+   "same_entity": 233,
+   "note": ""
+  },
+  {
+   "kind": "same_code",
+   "a": "trp/iata",
+   "b": "trp/unl",
+   "test": "IATA code is a UN/LOCODE code in the same country at a location with the airport function",
+   "a_entries": 9056,
+   "linked": 8999,
+   "same_entity": 7106,
+   "note": "labels differ by construction: airport name against place name"
+  },
+  {
+   "kind": "same_code_unchecked",
+   "a": "lng/i31",
+   "b": "trp/tld",
+   "test": "ISO 3166-1 alpha-2 code (alias) is also a top-level domain; entity not checked",
+   "a_entries": 249,
+   "linked": 244,
+   "same_entity": null,
+   "note": "the TLD list carries no country names to compare"
+  },
+  {
+   "kind": "different_code",
+   "a": "bio/aa1",
+   "b": "bio/aa3",
+   "test": "one-letter code linked to a three-letter code by the source table",
+   "a_entries": 20,
+   "linked": 20,
+   "same_entity": 20,
+   "note": ""
+  },
+  {
+   "kind": "different_code",
+   "a": "lng/ioc",
+   "b": "lng/i31",
+   "test": "IOC code linked to a different ISO 3166-1 alpha-3 code by extra.iso3",
+   "a_entries": 226,
+   "linked": 102,
+   "same_entity": 94,
+   "note": ""
+  },
+  {
+   "kind": "different_code",
+   "a": "lng/glt",
+   "b": "lng/i63",
+   "test": "glottocode linked to a three-letter language subtag by its aliases",
+   "a_entries": 27177,
+   "linked": 7847,
+   "same_entity": 6716,
+   "note": ""
+  },
+  {
+   "kind": "different_code",
+   "a": "trp/iata",
+   "b": "trp/icao",
+   "test": "exactly one ICAO airport with the same name, municipality and country",
+   "a_entries": 9056,
+   "linked": 7725,
+   "same_entity": 7725,
+   "note": "both systems are read from the same OurAirports file"
+  },
+  {
+   "kind": "different_code",
+   "a": "com/bau",
+   "b": "com/mor",
+   "test": "ITA2 combination and Morse signal for the same character",
+   "a_entries": 30,
+   "linked": 25,
+   "same_entity": 25,
+   "note": "the character is the shared entity"
+  }
+ ]
+}

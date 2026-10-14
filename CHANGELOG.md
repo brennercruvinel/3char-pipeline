@@ -8,6 +8,8 @@ Documentation only. No Parquet file has changed since 0.1.1.
 
 The card was restructured as the description of a scientific data resource. It now opens with a definition of the collection and the reason it exists, describes the five kinds of list it contains (assigned codes, symbols, vocabulary terms, community conventions and test vectors), and then covers uses, loading, construction, findings, licensing and limitations. The full inventory of the 58 systems moved to an appendix that lists each system's kind, authority and size; regular expressions and the other metadata remain in the `systems` configuration. System names are displayed with an initial capital, while the stored values are unchanged. The citation title now reads "58 code systems and controlled vocabularies" instead of "58 identifier systems".
 
+A new section, with a figure, shows which lists describe the same entities, under the same codes or under different ones, and how many shared codes carry the same name in two systems.
+
 Corrections:
 
 - Shared codes were presented as strings with several meanings. The card now states that a shared string may denote the same entity in different systems (`BRA` is Brazil in both ISO 3166-1 and the IOC list) and that the census does not decide which.
@@ -23,7 +25,7 @@ Corrections:
 
 ### Pipeline
 
-`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised; `SCHEMA.md` attributed the `deprecated` and `current` status values to the wrong systems, and now lists the systems that use them. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `build_card.py` writes the appendix of systems with each system's kind, and the license link points to an existing anchor. `build_systems.py` failed after 0.1.2, which moved `SOURCES.tsv` to `history/` and renamed its key column; it now reads `history/SOURCES.tsv` by `system_id`. `deposit/zenodo_metadata.json` no longer declares an open license for the whole deposit, because two systems have unconfirmed redistribution terms.
+`README.md`, `SCHEMA.md`, `LICENSES.md` and `deposit/VERSIONING.md` were revised; `SCHEMA.md` attributed the `deprecated` and `current` status values to the wrong systems, and now lists the systems that use them. `LICENSES.md` counted the copyleft systems as both four and seven; the count is seven. `equivalences.py` was added: it tests each link between lists with a stated rule and draws the card's figure, and `card_check.py` now checks its figures as well. `build_card.py` writes the appendix of systems with each system's kind, and the license link points to an existing anchor. `build_systems.py` failed after 0.1.2, which moved `SOURCES.tsv` to `history/` and renamed its key column; it now reads `history/SOURCES.tsv` by `system_id`. `deposit/zenodo_metadata.json` no longer declares an open license for the whole deposit, because two systems have unconfirmed redistribution terms.
 
 ## 0.1.2, 2026-10-14
 

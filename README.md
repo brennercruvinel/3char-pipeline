@@ -49,10 +49,11 @@ Two checks can be reproduced from this repository:
 - `validate.py` tests that every emitted code matches its system's anchored regular expression. `pattern_status` in `systems.tsv` records whether the expression was written against the real file (`derived`) or is still loose (`provisional`). All 58 published systems are `derived`.
 - `crosscheck_wikidata.py` tests every published code, as a full match, against the Wikidata format constraint (P1793) of the corresponding property, for the 13 systems that have one. The constraint table is in `external/`, with its retrieval date in the file name. The script documents the forms used for comparison: dotted ICD-10-CM codes, complete UN/LOCODEs, and BCP 47 language subtags only.
 
-`census.py`, `keys.py` and `manifest.py` produce the statistics, the identification keys and the deposit manifest cited in the dataset card; their outputs are in `deposit/`. `card_check.py` compares every number in the card with those outputs and exits with an error on any difference:
+`census.py`, `keys.py`, `equivalences.py` and `manifest.py` produce the statistics, the identification keys, the links between lists that describe the same entities (with the card's figure) and the deposit manifest; their outputs are in `deposit/`. `card_check.py` compares every number in the card with those outputs and exits with an error on any difference:
 
 ```bash
-.venv/bin/python pipeline/card_check.py hub/README.md deposit/census.json deposit/keys.json deposit/crosscheck_wikidata.json
+.venv/bin/python pipeline/equivalences.py hub deposit/equivalences.json hub/figures/equivalences.svg
+.venv/bin/python pipeline/card_check.py hub/README.md deposit/census.json deposit/keys.json deposit/crosscheck_wikidata.json deposit/equivalences.json
 ```
 
 ## Writing a parser

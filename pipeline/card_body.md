@@ -2,7 +2,7 @@
 
 3char is a curated collection of code systems, identifiers, symbols and controlled vocabularies from documented reference sources. It brings 751,870 heterogeneous records from 58 sources into a common Parquet schema, while preserving each record's source namespace and, for every source, its provenance, format constraints and licensing information.
 
-Short codes are reused across sources. `BRA` is Brazil in both ISO 3166-1 and the IOC country list, the Braj language in the IANA Language Subtag Registry, and an airport in the IATA list. Registries of identifier systems such as the Bioregistry describe these systems without redistributing their contents, and Wikidata records identifiers as statements about entities rather than as the lists their authorities publish. Keeping the lists side by side, each in its own namespace, makes it possible to see where the same string occurs in different sources, to check each code against the form its source defines, and to know under which terms each list may be reused.
+Short codes are reused across sources. `BRA` is Brazil in both ISO 3166-1 and the IOC country list, the Braj language in the IANA Language Subtag Registry, and an airport in the IATA list. Registries of identifier systems such as the Bioregistry describe these systems without redistributing their contents, and Wikidata records identifiers as statements about entities rather than as the lists their authorities publish. Keeping the lists side by side, each in its own namespace, makes it possible to see where the same string occurs in different sources, which lists describe the same entities with the same or with different codes, how each code compares with the form its source defines, and under which terms each list may be reused.
 
 This card describes release 0.1.3. The data files are unchanged since release 0.1.1 (2026-09-12).
 
@@ -26,7 +26,7 @@ The name comes from the three-character codes, such as airport, currency and cou
 
 - **Validating and normalizing codes.** Each list and its regular expression show whether a string is an entry in the recorded edition of the list, and whether it has the form the source defines.
 - **Grounding language models and search.** The lists can serve as lookup tables or retrieval corpora that map codes to names and back. [Retrieval](#retrieval) summarizes how the presentation of records affected retrieval in a controlled sample.
-- **Studying shared codes.** The collision census identifies every string that occurs in more than one system. Whether a shared string denotes the same entity has to be established for each pair of systems: `BRA` names Brazil in two of them and unrelated entities in others. The closed study [poc-nsi](https://github.com/brennercruvinel/poc-nsi) used seven systems in this way to test whether language models confuse such codes.
+- **Studying shared codes and equivalent lists.** The collision census identifies every string that occurs in more than one system, and [Lists that describe the same entities](#lists-that-describe-the-same-entities) shows which lists can be mapped onto each other. Whether a shared string denotes the same entity has to be established for each pair of systems: `BRA` names Brazil in two of them and unrelated entities in others. The closed study [poc-nsi](https://github.com/brennercruvinel/poc-nsi) used seven systems in this way to test whether language models confuse such codes.
 - **Linking tables.** Country codes stored in `extra`, such as `extra.country` in the airport systems and `extra.iso3` in `lng/ioc`, connect several systems to ISO 3166-1.
 
 For operational work that depends on the latest edition of a list, such as billing with ICD-10-CM, compare `version` and `retrieved_at` with the source's current release.
@@ -101,7 +101,7 @@ Every build verifies each raw file against its recorded checksum and tests each 
 
 ## What the collection shows
 
-Every figure in this section is produced by a script in the pipeline (`census.py`, `keys.py`, `crosscheck_wikidata.py`) and checked against this card by `card_check.py`.
+Every figure in this section is produced by a script in the pipeline (`census.py`, `keys.py`, `equivalences.py`, `crosscheck_wikidata.py`) and checked against this card by `card_check.py`.
 
 ### Codes shared between systems
 
@@ -118,6 +118,20 @@ Codes are compared after case folding, and a code is shared when the same folded
 A shared string is not necessarily a shared meaning. Some systems describe the same entities with the same codes, as ISO 3166-1 alpha-3 and the IOC list do for many countries, and `lng/i63` is derived from `lng/b47`. Others share strings by coincidence: `Arg` is arginine among the amino acid codes, while `ARG` is Argentina in the country lists and an airport in the IATA list. The census counts shared strings; it does not decide whether they refer to the same entity.
 
 Every code in eight systems also occurs in at least one other system: `bio/aa1`, `bio/aa3`, `bio/cdn`, `lng/i31`, `lng/i39`, `lng/i63`, `lng/mdy` and `wrt/iau`. In `trp/iata`, `lng/ioc`, `lng/i15`, `trp/ica2` and `fin/i42`, more than 98% of codes do. Without case folding there are 632,457 distinct strings, of which 21,255 occur in more than one system. Within `trp/unl`, 18,748 codes repeat because the key is the country plus the code; these repetitions are not counted as sharing between systems.
+
+### Lists that describe the same entities
+
+The same entity often appears in several lists, sometimes under the same code and sometimes under a different one. `equivalences.py` tests each such link with a stated rule. Names are compared after removing accents, case and punctuation, so two spellings of one name count as different.
+
+![Lists in 3char that describe the same entities](https://huggingface.co/datasets/brennercruvinel/3char/resolve/main/figures/equivalences.svg)
+
+*Solid lines: same code, same entity. Dashed lines: different codes, same entity. Dotted line: same code, entity not checked. Each label gives the entries of the first list that pass the test, out of all its entries.*
+
+**Same code, same entity.** The BCP 47 subtag registry contains three other lists: 152 of the 183 ISO 639-1 codes, 182 of the 226 ISO 15924 codes and 233 of the 249 ISO 3166-1 alpha-2 codes are subtags in it with the same name, and `lng/i63` is derived from it. The IOC uses the ISO 3166-1 alpha-3 code for 116 of its 226 countries. The largest overlap is between airport codes and UN/LOCODE: 7,106 of the 9,056 IATA codes are also UN/LOCODE codes in the same country, at a location with the airport function. Names cannot confirm this match, because one list names the airport and the other the place.
+
+**Different codes, same entity.** The one- and three-letter amino acid codes map one to one (20 of 20). Through `extra.iso3`, 94 IOC codes point to a different ISO 3166-1 code with the same name, as `GER` does to `DEU`. In Glottolog, 6,716 glottocodes carry an ISO 639-3 code that is a three-letter subtag with the same name. Of the IATA airports, 7,725 match exactly one ICAO airport with the same name, municipality and country. Finally, 25 characters have both an ITA2 combination and a Morse signal.
+
+The 244 ISO 3166-1 alpha-2 codes that are also top-level domains are shown but not counted as the same entity, because the TLD list carries no country names. Across the whole collection, counting the derived pair once, 491 of the 14,845 shared codes carry the same name in two systems. Name matching misses equivalences whose names differ, the IATA and UN/LOCODE overlap among them, so this count is a lower bound on shared meaning rather than an estimate of it.
 
 ### Shared strings by code length
 
@@ -205,7 +219,7 @@ Coverage follows what sources publish under terms that permit redistribution. St
 
 Releases are numbered `MAJOR.MINOR.PATCH`. A change to the schema increments the major version, a change to any Parquet file increments the minor version, and a change limited to the card or the changelog increments the patch version. The changelog is maintained in the pipeline repository and copied here.
 
-Release tags on the Hub and a Zenodo deposit are planned but have not been created yet; until then, a Hub commit identifies the exact files of a release. Each Zenodo version will contain the published Parquet files, `MANIFEST.tsv` (SHA-256, size and row count for each file), `SCHEMA.md`, `LICENSES.md`, the census, key and cross-check outputs, and the scripts that produce them.
+Release tags on the Hub and a Zenodo deposit are planned but have not been created yet; until then, a Hub commit identifies the exact files of a release. Each Zenodo version will contain the published Parquet files, `MANIFEST.tsv` (SHA-256, size and row count for each file), `SCHEMA.md`, `LICENSES.md`, the census, key, equivalence and cross-check outputs, and the scripts that produce them.
 
 ```bibtex
 @misc{cruvinel_3char_2026,
